@@ -50,44 +50,81 @@ public class PlayerController : MonoBehaviour
 	{
 		//TODO
 	}
+
+	private void OnDestroy()
+	{
+		UnassignControls();
+	}
 	#endregion
 
 	#region Input Handling
-	InputAction moveAction;
-	InputAction interactAction;
-	InputAction pauseAction;
+	Dictionary<string,InputAction> regControls = new();
+
+	//InputAction moveAction;
+	//InputAction interactAction;
+	//InputAction pauseAction;
 	public void RegisterControls()
 	{
-		moveAction = controls.Player.Move;
-		interactAction = controls.Player.Interact;
-		pauseAction = controls.Player.Pause;
+		//moveAction = controls.Player.Move;
+		//interactAction = controls.Player.Interact;
+		//pauseAction = controls.Player.Pause;
+
+		regControls.Add("move",controls.Player.Move);
+		regControls.Add("interact",controls.Player.Interact);
+		regControls.Add("pause",controls.Player.Pause);
 
 		AssignControls();
 	}
 
 	public void AssignControls()
 	{
-		moveAction.performed += Move;
-		moveAction.canceled += Move;
+		//moveAction.performed += Move;
+		//moveAction.canceled += Move;
+		//interactAction.performed += Interact;
+		//pauseAction.performed += Pause;
 
-		interactAction.performed += Interact;
+		regControls["move"].performed += Move;
+		regControls["move"].canceled += Move;
 
-		pauseAction.performed += Pause;
+		regControls["interact"].performed += Interact;
+
+		regControls["pause"].performed += Pause;
 	}
 
 	public void ActivateControls()
 	{
-		moveAction?.Enable();
-		interactAction?.Enable();
-		pauseAction?.Enable();
+		//moveAction?.Enable();
+		//interactAction?.Enable();
+		//pauseAction?.Enable();
+
+		foreach (var kvp in regControls) kvp.Value.Enable();
 	}
 
 	public void DeactivateControls()
 	{
-		moveAction?.Disable();
-		interactAction?.Disable();
-		pauseAction?.Disable();
+		//moveAction?.Disable();
+		//interactAction?.Disable();
+		//pauseAction?.Disable();
+
+		foreach (var kvp in regControls) kvp.Value.Disable();
 	}
+
+	public void UnassignControls()
+	{
+		//moveAction.performed -= Move;
+		//moveAction.canceled -= Move;
+		//interactAction.performed -= Interact;
+		//pauseAction.performed -= Pause;
+
+		regControls["move"].performed -= Move;
+		regControls["move"].canceled -= Move;
+
+		regControls["interact"].performed -= Interact;
+
+		regControls["pause"].performed -= Pause;
+	}
+
+	public void DeregisterControls() => regControls.Clear();
 
 	public void Move(InputAction.CallbackContext context)
 	{

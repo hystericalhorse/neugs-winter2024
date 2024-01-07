@@ -275,7 +275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetTransform: {fileID: 0}
   Camera: {fileID: 0}
-  Limits: {x: 10, y: 10}
+  Limits: {x: 2, y: 2}
+  fixedCamera: 0
   followSpeed: 15
   zoom: 0
 --- !u!1 &619394800
