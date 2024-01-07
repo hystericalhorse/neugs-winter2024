@@ -29,6 +29,5 @@ public class PlayerMovememn : MonoBehaviour
         velocity.y = direction.y * speed;
        
         rb.velocity = velocity;
-        
     }
 }
