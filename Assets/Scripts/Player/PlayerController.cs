@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	PlayerControls controls;
 
 	Vector2 movement = Vector2.zero;
+	Vector2 direction = Vector2.zero;
 	bool sprinting;
 
 	#region MonoBehaviour
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		//TODO
+		
 	}
 
 	private void OnDestroy()
@@ -120,6 +121,24 @@ public class PlayerController : MonoBehaviour
 	public void Move(InputAction.CallbackContext context)
 	{
 		movement = context.ReadValue<Vector2>();
+
+		if (movement.magnitude != 0)
+		{
+			if (movement.normalized.x > movement.normalized.y)
+			{
+				if (movement.normalized.x > 0)
+					direction = Vector2.right;
+				else
+					direction = Vector2.left;
+			}
+			else
+			{
+				if (movement.normalized.y > 0)
+					direction = Vector2.up;
+				else
+					direction = Vector2.down;
+			}
+		}
 	}
 
 	public void Interact(InputAction.CallbackContext context)
@@ -148,5 +167,12 @@ public class PlayerController : MonoBehaviour
 		//TODO
 	}
 
+	#endregion
+
+	#region Animator
+	public void Animate()
+	{
+
+	}
 	#endregion
 }
