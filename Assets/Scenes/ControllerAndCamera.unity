@@ -276,6 +276,7 @@ MonoBehaviour:
   TargetTransform: {fileID: 0}
   Camera: {fileID: 0}
   Limits: {x: 2, y: 2}
+  pos: {x: 0, y: 0, z: 0}
   fixedCamera: 1
   followSpeed: 10
   zoom: 0
@@ -617,7 +618,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1543098716
@@ -715,6 +716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 5
   defaultSprint: 0
+  rb: {fileID: 0}
+  movement: {x: 0, y: 0}
+  sprinting: 0
 --- !u!4 &1543098720
 Transform:
   m_ObjectHideFlags: 0
