@@ -276,8 +276,8 @@ MonoBehaviour:
   TargetTransform: {fileID: 0}
   Camera: {fileID: 0}
   Limits: {x: 2, y: 2}
-  fixedCamera: 0
-  followSpeed: 15
+  fixedCamera: 1
+  followSpeed: 10
   zoom: 0
 --- !u!1 &619394800
 GameObject:
@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkSpeed: 5
+  defaultSprint: 0
 --- !u!4 &1543098720
 Transform:
   m_ObjectHideFlags: 0
