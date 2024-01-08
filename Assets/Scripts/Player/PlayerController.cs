@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField, Range(1,10)] float WalkSpeed = 5f;
 	[SerializeField] bool defaultSprint = false;
+	[SerializeField] private Animator animator;
 
     Rigidbody2D rb;
 	PlayerControls controls;
@@ -172,7 +173,22 @@ public class PlayerController : MonoBehaviour
 	#region Animator
 	public void Animate()
 	{
-
-	}
+		if(direction == Vector2.up)
+		{
+			animator.SetBool("WalkUp", true);
+		}
+        if (direction == Vector2.down)
+        {
+            animator.SetBool("WalkDown", true);
+        }
+        if (direction == Vector2.right)
+        {
+            animator.SetBool("WalkRight", true);
+        }
+        if (direction == Vector2.left)
+        {
+            animator.SetBool("WalkLeft", true);
+        }
+    }
 	#endregion
 }
