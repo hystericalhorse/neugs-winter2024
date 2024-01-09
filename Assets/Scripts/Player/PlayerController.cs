@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField, Range(1,5)] float WalkSpeed = 2.5f;
+	[SerializeField, Range(1,10)] float WalkSpeed = 5f;
+	[SerializeField] bool defaultSprint = false;
+	[SerializeField] private Animator animator;
 
     Rigidbody2D rb;
 	PlayerControls controls;
 
 	Vector2 movement = Vector2.zero;
+	Vector2 direction = Vector2.zero;
+	bool sprinting;
 
 	#region MonoBehaviour
 	private void Awake()
 	{
 		rb ??= gameObject.GetComponent<Rigidbody2D>();
+		rb.gravityScale = 0f;
+
 		controls ??= new();
 
 		RegisterControls();
@@ -23,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
-		//TODO
+		sprinting = defaultSprint;
 	}
 
 	private void OnEnable()
@@ -43,12 +50,12 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		rb.velocity = movement.normalized * WalkSpeed * Time.fixedDeltaTime * 100;
+		rb.velocity = movement.normalized * (sprinting ? 2 * WalkSpeed : WalkSpeed);
 	}
 
 	private void LateUpdate()
 	{
-		//TODO
+		
 	}
 
 	private void OnDestroy()
@@ -58,77 +65,81 @@ public class PlayerController : MonoBehaviour
 	#endregion
 
 	#region Input Handling
-	Dictionary<string,InputAction> regControls = new();
+	Dictionary<string,InputAction> actions = new();
 
-	//InputAction moveAction;
-	//InputAction interactAction;
-	//InputAction pauseAction;
 	public void RegisterControls()
 	{
-		//moveAction = controls.Player.Move;
-		//interactAction = controls.Player.Interact;
-		//pauseAction = controls.Player.Pause;
-
-		regControls.Add("move",controls.Player.Move);
-		regControls.Add("interact",controls.Player.Interact);
-		regControls.Add("pause",controls.Player.Pause);
+		actions.Add("move",controls.Player.Move);
+		actions.Add("interact",controls.Player.Interact);
+		actions.Add("pause",controls.Player.Pause);
+		actions.Add("sprint",controls.Player.Sprint);
 
 		AssignControls();
 	}
 
 	public void AssignControls()
 	{
-		//moveAction.performed += Move;
-		//moveAction.canceled += Move;
-		//interactAction.performed += Interact;
-		//pauseAction.performed += Pause;
+		actions["move"].performed += Move;
+		actions["move"].canceled += Move;
 
-		regControls["move"].performed += Move;
-		regControls["move"].canceled += Move;
+		actions["interact"].performed += Interact;
 
-		regControls["interact"].performed += Interact;
+		actions["pause"].performed += Pause;
 
-		regControls["pause"].performed += Pause;
+		actions["sprint"].started += Sprint;
+		actions["sprint"].canceled += Sprint;
 	}
 
 	public void ActivateControls()
 	{
-		//moveAction?.Enable();
-		//interactAction?.Enable();
-		//pauseAction?.Enable();
-
-		foreach (var kvp in regControls) kvp.Value.Enable();
+		foreach (var kvp in actions) kvp.Value.Enable();
 	}
 
 	public void DeactivateControls()
 	{
-		//moveAction?.Disable();
-		//interactAction?.Disable();
-		//pauseAction?.Disable();
-
-		foreach (var kvp in regControls) kvp.Value.Disable();
+		foreach (var kvp in actions) kvp.Value.Disable();
 	}
 
 	public void UnassignControls()
 	{
-		//moveAction.performed -= Move;
-		//moveAction.canceled -= Move;
-		//interactAction.performed -= Interact;
-		//pauseAction.performed -= Pause;
+		actions["move"].performed -= Move;
+		actions["move"].canceled -= Move;
 
-		regControls["move"].performed -= Move;
-		regControls["move"].canceled -= Move;
+		actions["interact"].performed -= Interact;
 
-		regControls["interact"].performed -= Interact;
+		actions["pause"].performed -= Pause;
 
-		regControls["pause"].performed -= Pause;
+		actions["sprint"].started -= Sprint;
+		actions["sprint"].canceled -= Sprint;
+
+		DeregisterControls();
 	}
 
-	public void DeregisterControls() => regControls.Clear();
+	public void DeregisterControls() => actions.Clear();
+	#endregion
 
+	#region Controls
 	public void Move(InputAction.CallbackContext context)
 	{
 		movement = context.ReadValue<Vector2>();
+
+		if (movement.magnitude != 0)
+		{
+			if (movement.normalized.x > movement.normalized.y)
+			{
+				if (movement.normalized.x > 0)
+					direction = Vector2.right;
+				else
+					direction = Vector2.left;
+			}
+			else
+			{
+				if (movement.normalized.y > 0)
+					direction = Vector2.up;
+				else
+					direction = Vector2.down;
+			}
+		}
 	}
 
 	public void Interact(InputAction.CallbackContext context)
@@ -146,10 +157,38 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	public void Pause(InputAction.CallbackContext context)
+	public void Sprint(InputAction.CallbackContext context)
 	{
-		
+		if (context.started) sprinting = !defaultSprint;
+		if (context.canceled) sprinting = defaultSprint;
 	}
 
+	public void Pause(InputAction.CallbackContext context)
+	{
+		//TODO
+	}
+
+	#endregion
+
+	#region Animator
+	public void Animate()
+	{
+		if(direction == Vector2.up)
+		{
+			animator.SetBool("WalkUp", true);
+		}
+        if (direction == Vector2.down)
+        {
+            animator.SetBool("WalkDown", true);
+        }
+        if (direction == Vector2.right)
+        {
+            animator.SetBool("WalkRight", true);
+        }
+        if (direction == Vector2.left)
+        {
+            animator.SetBool("WalkLeft", true);
+        }
+    }
 	#endregion
 }
