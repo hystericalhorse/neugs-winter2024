@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f22061291016e047907519fa9eb0cb9
+guid: a73a35111619ce442802e64c546914bb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: AshDown
+  - name: AshLeft
     originalName: 
-    pivot: {x: 0.42857143, y: -0.1388889}
+    pivot: {x: 0.375, y: -0.1388889}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 21
+      width: 16
       height: 36
-    spriteID: b1daf1e10ecd0fe4480b6cadc327b0d0
+    spriteID: 3ec870a7151b33c49a9a32892beffb87
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,20 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 770266958
-    name: AshDown
+    guid: -213193515
+    name: AshLeft
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: AshDown
+    - name: AshLeft
       frameIndex: 0
       cellRect:
-        x: 7
+        x: 10
         y: 5
-        width: 21
+        width: 16
         height: 36
-      spriteId: b1daf1e10ecd0fe4480b6cadc327b0d0
+      spriteId: 3ec870a7151b33c49a9a32892beffb87
     linkedCells: []
     parentIndex: -1
   platformSettings:
