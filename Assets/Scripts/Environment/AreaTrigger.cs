@@ -5,9 +5,9 @@ using UnityEngine.Events;
 public class AreaTrigger : MonoBehaviour
 {
     [SerializeField] new Collider2D collider;
-    public UnityEvent[] OnEnter = { };
-    public UnityEvent[] OnStay = { };
-    public UnityEvent[] OnExit = { };
+    public UnityEvent OnEnter;
+    public UnityEvent OnStay;
+    public UnityEvent OnExit;
 
     public void Start()
     {
@@ -15,18 +15,7 @@ public class AreaTrigger : MonoBehaviour
         collider.isTrigger = true;
     }
 
-	public void OnTriggerEnter2D(Collider2D collision)
-	{
-		foreach (var evt in OnEnter) evt?.Invoke();
-	}
-
-	public void OnTriggerStay2D(Collider2D collision)
-	{
-		foreach (var evt in OnStay) evt?.Invoke();
-	}
-
-	public void OnTriggerExit2D(Collider2D collision)
-	{
-		foreach (var evt in OnExit) evt?.Invoke();
-	}
+	public void OnTriggerEnter2D(Collider2D collision) => OnEnter?.Invoke();
+	public void OnTriggerStay2D(Collider2D collision) => OnStay?.Invoke();
+	public void OnTriggerExit2D(Collider2D collision) => OnExit?.Invoke();
 }
