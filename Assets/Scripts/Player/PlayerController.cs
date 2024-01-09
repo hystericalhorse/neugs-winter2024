@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Interact(InputAction.CallbackContext context)
 	{
-		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 2, 0, Vector2.up, 0);
+		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one, 0, direction, 1);
 		
 		foreach (var hit in hits)
 		{
