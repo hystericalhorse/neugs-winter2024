@@ -4,22 +4,15 @@ using UnityEngine;
 using UnitySceneManager = UnityEngine.SceneManagement.SceneManager;
 using System.Collections;
 
-public class SceneManager : MonoBehaviour
+public class SceneManager : MonoBehaviourSingleton<SceneManager>
 {
-	public static SceneManager sceneManager;
-
 	public bool sceneLoaded;
 	public float loadingPercent;
 	public delegate void OnSceneLoaded();
 	public OnSceneLoaded onSceneLoaded;
 
-	private void Awake()
-	{
-		if (sceneManager == null) sceneManager = this;
-		else Destroy(this);
-
-		DontDestroyOnLoad(this);
-	}
+	private void Awake() => Set(this);
+	private void OnDestroy() => Release();
 
 	public IEnumerator WaitForSceneLoad(UnityEngine.AsyncOperation operation, bool fade = false)
 	{
