@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Apple;
 
-public class PortalController : MonoBehaviour
+public class DoorSwitch : MonoBehaviour
 {
    // public Transform prevLevel; // Spawn in other room transform
     GameObject player;

@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneChange : MonoBehaviour
+public class SceneChange : MonoBehaviour, Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] string sceneName;
+
+    public void OnInteract()
     {
-        
+        SceneManager.instance.LoadScene(sceneName);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
