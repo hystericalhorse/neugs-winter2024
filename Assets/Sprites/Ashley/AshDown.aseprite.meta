@@ -121,12 +121,12 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: AshDown
     originalName: 
-    pivot: {x: 0.42857143, y: -0.1388889}
+    pivot: {x: 0.5, y: -0.055555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 33
       y: 4
       width: 21
       height: 36
@@ -138,7 +138,67 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: 33, y: 4}
+  - name: AshDown_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 21
+      height: 37
+    spriteID: 77edfc96075dc1d4796045bf8cf630d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: AshDown_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.055555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 33
+      y: 48
+      width: 21
+      height: 36
+    spriteID: f325dd26ab044e940b1563014d3976ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 33, y: 48}
+  - name: AshDown_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 49
+      width: 21
+      height: 37
+    spriteID: 69dacfe05e0592d4992403ca5c471a62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 49}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,14 +208,38 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: AshDown
+    - name: AshDown_Frame_0
       frameIndex: 0
       cellRect:
-        x: 7
-        y: 5
+        x: 0
+        y: 2
         width: 21
         height: 36
       spriteId: b1daf1e10ecd0fe4480b6cadc327b0d0
+    - name: AshDown_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 21
+        height: 37
+      spriteId: 77edfc96075dc1d4796045bf8cf630d2
+    - name: AshDown_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 2
+        width: 21
+        height: 36
+      spriteId: f325dd26ab044e940b1563014d3976ce
+    - name: AshDown_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 21
+        height: 37
+      spriteId: 69dacfe05e0592d4992403ca5c471a62
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -197,4 +281,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 48}
+  canvasSize: {x: 21, y: 38}

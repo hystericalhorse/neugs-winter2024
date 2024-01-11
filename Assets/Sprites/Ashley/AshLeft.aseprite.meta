@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: AshLeft
     originalName: 
-    pivot: {x: 0.375, y: -0.1388889}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 28
       y: 4
       width: 16
-      height: 36
+      height: 35
     spriteID: 3ec870a7151b33c49a9a32892beffb87
     spriteBone: []
     spriteOutline: []
@@ -138,7 +138,67 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: 28, y: 4}
+  - name: AshLeft_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 47
+      width: 16
+      height: 35
+    spriteID: 7d61a8ad7b39249409d7cebd3f481458
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 47}
+  - name: AshLeft_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 16
+      height: 36
+    spriteID: 1ac8e328615a435478eabb767ece8fd2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: AshLeft_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 48
+      width: 16
+      height: 36
+    spriteID: e01252ddd75e239468452d4a8f28a18f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 48}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,14 +208,38 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: AshLeft
+    - name: AshLeft_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 35
+      spriteId: 3ec870a7151b33c49a9a32892beffb87
+    - name: AshLeft_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 35
+      spriteId: 7d61a8ad7b39249409d7cebd3f481458
+    - name: AshLeft_Frame_0
       frameIndex: 0
       cellRect:
-        x: 10
-        y: 5
+        x: 0
+        y: 0
         width: 16
         height: 36
-      spriteId: 3ec870a7151b33c49a9a32892beffb87
+      spriteId: 1ac8e328615a435478eabb767ece8fd2
+    - name: AshLeft_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 36
+      spriteId: e01252ddd75e239468452d4a8f28a18f
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -197,4 +281,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 48}
+  canvasSize: {x: 16, y: 36}
