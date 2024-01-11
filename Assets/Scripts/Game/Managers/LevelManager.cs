@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviourSingleton<LevelManager>
@@ -24,6 +21,7 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 
 	}
 
+	[ContextMenu("SaveLevel")]
 	public void SaveLevel()
 	{
 		LevelData lvl_dat = GetLevelData(currentLevel.Name);
@@ -33,6 +31,7 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 			LevelData.Add(currentLevel.ExtractData());
 	}
 
+	[ContextMenu("LoadLevel")]
 	public void LoadLevel()
 	{
 		currentLevel = FindObjectOfType<Level>();
@@ -43,7 +42,7 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 		
 	}
 
-	public LevelData GetLevelData(string name)
+	LevelData GetLevelData(string name)
 	{
 		foreach (var lvl_dat in LevelData)
 		{
@@ -53,7 +52,7 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 		return null;
 	}
 
-	public Flag GetFlag(string name)
+	Flag GetFlag(string name)
 	{
 		foreach (var flag in currentLevel.Flags)
 		{

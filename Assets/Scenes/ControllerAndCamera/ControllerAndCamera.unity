@@ -1926,9 +1926,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1503708077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed597b0dfdcc9034791015d7629dee81, type: 3}
+  m_Script: {fileID: 11500000, guid: 32d361078bdc1314fb2e59af1b1e3bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagName: sceneTriggered
+  updateValue: 1
+  onInteractSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractFailure:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1519600746
 GameObject:
   m_ObjectHideFlags: 0
