@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField, Range(1,10)] float WalkSpeed = 5f;
 	[SerializeField] bool defaultSprint = false;
+	[SerializeField] private Animator animator;
 
     Rigidbody2D rb;
 	PlayerControls controls;
 
 	Vector2 movement = Vector2.zero;
+	Vector2 direction = Vector2.zero;
 	bool sprinting;
 
 	#region MonoBehaviour
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		//TODO
+		
 	}
 
 	private void OnDestroy()
@@ -120,11 +122,29 @@ public class PlayerController : MonoBehaviour
 	public void Move(InputAction.CallbackContext context)
 	{
 		movement = context.ReadValue<Vector2>();
+
+		if (movement.magnitude != 0)
+		{
+			if (movement.normalized.x > movement.normalized.y)
+			{
+				if (movement.normalized.x > 0)
+					direction = Vector2.right;
+				else
+					direction = Vector2.left;
+			}
+			else
+			{
+				if (movement.normalized.y > 0)
+					direction = Vector2.up;
+				else
+					direction = Vector2.down;
+			}
+		}
 	}
 
 	public void Interact(InputAction.CallbackContext context)
 	{
-		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 2, 0, Vector2.up, 0);
+		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one, 0, direction, 1);
 		
 		foreach (var hit in hits)
 		{
@@ -148,5 +168,27 @@ public class PlayerController : MonoBehaviour
 		//TODO
 	}
 
+	#endregion
+
+	#region Animator
+	public void Animate()
+	{
+		if(direction == Vector2.up)
+		{
+			animator.SetBool("WalkUp", true);
+		}
+        if (direction == Vector2.down)
+        {
+            animator.SetBool("WalkDown", true);
+        }
+        if (direction == Vector2.right)
+        {
+            animator.SetBool("WalkRight", true);
+        }
+        if (direction == Vector2.left)
+        {
+            animator.SetBool("WalkLeft", true);
+        }
+    }
 	#endregion
 }
