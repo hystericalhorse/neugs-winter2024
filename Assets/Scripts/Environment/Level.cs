@@ -6,11 +6,26 @@ public class Level : MonoBehaviour
 {
 	[SerializeField] public string Name = string.Empty;
 	[SerializeField] public List<Flag> Flags = new();
+	[SerializeField] public List<Room> Rooms = new();
 
 	private void Start()
 	{
 		// M.A.D.
 		if (FindObjectOfType<Level>() != this) Destroy(gameObject);
+
+		Rooms.AddRange(FindObjectsOfType<Room>(true));
+	}
+
+	public void SetRoomLockState(string name, bool lockState)
+	{
+		foreach (var room in Rooms)
+		{
+			if (room.RoomName == name)
+			{
+				room.Locked = lockState;
+				Debug.Log($"Room {room.RoomName} is Locked? {room.Locked}");
+			}
+		}
 	}
 
 	public LevelData ExtractData()
