@@ -16,18 +16,6 @@ public class Level : MonoBehaviour
 		Rooms.AddRange(FindObjectsOfType<Room>(true));
 	}
 
-	public void SetRoomLockState(string name, bool lockState)
-	{
-		foreach (var room in Rooms)
-		{
-			if (room.RoomName == name)
-			{
-				room.Locked = lockState;
-				Debug.Log($"Room {room.RoomName} is Locked? {room.Locked}");
-			}
-		}
-	}
-
 	public LevelData ExtractData()
 	{
 		return new LevelData(Name, Flags);

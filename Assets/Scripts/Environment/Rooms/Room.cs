@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class Room : MonoBehaviour
 {
-    public bool Locked = false;
     public string RoomName;
 
     [SerializeField] UnityEvent onEnterRoom;

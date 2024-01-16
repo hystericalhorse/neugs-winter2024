@@ -179,18 +179,22 @@ public class PlayerController : MonoBehaviour
 		if(direction == Vector2.up)
 		{
 			animator.SetBool("FaceUp", true);
-		}
+            animator.SetBool("FaceRight", false);
+        }
         if (direction == Vector2.down)
         {
             animator.SetBool("FaceRight", false);
+            animator.SetBool("FaceUp", false);
         }
         if (direction == Vector2.right)
         {
             animator.SetBool("FaceRight", true);
+            animator.SetBool("FaceUp", false);
         }
         if (direction == Vector2.left)
         {
             animator.SetBool("FaceUp", false);
+            animator.SetBool("FaceRight", false);
         }
 
         //animation jank FUCK THIS >:(

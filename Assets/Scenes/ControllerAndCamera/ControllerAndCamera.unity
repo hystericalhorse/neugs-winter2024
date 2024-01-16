@@ -197,6 +197,7 @@ MonoBehaviour:
   Flags:
   - name: sceneTriggered
     value: 0
+  Rooms: []
 --- !u!1 &255373824
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +269,82 @@ MonoBehaviour:
   fontStyle: 1
   alignment: 0
   textDropShadow: 0
+--- !u!1 &512668002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512668005}
+  - component: {fileID: 512668006}
+  - component: {fileID: 512668003}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &512668003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512668002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDefaultBackgroundColor: 1
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  useDefaultTextColor: 1
+  textColor:
+    serializedVersion: 2
+    rgba: 4278190335
+  font: {fileID: 0}
+  fontSize: 11
+  fontStyle: 1
+  alignment: 0
+  textDropShadow: 0
+--- !u!4 &512668005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512668002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512668006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512668002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1eafbd48c5bd14a8fede3609f6d8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  currentDialogue:
+    ActorName: 
+    Lines: []
+  line: 0
+  display: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,17 +2003,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1503708077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d361078bdc1314fb2e59af1b1e3bad, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e4ee318f8e277247bf4686fb56c0202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagName: sceneTriggered
-  updateValue: 1
-  onInteractSuccess:
-    m_PersistentCalls:
-      m_Calls: []
-  onInteractFailure:
-    m_PersistentCalls:
-      m_Calls: []
+  dialogue:
+    ActorName: YIPPEE
+    Lines:
+    - Hello, World
+    - I love living here
+    - In this new world
 --- !u!1 &1519600746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,6 +3438,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2098522060}
+  - {fileID: 512668005}
   - {fileID: 255373826}
   - {fileID: 83637111}
   - {fileID: 619394802}
