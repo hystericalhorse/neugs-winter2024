@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
 	private void Update()
 	{
 		//TODO
+		Animate();
 	}
 
 	private void FixedUpdate()
@@ -139,7 +140,8 @@ public class PlayerController : MonoBehaviour
 				else
 					direction = Vector2.down;
 			}
-		}
+            
+        }
 	}
 
 	public void Interact(InputAction.CallbackContext context)
@@ -173,22 +175,27 @@ public class PlayerController : MonoBehaviour
 	#region Animator
 	public void Animate()
 	{
+		Debug.Log(direction);
 		if(direction == Vector2.up)
 		{
-			animator.SetBool("WalkUp", true);
+			animator.SetBool("FaceUp", true);
 		}
         if (direction == Vector2.down)
         {
-            animator.SetBool("WalkDown", true);
+            animator.SetBool("FaceRight", false);
         }
         if (direction == Vector2.right)
         {
-            animator.SetBool("WalkRight", true);
+            animator.SetBool("FaceRight", true);
         }
         if (direction == Vector2.left)
         {
-            animator.SetBool("WalkLeft", true);
+            animator.SetBool("FaceUp", false);
         }
+
+        //animation jank FUCK THIS >:(
+        animator.SetFloat("XSpeed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("YSpeed", Mathf.Abs(rb.velocity.y));
     }
 	#endregion
 }
