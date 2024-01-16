@@ -7,9 +7,11 @@ using UnityEngine.InputSystem.Interactions;
 public class PlayerController : MonoBehaviour
 {
 	[SerializeField, Range(1,10)] float WalkSpeed = 5f;
+	[SerializeField, Range(1,10)] float SprintSpeed = 5f;
 	[SerializeField] bool defaultSprint = false;
 	[SerializeField] private Animator animator;
-
+    [SerializeField, Range(0.1f, 10)] float WalkAnimationSpeed = 1f;
+    [SerializeField, Range(0.1f, 10)] float SprintAnimationSpeed = 2f;
     Rigidbody2D rb;
 	PlayerControls controls;
 
@@ -200,6 +202,8 @@ public class PlayerController : MonoBehaviour
         //animation jank FUCK THIS >:(
         animator.SetFloat("XSpeed", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("YSpeed", Mathf.Abs(rb.velocity.y));
+
+		animator.speed = (sprinting? SprintAnimationSpeed : WalkAnimationSpeed);
     }
 	#endregion
 }
