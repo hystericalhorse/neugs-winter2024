@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class Dialogue
@@ -14,7 +15,7 @@ public class Dialogue
 public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 {
 	public bool isRunning = false;
-
+	public Image imageCutscene;
 	void Awake() => Set(this);
 	void OnDestroy() => Release();
 
@@ -38,8 +39,8 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 	public void NextLine()
 	{
 		if (!isRunning) return;
-
-		if (line >= currentDialogue.Lines.Length - 1)
+        imageCutscene.enabled = true;
+        if (line >= currentDialogue.Lines.Length - 1)
 		{
 			if (!script.TryDequeue(out currentDialogue))
 			{
@@ -60,14 +61,15 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 
 	public void PlayDialogue()
 	{
+		
 		isRunning = true;
-
 		if (currentDialogue is null) currentDialogue = script.Peek();
 		NextLine();
 	}
 
 	public void StopDialogue()
 	{
+		imageCutscene.enabled = false;
 		isRunning = false;
 
 		currentDialogue = null;
