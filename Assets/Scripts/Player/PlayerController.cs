@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
 		actions.Add("interact",controls.Player.Interact);
 		actions.Add("pause",controls.Player.Pause);
 		actions.Add("sprint",controls.Player.Sprint);
+		actions.Add("flashlight",controls.Player.Flashlight);
 
 		AssignControls();
 	}
@@ -89,7 +90,10 @@ public class PlayerController : MonoBehaviour
 
 		actions["sprint"].started += Sprint;
 		actions["sprint"].canceled += Sprint;
-	}
+
+        actions["flashlight"].started += Sprint;
+        actions["flashlight"].canceled += Sprint;
+    }
 
 	public void ActivateControls()
 	{
@@ -113,7 +117,10 @@ public class PlayerController : MonoBehaviour
 		actions["sprint"].started -= Sprint;
 		actions["sprint"].canceled -= Sprint;
 
-		DeregisterControls();
+        actions["flashlight"].started -= Sprint;
+        actions["flashlight"].canceled -= Sprint;
+
+        DeregisterControls();
 	}
 
 	public void DeregisterControls() => actions.Clear();
@@ -175,7 +182,7 @@ public class PlayerController : MonoBehaviour
 	#region Animator
 	public void Animate()
 	{
-		Debug.Log(direction);
+		
 		if(direction == Vector2.up)
 		{
 			animator.SetBool("FaceUp", true);
