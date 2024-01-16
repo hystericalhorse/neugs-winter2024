@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
 	#region Animator
 	public void Animate()
 	{
-		Debug.Log(direction);
+		
 		if(direction == Vector2.up)
 		{
 			animator.SetBool("FaceUp", true);
