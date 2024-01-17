@@ -39,7 +39,9 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 	public void NextLine()
 	{
 		if (!isRunning) return;
+
         imageCutscene.enabled = true;
+
         if (line >= currentDialogue.Lines.Length - 1)
 		{
 			if (!script.TryDequeue(out currentDialogue))
@@ -61,7 +63,6 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 
 	public void PlayDialogue()
 	{
-		
 		isRunning = true;
 		if (currentDialogue is null) currentDialogue = script.Peek();
 		NextLine();

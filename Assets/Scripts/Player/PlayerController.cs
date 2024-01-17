@@ -51,13 +51,12 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-		//TODO
 		Animate();
 	}
 
 	private void FixedUpdate()
 	{
-		rb.velocity = movement.normalized * (sprinting ? 2 * WalkSpeed : WalkSpeed);
+		rb.velocity = movement.normalized * (sprinting ? SprintSpeed * WalkSpeed : WalkSpeed);
 	}
 
 	private void LateUpdate()
@@ -97,8 +96,7 @@ public class PlayerController : MonoBehaviour
 		actions["sprint"].started += Sprint;
 		actions["sprint"].canceled += Sprint;
 
-        actions["flashlight"].started += Sprint;
-        actions["flashlight"].canceled += Sprint;
+        actions["flashlight"].performed += Flashlight;
     }
 
 	public void ActivateControls()
@@ -123,16 +121,16 @@ public class PlayerController : MonoBehaviour
 		actions["sprint"].started -= Sprint;
 		actions["sprint"].canceled -= Sprint;
 
-        actions["flashlight"].started -= Sprint;
-        actions["flashlight"].canceled -= Sprint;
+		actions["flashlight"].performed -= Flashlight;
 
-        DeregisterControls();
+		DeregisterControls();
 	}
 
 	public void DeregisterControls() => actions.Clear();
 	#endregion
 
 	#region Controls
+	private readonly Vector3 centerY = new(0,0.5f,0);
 	public void Move(InputAction.CallbackContext context)
 	{
 		movement = context.ReadValue<Vector2>();
@@ -153,8 +151,11 @@ public class PlayerController : MonoBehaviour
 				else
 					direction = Vector2.down;
 			}
-            
-        }
+
+			flashlight.transform.localPosition = ((Vector3) movement.normalized * 0.5f) + centerY;
+			flashlight.transform.rotation =
+				Quaternion.AngleAxis(Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI, -Vector3.forward);
+		}
 	}
 
 	public void Interact(InputAction.CallbackContext context)
@@ -185,7 +186,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Flashlight(InputAction.CallbackContext context)
 	{
-		//TODO
+		flashlight.Toggle();
 	}
 
 	#endregion
@@ -193,6 +194,8 @@ public class PlayerController : MonoBehaviour
 	#region Animator
 	public void Animate()
 	{
+		if (animator == null) return;
+
 		
 		if(direction == Vector2.up)
 		{
