@@ -374,6 +374,7 @@ MonoBehaviour:
   animator: {fileID: 220639108}
   WalkAnimationSpeed: 0.34
   SprintAnimationSpeed: 1.1
+  flashlight: {fileID: 0}
 --- !u!95 &220639108
 Animator:
   serializedVersion: 5
@@ -5345,6 +5346,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   WalkAnimationSpeed: 5
   SprintAnimationSpeed: 5
+  flashlight: {fileID: 0}
 --- !u!4 &1543098720
 Transform:
   m_ObjectHideFlags: 0
