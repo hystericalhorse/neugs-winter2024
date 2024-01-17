@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0.1f, 10)] float SprintAnimationSpeed = 2f;
     Rigidbody2D rb;
 	PlayerControls controls;
+	
+	[SerializeField] Flashlight flashlight;
 
 	Vector2 movement = Vector2.zero;
 	Vector2 direction = Vector2.zero;
@@ -24,6 +26,8 @@ public class PlayerController : MonoBehaviour
 	{
 		rb ??= gameObject.GetComponent<Rigidbody2D>();
 		rb.gravityScale = 0f;
+
+		flashlight ??= gameObject.GetComponent<Flashlight>();
 
 		controls ??= new();
 
@@ -175,6 +179,11 @@ public class PlayerController : MonoBehaviour
 	}
 
 	public void Pause(InputAction.CallbackContext context)
+	{
+		//TODO
+	}
+
+	public void Flashlight(InputAction.CallbackContext context)
 	{
 		//TODO
 	}

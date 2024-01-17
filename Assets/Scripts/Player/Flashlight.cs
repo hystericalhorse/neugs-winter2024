@@ -7,10 +7,6 @@ public class Flashlight : MonoBehaviour {
     [SerializeField] private float DrainMultiplier = 1f;
     [SerializeField] private bool Active = true;
 
-    void Start() {
-        
-    }
-
     void Update() {
         if (Battery <= 0) {
             this.gameObject.SetActive(false);

@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRunning: 0
+  imageCutscene: {fileID: 0}
   currentDialogue:
     ActorName: 
     Lines: []
@@ -614,6 +615,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &837428479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1519600747}
+    m_Modifications:
+    - target: {fileID: 6715261504217246337, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_Name
+      value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+--- !u!4 &837428480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8920330917026851837, guid: 49d4e4bfcd0527b4b8319a081d6ef763, type: 3}
+  m_PrefabInstance: {fileID: 837428479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &861580454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2075,7 @@ MonoBehaviour:
     - Hello, World
     - I love living here
     - In this new world
+  imageCutscene: {fileID: 0}
 --- !u!1 &1519600746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,7 +2105,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 837428480}
   m_Father: {fileID: 1543098720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1519600748
@@ -2190,8 +2255,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkSpeed: 5
+  SprintSpeed: 5
   defaultSprint: 0
   animator: {fileID: 0}
+  WalkAnimationSpeed: 1
+  SprintAnimationSpeed: 2
+  flashlight: {fileID: 0}
 --- !u!4 &1543098720
 Transform:
   m_ObjectHideFlags: 0
@@ -3363,6 +3432,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1789317784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789317785}
+  - component: {fileID: 1789317786}
+  - component: {fileID: 1789317787}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1789317785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789317784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789317786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789317784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc558fa6441dc441ae12a29bfacb9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 2726b2c288b63d64798313522f85c011, type: 2}
+  sounds: []
+  music: []
+--- !u!114 &1789317787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789317784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDefaultBackgroundColor: 1
+  backgroundColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  useDefaultTextColor: 1
+  textColor:
+    serializedVersion: 2
+    rgba: 4278190335
+  font: {fileID: 0}
+  fontSize: 11
+  fontStyle: 1
+  alignment: 0
+  textDropShadow: 0
 --- !u!1 &2098522059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,6 +3582,7 @@ SceneRoots:
   - {fileID: 2098522060}
   - {fileID: 512668005}
   - {fileID: 255373826}
+  - {fileID: 1789317785}
   - {fileID: 83637111}
   - {fileID: 619394802}
   - {fileID: 519420032}
