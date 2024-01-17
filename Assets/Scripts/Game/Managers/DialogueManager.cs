@@ -9,6 +9,7 @@ using UnityEngine.UI;
 [Serializable]
 public class Dialogue
 {
+	public Sprite[] Portraits;
 	public string ActorName;
 	public string[] Lines;
 }
@@ -18,9 +19,16 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 	public bool isRunning = false;
 	public Image imageCutscene;
 	public Image textBox;
+	public Image nameTextBox;
+	public Image portrait;
 	public TextMeshProUGUI text;
+	public TextMeshProUGUI nameText;
 	void Awake() => Set(this);
-	void OnDestroy() => Release();
+    private void Start()
+    {
+		//StopDialogue();
+    }
+    void OnDestroy() => Release();
 
 	private void Update()
 	{
@@ -46,6 +54,8 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
         imageCutscene.enabled = true;
 		textBox.enabled= true;
 		text.enabled= true;
+        nameText.enabled = true;
+        portrait.enabled = true;
 
         if (line >= currentDialogue.Lines.Length - 1)
 		{
@@ -62,24 +72,33 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 			line++;
 		}
 
-		display = currentDialogue.ActorName + ": " + currentDialogue.Lines[line];
+		display = currentDialogue.Lines[line];
 		text.text = display;
-		Debug.Log(display);
-	}
+		nameText.text = currentDialogue.ActorName;
+		if (currentDialogue.Portraits.Length > line) portrait.sprite = currentDialogue.Portraits[line];
+
+        //Debug.Log(display);
+    }
 
 	public void PlayDialogue()
 	{
-		isRunning = true;
+        line = 0;
+        isRunning = true;
 		if (currentDialogue is null) currentDialogue = script.Peek();
 		NextLine();
 	}
 
 	public void StopDialogue()
 	{
+		line = 0;
 		imageCutscene.enabled = false;
 		textBox.enabled = false;
-		text.enabled= false;
+		text.enabled = false;
 		isRunning = false;
+
+		nameTextBox.enabled = false;
+		nameText.enabled = false;
+		portrait.enabled = false;
 
 		currentDialogue = null;
 	}
