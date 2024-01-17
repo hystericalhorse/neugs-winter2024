@@ -6,8 +6,15 @@ using UnityEngine.UI;
 public class Cutscene : MonoBehaviour, Interactable
 {
     [SerializeField] Image cutsceneImages;
+
+    private void Awake()
+    {
+        cutsceneImages.enabled = false;
+    }
+
     public void OnInteract()
     {
+        //So true bestie
         Debug.Log("PLEASE JUST WORK");
         cutsceneImages.enabled = true;
 
