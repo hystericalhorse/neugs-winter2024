@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 {
 	public bool isRunning = false;
 	public Image imageCutscene;
+	public Image textBox;
+	public TextMeshProUGUI text;
 	void Awake() => Set(this);
 	void OnDestroy() => Release();
 
@@ -41,6 +44,8 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 		if (!isRunning) return;
 
         imageCutscene.enabled = true;
+		textBox.enabled= true;
+		text.enabled= true;
 
         if (line >= currentDialogue.Lines.Length - 1)
 		{
@@ -58,6 +63,7 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 		}
 
 		display = currentDialogue.ActorName + ": " + currentDialogue.Lines[line];
+		text.text = display;
 		Debug.Log(display);
 	}
 
@@ -71,6 +77,8 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 	public void StopDialogue()
 	{
 		imageCutscene.enabled = false;
+		textBox.enabled = false;
+		text.enabled= false;
 		isRunning = false;
 
 		currentDialogue = null;
