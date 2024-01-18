@@ -50,6 +50,7 @@ MonoBehaviour:
   DrainMultiplier: 1
   Active: 1
   light: {fileID: 3755682887991067349}
+  flashlight: {fileID: 0}
 --- !u!114 &3755682887991067349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,13 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c974f9671e94f7849ab2234efe2be7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 5
-  SprintSpeed: 5
+  WalkSpeed: 2.5
+  SprintSpeed: 3
   defaultSprint: 0
   animator: {fileID: 7357012063707640483}
-  WalkAnimationSpeed: 1
-  SprintAnimationSpeed: 2
-  flashlight: {fileID: 0}
+  WalkAnimationSpeed: 0.32
+  SprintAnimationSpeed: 0.71
+  flashlight: {fileID: 7728349761238687539}
 --- !u!50 &2140223452602964879
 Rigidbody2D:
   serializedVersion: 4
@@ -213,8 +214,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: 0.13514873}
+  m_Size: {x: 0.4, y: 0.4}
   m_Direction: 0
 --- !u!1 &3839493940036266528
 GameObject:
