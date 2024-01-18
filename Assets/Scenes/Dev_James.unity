@@ -14449,7 +14449,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -14474,7 +14474,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14499,7 +14499,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.721875, y: 5.130603, z: -10.012047}
+  m_LocalPosition: {x: 15.6, y: 1.32, z: -10.012047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17820,6 +17820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3504480937074480171, guid: b1b47e15661a97e448895534050a20ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4096632863413581235, guid: b1b47e15661a97e448895534050a20ce, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -17834,7 +17838,7 @@ PrefabInstance:
       objectReference: {fileID: 1344682124}
     - target: {fileID: 9205952330516880182, guid: b1b47e15661a97e448895534050a20ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7118754
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 9205952330516880182, guid: b1b47e15661a97e448895534050a20ce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20926,7 +20930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1675574059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30759,7 +30763,7 @@ MonoBehaviour:
   useDefaultBackgroundColor: 0
   backgroundColor:
     serializedVersion: 2
-    rgba: 4278255360
+    rgba: 4278240256
   useDefaultTextColor: 0
   textColor:
     serializedVersion: 2
