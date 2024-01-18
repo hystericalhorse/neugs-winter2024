@@ -152,7 +152,8 @@ public class PlayerController : MonoBehaviour
 					direction = Vector2.down;
 			}
 
-			flashlight.transform.localPosition = ((Vector3) movement.normalized * 0.5f) + centerY;
+			flashlight.transform.localPosition =
+				((Vector3) movement.normalized * 0.5f) + centerY;
 			flashlight.transform.rotation =
 				Quaternion.AngleAxis(Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI, -Vector3.forward);
 		}
