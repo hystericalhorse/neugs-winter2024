@@ -50,6 +50,7 @@ MonoBehaviour:
   DrainMultiplier: 1
   Active: 1
   light: {fileID: 3755682887991067349}
+  flashlight: {fileID: 0}
 --- !u!114 &3755682887991067349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c974f9671e94f7849ab2234efe2be7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 2
+  WalkSpeed: 2.5
   SprintSpeed: 3
   defaultSprint: 0
   animator: {fileID: 7357012063707640483}
