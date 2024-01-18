@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 
         imageCutscene.enabled = true;
 		textBox.enabled= true;
+		nameTextBox.enabled= true;
 		text.enabled= true;
         nameText.enabled = true;
         portrait.enabled = true;
