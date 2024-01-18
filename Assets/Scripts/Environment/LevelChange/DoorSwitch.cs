@@ -21,7 +21,7 @@ public class DoorSwitch : MonoBehaviour
         if (Vector2.Distance(player.transform.position, transform.position) > 0.3f)
             player.transform.position = nextLevel.transform.position;
 
-        
-
+        var camera = FindAnyObjectByType<CameraController>();
+        if (camera != null) { camera.Teleport(); }
     }
 }
