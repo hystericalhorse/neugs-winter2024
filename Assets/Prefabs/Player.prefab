@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Intensity: 0.75
   m_LightVolumeIntensity: 0.5
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000618edd12
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -129,7 +129,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6329460712990585859}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 5398641794997067293}
   m_Layer: 0
   m_Name: LightHitbox
-  m_TagString: Untagged
+  m_TagString: PlayerDetection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
