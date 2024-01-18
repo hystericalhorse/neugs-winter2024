@@ -161,10 +161,12 @@ public class PlayerController : MonoBehaviour
 
 	public void Interact(InputAction.CallbackContext context)
 	{
-		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one, 0, direction, 1);
-		
+		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 1, 0, direction, 1);
+			
 		foreach (var hit in hits)
 		{
+			Debug.DrawRay(hit.point, Vector3.up, Color.red, 5.0f);
+
 			if (hit.collider == null) continue;
 			if (hit.transform.gameObject.GetComponent<Interactable>() != null)
 			{
