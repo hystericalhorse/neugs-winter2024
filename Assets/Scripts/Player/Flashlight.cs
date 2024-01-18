@@ -8,10 +8,12 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private float DrainMultiplier = 1f;
     [SerializeField] private bool Active = true;
     [SerializeField] private new Light2D light = null;
+    [SerializeField] private AudioSource flashlight;
 
 	private void Start()
 	{
 		light = gameObject.GetComponent<Light2D>();
+        
 	}
 
 	void Update()
@@ -22,6 +24,7 @@ public class Flashlight : MonoBehaviour
         {
 			Active = false;
             light.enabled = false;
+            flashlight.Stop();
 		}
 
 		if (Active) Battery -= Time.deltaTime * DrainMultiplier;
@@ -30,6 +33,7 @@ public class Flashlight : MonoBehaviour
     public void Toggle()
     {
         light.enabled = !light.enabled;
+        flashlight.Play();
         Active = light.enabled;
     }
 }
