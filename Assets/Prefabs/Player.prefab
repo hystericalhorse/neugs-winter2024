@@ -147,12 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c974f9671e94f7849ab2234efe2be7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 5
-  SprintSpeed: 5
+  WalkSpeed: 2
+  SprintSpeed: 3
   defaultSprint: 0
   animator: {fileID: 7357012063707640483}
-  WalkAnimationSpeed: 1
-  SprintAnimationSpeed: 2
+  WalkAnimationSpeed: 0.32
+  SprintAnimationSpeed: 0.71
   flashlight: {fileID: 7728349761238687539}
 --- !u!50 &2140223452602964879
 Rigidbody2D:
