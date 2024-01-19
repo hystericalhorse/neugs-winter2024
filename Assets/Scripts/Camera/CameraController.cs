@@ -16,7 +16,8 @@ public class CameraController : MonoBehaviour
 	private void Awake()
 	{
 		Camera = GetComponent<Camera>();
-		TargetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+		if (TargetTransform == null) TargetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+		transform.position = TargetTransform.position;
 	}
 
 	private void Update()
@@ -38,5 +39,10 @@ public class CameraController : MonoBehaviour
 	{	
 		if (!fixedCamera)
 			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime); // smooth camera motion
+	}
+
+	public void Teleport()
+	{
+		transform.position = TargetTransform.position;
 	}
 }
