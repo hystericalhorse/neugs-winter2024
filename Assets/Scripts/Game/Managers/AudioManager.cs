@@ -28,7 +28,36 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 	[SerializeField] Sound[] music;
 	int musicIndex = 0;
 
-	public void PlaySound(string name)
+    private void Start()
+    {
+        foreach (var sound in sounds)
+        {
+            sound.source = gameObject.AddComponent<AudioSource>();
+            sound.source.clip = sound.clip;
+
+            sound.source.volume = sound.volume;
+            sound.source.pitch = sound.pitch;
+            sound.source.loop = sound.loop;
+
+            sound.source.playOnAwake = false;
+            sound.source.outputAudioMixerGroup = mixerGroup;
+        }
+
+        foreach (var sound in music)
+        {
+            sound.source = gameObject.AddComponent<AudioSource>();
+            sound.source.clip = sound.clip;
+
+            sound.source.volume = sound.volume;
+            sound.source.pitch = sound.pitch;
+            sound.source.loop = sound.loop;
+
+            sound.source.playOnAwake = false;
+            sound.source.outputAudioMixerGroup = mixerGroup;
+        }
+    }
+
+    public void PlaySound(string name)
 	{
 		foreach (var sound in sounds)
 		{
