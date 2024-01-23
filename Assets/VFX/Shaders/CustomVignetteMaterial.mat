@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VignetteMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: f35b59405c7e5494481fbc0d7a89b879, type: 3}
+  m_Name: CustomVignetteMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 07cde2677d6f095419bb0ae231ec72c5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,11 +41,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FogSize: 55
     - _FullscreenIntensity: 1
-    - _VignetteIntensity: 1
-    - _VignetteRadiusPower: 7
+    - _Power: 1
+    - _Scale: 7.5
+    - _Speed: 0.75
+    - _VignetteIntensity: 0.679
+    - _VignetteRadiusPower: 10
     m_Colors:
-    - _Color: {r: 0.044025123, g: 0.044025123, b: 0.044025123, a: 1}
-    - _FogSpeed: {r: 0, g: 0.15, b: 0, a: 0}
+    - _Color: {r: 2, g: 0.061050825, b: 0, a: 1}
   m_BuildTextureStacks: []
