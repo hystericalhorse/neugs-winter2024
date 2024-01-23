@@ -41,11 +41,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _FogHorizontalSpeed: 0.01
     - _FogSize: 55
+    - _FogVerticalSpeed: 0.2
+    - _FogVerticalSpeed_1: 0.25
     - _FullscreenIntensity: 1
-    - _VignetteIntensity: 1
-    - _VignetteRadiusPower: 7
+    - _Fullscreen_AlphaBlendOperation: 0
+    - _Fullscreen_BlendMode: 1
+    - _Fullscreen_ColorBlendOperation: 0
+    - _Fullscreen_DepthWrite: 0
+    - _Fullscreen_DstAlphaBlend: 10
+    - _Fullscreen_DstColorBlend: 10
+    - _Fullscreen_SrcAlphaBlend: 1
+    - _Fullscreen_SrcColorBlend: 5
+    - _SineDivider: 10
+    - _SineMultiplier: 1
+    - _VignetteIntensity: 0.61
+    - _VignetteRadiusPower: 4.85
     m_Colors:
-    - _Color: {r: 0.044025123, g: 0.044025123, b: 0.044025123, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _FogSpeed: {r: 0, g: 0.15, b: 0, a: 0}
   m_BuildTextureStacks: []
