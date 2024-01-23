@@ -33,9 +33,13 @@ public class RotaryPadLocks : MonoBehaviour
     void Start()
     {
         ////For DEBUGGING don't kill me!
-        //combination[0] = 5;
-        //combination[1] = 35;
-        //combination[2] = 2;
+        combination[0] = 5;
+        combination[1] = 35;
+        combination[2] = 2;
+
+        currentInputs[0] = 5;
+        currentInputs[1] = 35;
+        currentInputs[2] = 2;
 
         playerControls.RotaryLock.Rotation.performed += LockController;
         playerControls.RotaryLock.Rotation.started += ToggleLock;
@@ -94,7 +98,12 @@ public class RotaryPadLocks : MonoBehaviour
             currentPlace = 0;
         }
 
-        if ((!direction && currentPlace == 2) && (currentFullRotations < 1 && currentPlace == 2)) currentInputs[2] = currentNumber;
+        if ((!direction && currentPlace == 2) && (currentFullRotations < 1 && currentPlace == 2))
+        {
+            currentInputs[2] = currentNumber;
+
+            if (CheckCombo()) Debug.Log("YIPPEEEEEEEEEEE");
+        }
         else if ((direction && currentPlace == 2) || (currentFullRotations >= 1 && currentPlace == 2))
         {
             currentInputs = new short[3];
@@ -102,6 +111,15 @@ public class RotaryPadLocks : MonoBehaviour
         }
     }
 
+    public bool CheckCombo()
+    {
+        bool output = true;
+        for (int i = 0; i < combination.Length; i++) 
+        {
+            output = (combination[0] == currentInputs[0]);
+        }
+        return output;
+    }
     public void LockController(InputAction.CallbackContext context)
     {
         float axisValue = context.ReadValue<float>();
