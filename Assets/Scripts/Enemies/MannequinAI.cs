@@ -35,4 +35,9 @@ public class MannequinAI : MonoBehaviour {
         //animator.SetFloat("Vertical", Direction.y);
         //animator.SetFloat("Speed", Velocity.magnitude);
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        
+    }
 }
