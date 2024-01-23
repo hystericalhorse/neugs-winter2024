@@ -36,5 +36,6 @@ public class Flashlight : MonoBehaviour
         light.enabled = !light.enabled;
         AudioManager.instance.PlaySound("Flashlight");
         Active = light.enabled;
+        Active = Hitbox.enabled;
     }
 }

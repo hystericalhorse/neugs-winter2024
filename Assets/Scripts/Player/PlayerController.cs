@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (animator == null) return;
 		
-		AudioManager.instance.PlaySound("Footsteps");
+		
 		
 		if(direction == Vector2.up)
 		{
