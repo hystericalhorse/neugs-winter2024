@@ -198,7 +198,8 @@ public class PlayerController : MonoBehaviour
 	public void Animate()
 	{
 		if (animator == null) return;
-
+		
+		
 		
 		if(direction == Vector2.up)
 		{
@@ -221,7 +222,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("FaceRight", false);
         }
 
-        //animation jank FUCK THIS >:(
         animator.SetFloat("XSpeed", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("YSpeed", Mathf.Abs(rb.velocity.y));
 

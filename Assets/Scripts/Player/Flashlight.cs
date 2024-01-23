@@ -8,12 +8,12 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private float DrainMultiplier = 1f;
     [SerializeField] private bool Active = true;
     [SerializeField] private new Light2D light = null;
-    [SerializeField] private AudioSource flashlight;
+    [SerializeField] private PolygonCollider2D Hitbox = null;
 
 	private void Start()
 	{
 		light = gameObject.GetComponent<Light2D>();
-        
+        Hitbox = gameObject.GetComponent<PolygonCollider2D>();
 	}
 
 	void Update()
@@ -24,7 +24,7 @@ public class Flashlight : MonoBehaviour
         {
 			Active = false;
             light.enabled = false;
-            flashlight.Stop();
+            AudioManager.instance.StopSounds();
 		}
 
 		if (Active) Battery -= Time.deltaTime * DrainMultiplier;
@@ -32,8 +32,10 @@ public class Flashlight : MonoBehaviour
 
     public void Toggle()
     {
+        Hitbox.enabled = !Hitbox.enabled;
         light.enabled = !light.enabled;
-        flashlight.Play();
+        AudioManager.instance.PlaySound("Flashlight");
         Active = light.enabled;
+        Active = Hitbox.enabled;
     }
 }

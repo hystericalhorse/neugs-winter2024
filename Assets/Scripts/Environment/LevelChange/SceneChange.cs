@@ -8,7 +8,11 @@ public class SceneChange : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
-        SceneManager.instance.LoadScene(sceneName);
+        SceneManager.instance.onSceneLoaded += () => {
+                PlayerManager.instance.TogglePlayerController();
+            };
+
+		SceneManager.instance.LoadScene(sceneName);
     }
 
 }

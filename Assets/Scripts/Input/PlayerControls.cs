@@ -306,6 +306,133 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""RotaryLock"",
+            ""id"": ""9f790a2b-3f27-47e8-a183-19cc5f8db056"",
+            ""actions"": [
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""16b20d8f-7260-4b5c-9922-7de01c19b6e9"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Left/Right_WASD"",
+                    ""id"": ""e63886b2-d690-45cc-b53e-ec0283592def"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""6ba25dad-2842-4d29-a34b-382bf3b60b36"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1587fdc3-f388-49bb-a3f6-a5ce62342615"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right_ARRW"",
+                    ""id"": ""90a237f3-d13a-4c97-b523-1e3b590acee3"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""3ec1402c-2522-4866-8f8d-b5e454f31a0c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1a8cebbc-7c27-4056-937b-a18bf623080d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right_DPAD"",
+                    ""id"": ""b47b0960-e6f0-47e9-83a7-9b4e9766e854"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""95d3b9a7-f861-4a9b-80cf-0ba78149b95e"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b411694d-e1cf-43f5-ab9f-8452ded9a5fe"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""605a6970-fc07-4402-a615-5f250a163c08"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -317,6 +444,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Flashlight = m_Player.FindAction("Flashlight", throwIfNotFound: true);
+        // RotaryLock
+        m_RotaryLock = asset.FindActionMap("RotaryLock", throwIfNotFound: true);
+        m_RotaryLock_Rotation = m_RotaryLock.FindAction("Rotation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -452,6 +582,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // RotaryLock
+    private readonly InputActionMap m_RotaryLock;
+    private List<IRotaryLockActions> m_RotaryLockActionsCallbackInterfaces = new List<IRotaryLockActions>();
+    private readonly InputAction m_RotaryLock_Rotation;
+    public struct RotaryLockActions
+    {
+        private @PlayerControls m_Wrapper;
+        public RotaryLockActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Rotation => m_Wrapper.m_RotaryLock_Rotation;
+        public InputActionMap Get() { return m_Wrapper.m_RotaryLock; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RotaryLockActions set) { return set.Get(); }
+        public void AddCallbacks(IRotaryLockActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Add(instance);
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
+        }
+
+        private void UnregisterCallbacks(IRotaryLockActions instance)
+        {
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
+        }
+
+        public void RemoveCallbacks(IRotaryLockActions instance)
+        {
+            if (m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IRotaryLockActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RotaryLockActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public RotaryLockActions @RotaryLock => new RotaryLockActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -459,5 +635,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnFlashlight(InputAction.CallbackContext context);
+    }
+    public interface IRotaryLockActions
+    {
+        void OnRotation(InputAction.CallbackContext context);
     }
 }
