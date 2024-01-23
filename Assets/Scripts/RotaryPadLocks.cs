@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,27 +21,23 @@ public class RotaryPadLocks : MonoBehaviour
     //[SerializeField] private bool[] direction = new short[3];
 
     [SerializeField] private RectTransform dial;
+    [SerializeField] private Animator animator;
 
     private PlayerControls playerControls;
     private bool holding = false;
     private bool direction = false; //false = left
+    public bool locked = true;
 
     private void Awake()
     {
         playerControls ??= new();
         dial ??= new();
+        animator.speed = 0;
     }
     // Start is called before the first frame update
     void Start()
     {
-        ////For DEBUGGING don't kill me!
-        combination[0] = 5;
-        combination[1] = 35;
-        combination[2] = 2;
-
-        currentInputs[0] = 5;
-        currentInputs[1] = 35;
-        currentInputs[2] = 2;
+        GenerateRandomCombo();
 
         playerControls.RotaryLock.Rotation.performed += LockController;
         playerControls.RotaryLock.Rotation.started += ToggleLock;
@@ -54,7 +52,8 @@ public class RotaryPadLocks : MonoBehaviour
     void LateUpdate()
     {
         var tempDir = direction;
-        if (holding && (dial.rotation.z != currentRotation)) 
+        //Only allow player to interact with the lock if the lock is actually locked
+        if (holding && (dial.rotation.z != currentRotation) && locked) 
         {
             var tempNum = currentNumber;
             Vector3 rotation = new Vector3(0, 0, currentRotation * Time.deltaTime);
@@ -73,8 +72,7 @@ public class RotaryPadLocks : MonoBehaviour
             }
 
             currentPlace %= 3;
-            //Debug.Log(Mathf.Abs(currentNumber - tempNum));
-            if (currentNumber != tempNum) currentNumbersPassed++;//= (short)Mathf.Abs(currentNumber - tempNum);
+            if (currentNumber != tempNum) currentNumbersPassed++;
             currentFullRotations = (short)(currentNumbersPassed / 40);
 
         }
@@ -84,30 +82,33 @@ public class RotaryPadLocks : MonoBehaviour
             dial.localRotation = Quaternion.Slerp(desiredRotation, dial.localRotation, (rotationSpeed * 0.00000000001f * Time.deltaTime));
         }
 
-        if ((!direction && currentPlace == 0) && currentFullRotations >= 3) currentInputs[0] = currentNumber;
-        else if ((direction && currentPlace == 0))
+        switch (currentPlace)
         {
-            currentInputs = new short[3];
-            currentPlace = 0;
-        }
+            case 0:
+                if ((!direction) && currentFullRotations >= 3) currentInputs[0] = currentNumber;
+                else if ((direction)) ResetLock();
+                
+                break;
+             case 1:
+                if (direction && currentPlace == 1 && currentFullRotations == 1) currentInputs[1] = currentNumber;
+                else if (!direction || currentFullRotations > 1) ResetLock();
+                break;
+            case 2:
+                if (!direction && currentFullRotations < 1)
+                {
+                    currentInputs[2] = currentNumber;
 
-        if (direction && currentPlace == 1 && currentFullRotations == 1) currentInputs[1] = currentNumber;
-        else if ((!direction && currentPlace == 1) || (currentFullRotations > 1 && currentPlace == 1))
-        {
-            currentInputs = new short[3];
-            currentPlace = 0;
-        }
-
-        if ((!direction && currentPlace == 2) && (currentFullRotations < 1 && currentPlace == 2))
-        {
-            currentInputs[2] = currentNumber;
-
-            if (CheckCombo()) Debug.Log("YIPPEEEEEEEEEEE");
-        }
-        else if ((direction && currentPlace == 2) || (currentFullRotations >= 1 && currentPlace == 2))
-        {
-            currentInputs = new short[3];
-            currentPlace = 0;
+                    if (CheckCombo())
+                    {
+                        locked = false;
+                        animator.speed = 1;
+                    }
+                }
+                else if (direction || currentFullRotations >= 1)
+                {
+                    ResetLock();
+                }
+                break;
         }
     }
 
@@ -116,7 +117,7 @@ public class RotaryPadLocks : MonoBehaviour
         bool output = true;
         for (int i = 0; i < combination.Length; i++) 
         {
-            output = (combination[0] == currentInputs[0]);
+            output = (combination[i] == currentInputs[i]);
         }
         return output;
     }
@@ -130,9 +131,54 @@ public class RotaryPadLocks : MonoBehaviour
         //Vector3 rotation = new Vector3(0, 0, currentRotation);
         //dial.Rotate(rotation);
     }
-    public void ToggleLock(InputAction.CallbackContext context)
+    private void ToggleLock(InputAction.CallbackContext context)
     {
         holding = !holding;
+    }
+    private void ResetLock()
+    {
+        currentInputs = new short[3];
+        currentPlace = 0;
+    }
+    public short[] GetCombo()
+    {
+        return combination;
+    }
+    public int[] GetComboInt()
+    {
+        int[] combo = new int[3];
+        combo[0] = combination[0];
+        combo[1] = combination[1];
+        combo[2] = combination[2];
+        return combo;
+    }
+    public Vector3 GetComboVec3()
+    {
+        Vector3 combo = new();
+        combo.x = combination[0];
+        combo.y = combination[1];
+        combo.z = combination[2];
+        return combo;
+    }
+    public void GenerateRandomCombo()
+    {
+        for (int i = 0; i < combination.Length; i++)
+        {
+            combination[i] = GenerateUniqueNumber(); 
+        }
+    }
+
+    private short GenerateUniqueNumber()
+    {
+        System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
+        bool unique = false;
+        short output = 0;
+        while (!unique)
+        {
+            output = (short)rand.Next(40);
+            if (!combination.Contains(output)) unique = true;
+        }
+        return output;
     }
     private void OnDestroy()
     {
