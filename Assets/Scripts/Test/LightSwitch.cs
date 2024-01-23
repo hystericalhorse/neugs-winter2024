@@ -7,7 +7,12 @@ public class LightSwitch : MonoBehaviour, Interactable
 	private bool toggleActive = false;
 
 	[SerializeField] private Sprite[] switchSprites;
-	[SerializeField] private SpriteRenderer sprite;
+	private SpriteRenderer sprite;
+
+    private void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
 
     public void OnInteract()
 	{
