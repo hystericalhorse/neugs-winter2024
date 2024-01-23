@@ -61,12 +61,37 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 	{
 		foreach (var sound in sounds)
 		{
-			if (sound.name == name)
+			if (sound.name.ToLower() == name.ToLower())
 			{
 				sound.source.Play();
 				return;
 			}
 		}
+	}
+
+	public void StopSound(string name)
+	{
+		foreach (var sound in sounds)
+		{
+			if (sound.name.ToLower() == name.ToLower())
+			{
+				sound.source.Stop();
+				return;
+			}
+		}
+	}
+
+	public bool IsPlaying(string name)
+	{
+		foreach (var sound in sounds)
+		{
+			if (sound.name.ToLower() == name.ToLower())
+			{
+				return sound.source.isPlaying;
+			}
+		}
+
+		return false;
 	}
 
 	Queue<Sound> pauseSounds = new();
