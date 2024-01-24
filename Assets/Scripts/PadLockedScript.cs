@@ -23,9 +23,7 @@ public class PadLockedScript : MonoBehaviour, Interactable
     [SerializeField] PadLockedTempController onesPlace;
 
     
-    //Okay heres my new problem 
-    //The way this currently works the padlock is always on screen and you only interact with the map version to check your answer.
-    //So what if i instead make this script on a funny little button that lets me check my answer and make another script for engaging in the padlock to begin with?
+ 
 
 
     public void OnInteract()
@@ -36,8 +34,6 @@ public class PadLockedScript : MonoBehaviour, Interactable
        //if we didnt do the multiply it would instead be 5 + 4 + 6 + 1 = 16 instead of 5000 + 400 + 60 + 1 = 5461 which would be the code
        //we dont multiply the ones place because it would be onesPlace.GetNum() * 1 which just equals onesPlace.GetNum()
        currentAnswer = (thousandsPlace.GetNum() * 1000) + (hundredsPlace.GetNum() * 100) + (tensPlace.GetNum() * 10) + onesPlace.GetNum();
-
-        //This check ensures Ash checks the location where the answer is told to her before she can input anything.
       
             float correctAnwer;
             correctAnwer = answerGener.ReturnCode();
