@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour, Interactable
+public class DoorInteractable : MonoBehaviour, Interactable
 {
     public bool Locked = false;
 	public Transform targetTransform;
@@ -14,7 +14,7 @@ public class Door : MonoBehaviour, Interactable
 		}
 		else
 		{
-			FindObjectOfType<PlayerController>().transform.position = targetTransform.position;
+			PlayerManager.instance.PlacePlayerController(targetTransform.position);
 		}
 	}
 }

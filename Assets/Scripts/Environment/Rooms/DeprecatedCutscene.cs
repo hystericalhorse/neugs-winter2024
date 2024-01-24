@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Cutscene : MonoBehaviour, Interactable
+public class DeprecatedCutscene : MonoBehaviour, Interactable
 {
     [SerializeField] Image cutsceneImages;
 
@@ -18,8 +18,5 @@ public class Cutscene : MonoBehaviour, Interactable
         Debug.Log("PLEASE JUST WORK");
         cutsceneImages.enabled = true;
 
-        
     }
-
-
 }

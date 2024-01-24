@@ -13,7 +13,7 @@ public class Level : MonoBehaviour
 		// M.A.D.
 		if (FindObjectOfType<Level>() != this) Destroy(gameObject);
 
-		Rooms.AddRange(FindObjectsOfType<Room>(true));
+		//Rooms.AddRange(FindObjectsOfType<Room>(true));
 	}
 
 	public LevelData ExtractData()

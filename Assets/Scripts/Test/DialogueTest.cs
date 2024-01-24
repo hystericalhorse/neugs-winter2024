@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueTest : MonoBehaviour, Interactable
 {
-	[SerializeField] Dialogue dialogue;
+	[SerializeField] DeprecatedDialogue dialogue;
 	[SerializeField] Image imageCutscene;
 	[SerializeField] Image textBox;
 	[SerializeField] Image nameTextBox;
@@ -28,14 +28,18 @@ public class DialogueTest : MonoBehaviour, Interactable
 
     public void OnInteract()
 	{
+<<<<<<< Updated upstream
 		if (backgroundSprite != null) imageCutscene.sprite = backgroundSprite;
 		if (!DialogueManager.instance.isRunning)
+=======
+		if (!DeprecatedDialogueManager.instance.isRunning)
+>>>>>>> Stashed changes
 		{
-			DialogueManager.instance.AddDialogue(new Dialogue[] { dialogue });
-			DialogueManager.instance.PlayDialogue();
+			DeprecatedDialogueManager.instance.AddDialogue(new DeprecatedDialogue[] { dialogue });
+			DeprecatedDialogueManager.instance.PlayDialogue();
 		}
 			
 		else
-			DialogueManager.instance.NextLine();
+			DeprecatedDialogueManager.instance.NextLine();
 	}
 }
