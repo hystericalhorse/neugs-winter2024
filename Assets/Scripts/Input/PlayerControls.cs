@@ -319,6 +319,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SpeedUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""15c1a3d2-561d-4081-bd85-f598997e1e9e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c134ec1-acb7-4069-8475-e09bd1b20c7f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -431,6 +449,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04b94b03-4419-47f0-aa2b-007ce6c56735"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpeedUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""962db2cb-6e54-4fe6-91d6-99307bdc329d"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -447,6 +487,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // RotaryLock
         m_RotaryLock = asset.FindActionMap("RotaryLock", throwIfNotFound: true);
         m_RotaryLock_Rotation = m_RotaryLock.FindAction("Rotation", throwIfNotFound: true);
+        m_RotaryLock_SpeedUp = m_RotaryLock.FindAction("SpeedUp", throwIfNotFound: true);
+        m_RotaryLock_Exit = m_RotaryLock.FindAction("Exit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -587,11 +629,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_RotaryLock;
     private List<IRotaryLockActions> m_RotaryLockActionsCallbackInterfaces = new List<IRotaryLockActions>();
     private readonly InputAction m_RotaryLock_Rotation;
+    private readonly InputAction m_RotaryLock_SpeedUp;
+    private readonly InputAction m_RotaryLock_Exit;
     public struct RotaryLockActions
     {
         private @PlayerControls m_Wrapper;
         public RotaryLockActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Rotation => m_Wrapper.m_RotaryLock_Rotation;
+        public InputAction @SpeedUp => m_Wrapper.m_RotaryLock_SpeedUp;
+        public InputAction @Exit => m_Wrapper.m_RotaryLock_Exit;
         public InputActionMap Get() { return m_Wrapper.m_RotaryLock; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -604,6 +650,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Rotation.started += instance.OnRotation;
             @Rotation.performed += instance.OnRotation;
             @Rotation.canceled += instance.OnRotation;
+            @SpeedUp.started += instance.OnSpeedUp;
+            @SpeedUp.performed += instance.OnSpeedUp;
+            @SpeedUp.canceled += instance.OnSpeedUp;
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
         }
 
         private void UnregisterCallbacks(IRotaryLockActions instance)
@@ -611,6 +663,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Rotation.started -= instance.OnRotation;
             @Rotation.performed -= instance.OnRotation;
             @Rotation.canceled -= instance.OnRotation;
+            @SpeedUp.started -= instance.OnSpeedUp;
+            @SpeedUp.performed -= instance.OnSpeedUp;
+            @SpeedUp.canceled -= instance.OnSpeedUp;
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
         }
 
         public void RemoveCallbacks(IRotaryLockActions instance)
@@ -639,5 +697,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IRotaryLockActions
     {
         void OnRotation(InputAction.CallbackContext context);
+        void OnSpeedUp(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
 }

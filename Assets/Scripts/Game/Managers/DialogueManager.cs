@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 	public Image portrait;
 	public TextMeshProUGUI text;
 	public TextMeshProUGUI nameText;
+	public TextMeshProUGUI combo;
 	void Awake() => Set(this);
     private void Start()
     {
@@ -100,6 +101,7 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 		nameTextBox.enabled = false;
 		nameText.enabled = false;
 		portrait.enabled = false;
+		combo.enabled = false;
 
 		currentDialogue = null;
 	}

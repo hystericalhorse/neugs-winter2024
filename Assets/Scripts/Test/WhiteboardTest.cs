@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueTest : MonoBehaviour, Interactable
+public class WhiteboardTest : MonoBehaviour, Interactable
 {
 	[SerializeField] Dialogue dialogue;
 	[SerializeField] Image imageCutscene;
@@ -13,6 +13,7 @@ public class DialogueTest : MonoBehaviour, Interactable
 	[SerializeField] Image portrait;
     public TextMeshProUGUI text;
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI combo;
     public Sprite backgroundSprite;
 
     private void Awake()
@@ -24,11 +25,16 @@ public class DialogueTest : MonoBehaviour, Interactable
         nameText.enabled = false;
 
 		portrait.enabled = false;
+		if (combo != null) combo.enabled = false;
     }
 
     public void OnInteract()
 	{
-		if (backgroundSprite != null) imageCutscene.sprite = backgroundSprite;
+        combo.enabled = true;
+		var combination = FindAnyObjectByType<LockedBox>().GetComboVec3();
+
+        combo.text = "              " + combination.y.ToString() + "\n " + combination.x.ToString() + "\n                        " + combination.z.ToString();
+        if (backgroundSprite != null) imageCutscene.sprite = backgroundSprite;
 		if (!DialogueManager.instance.isRunning)
 		{
 			DialogueManager.instance.AddDialogue(new Dialogue[] { dialogue });
