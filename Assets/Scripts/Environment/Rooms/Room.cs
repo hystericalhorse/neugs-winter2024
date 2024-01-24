@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
+[ExecuteInEditMode]
 public class Room : MonoBehaviour
 {
     public string RoomName;
 
     [SerializeField] UnityEvent onEnterRoom;
     [SerializeField] UnityEvent onExitRoom;
+    [Space]
+    [SerializeField] Color boundsCrossColor = Color.red;
 
     private Vector2 roomCenter;
     public Vector2 RoomBounds = Vector2.positiveInfinity;
 
-	public void Start()
+    public void Start()
 	{
         roomCenter = (Vector2) transform.position;
         onEnterRoom.AddListener(SetCameraControllerCenter);
@@ -27,4 +31,28 @@ public class Room : MonoBehaviour
         var cam = GameObject.FindObjectOfType<CameraController>();
         cam.Limits = roomCenter + RoomBounds;
     }
+
+#if UNITY_EDITOR
+	void OnEnable()
+	{
+        SceneView.duringSceneGui += OnScene;
+	}
+
+	void OnDisable()
+	{
+		SceneView.duringSceneGui -= OnScene;
+	}
+
+	private void OnScene(SceneView scene)
+    {
+        roomCenter = (Vector2) transform.position;
+    }
+
+	private void OnDrawGizmos()
+	{
+        Gizmos.color = boundsCrossColor;
+		Gizmos.DrawLine(roomCenter - (RoomBounds*0.5f), roomCenter + (RoomBounds * 0.5f));
+	}
+#endif
 }
+
