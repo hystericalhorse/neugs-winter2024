@@ -198,34 +198,43 @@ public class PlayerController : MonoBehaviour
 	public void Animate()
 	{
 		if (animator == null) return;
-		
-		AudioManager.instance.PlaySound("Footsteps");
+
 		
 		if(direction == Vector2.up)
 		{
 			animator.SetBool("FaceUp", true);
             animator.SetBool("FaceRight", false);
+			
         }
         if (direction == Vector2.down)
         {
             animator.SetBool("FaceRight", false);
             animator.SetBool("FaceUp", false);
+			
         }
         if (direction == Vector2.right)
         {
             animator.SetBool("FaceRight", true);
             animator.SetBool("FaceUp", false);
+			
         }
         if (direction == Vector2.left)
         {
             animator.SetBool("FaceUp", false);
             animator.SetBool("FaceRight", false);
+			
+			
         }
-
+        //AudioManager.instance.PauseSounds();
         animator.SetFloat("XSpeed", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("YSpeed", Mathf.Abs(rb.velocity.y));
 
 		animator.speed = (sprinting? SprintAnimationSpeed : WalkAnimationSpeed);
     }
-	#endregion
+	public void PlayFootstep() { AudioManager.instance.PlaySound("Footsteps"); }
+    
+    #endregion
+
+
+
 }

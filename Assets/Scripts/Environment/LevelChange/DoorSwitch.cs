@@ -12,6 +12,7 @@ public class DoorSwitch : MonoBehaviour
 
     private void Awake()
     {
+       
         player = GameObject.FindGameObjectWithTag("Player");
         
     }

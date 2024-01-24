@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
 
 	private void Awake()
 	{
+		
 		Camera = GetComponent<Camera>();
 		if (TargetTransform == null) TargetTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		transform.position = TargetTransform.position;

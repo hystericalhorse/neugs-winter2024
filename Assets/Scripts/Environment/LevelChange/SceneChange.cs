@@ -8,6 +8,7 @@ public class SceneChange : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
+     
         SceneManager.instance.LoadScene(sceneName);
     }
 

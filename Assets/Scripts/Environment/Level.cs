@@ -12,6 +12,7 @@ public class Level : MonoBehaviour
 	{
 		// M.A.D.
 		if (FindObjectOfType<Level>() != this) Destroy(gameObject);
+		AudioManager.instance.PlaySound("HouseAmbience");
 
 		Rooms.AddRange(FindObjectsOfType<Room>(true));
 	}
