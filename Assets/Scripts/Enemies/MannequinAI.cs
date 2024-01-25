@@ -52,8 +52,10 @@ public class MannequinAI : MonoBehaviour {
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
-        Detected = true;
-        Anim.speed = 0;
+        if (collision.gameObject.CompareTag("PlayerDetection")) {
+            Detected = true;
+            Anim.speed = 0;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
