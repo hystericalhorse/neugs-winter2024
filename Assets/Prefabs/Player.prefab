@@ -130,7 +130,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6329460712990585859}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkSpeed: 2.5
-  SprintSpeed: 3
+  SprintSpeed: 5
   defaultSprint: 0
   animator: {fileID: 7357012063707640483}
   WalkAnimationSpeed: 0.32
@@ -290,8 +290,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1577675235
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1736942679, guid: b25fc327cae47a841924b8df18fdb847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,23 +25,38 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 	[ContextMenu("SaveLevel")]
 	public void SaveLevel()
 	{
-		LevelData lvl_dat = GetLevelData(currentLevel.Name);
-		if (lvl_dat != null)
-			LevelData[LevelData.IndexOf(lvl_dat)] = currentLevel.ExtractData();
-		else
-			LevelData.Add(currentLevel.ExtractData());
+		try
+		{
+			LevelData lvl_dat = GetLevelData(currentLevel.Name);
+			if (lvl_dat != null)
+				LevelData[LevelData.IndexOf(lvl_dat)] = currentLevel.ExtractData();
+			else
+				LevelData.Add(currentLevel.ExtractData());
+		}
+		catch (Exception e)
+		{
+			Debug.LogException(e);
+		}
 	}
 
 	[ContextMenu("LoadLevel")]
 	public void LoadLevel()
 	{
-		currentLevel = FindObjectOfType<Level>();
+		try
+		{
+			currentLevel = FindObjectOfType<Level>();
 
-		LevelData lvl_dat = GetLevelData(currentLevel.Name);
-		if (lvl_dat != null)
-			currentLevel.InsertData(lvl_dat);
+			LevelData lvl_dat = GetLevelData(currentLevel.Name);
+			if (lvl_dat != null)
+				currentLevel.InsertData(lvl_dat);
 
-		currentLevel?.Rooms[0]?.OnEnterRoom();
+			currentLevel.Rooms[0].OnEnterRoom();
+		}
+		catch (Exception e)
+		{
+			Debug.LogException(e);
+		}
+		
 	}
 
 	LevelData GetLevelData(string name)

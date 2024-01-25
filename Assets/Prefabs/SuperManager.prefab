@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6475907885204701400}
   - component: {fileID: 3437735441822643309}
   - component: {fileID: 52393877073830651}
+  - component: {fileID: 1109699958181806610}
   - component: {fileID: 1875141416267767967}
   - component: {fileID: 3834632976285226439}
-  - component: {fileID: 4571944313462327240}
   - component: {fileID: 5738063023435190581}
   m_Layer: 0
   m_Name: SuperManager
@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPawn: {fileID: 3504480937074480171, guid: b1b47e15661a97e448895534050a20ce, type: 3}
   playerController: {fileID: 0}
+  cameraController: {fileID: 0}
 --- !u!114 &3437735441822643309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +106,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelData: []
+--- !u!114 &1109699958181806610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466386900169142742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848635a4ebde29841833bfe40ea42af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotImage: {fileID: 0}
+  leftCharacterImage: {fileID: 0}
+  rightCharacterImage: {fileID: 0}
+  narratorTextbox: {fileID: 0}
+  dialogueTextbox: {fileID: 0}
 --- !u!114 &1875141416267767967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,31 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c73f2d36d5211a479db912390ba6896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4571944313462327240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466386900169142742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b1eafbd48c5bd14a8fede3609f6d8da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRunning: 0
-  imageCutscene: {fileID: 0}
-  textBox: {fileID: 0}
-  nameTextBox: {fileID: 0}
-  portrait: {fileID: 0}
-  text: {fileID: 0}
-  nameText: {fileID: 0}
-  currentDialogue:
-    Portraits: []
-    ActorName: 
-    Lines: []
-  line: 0
-  display: 
 --- !u!114 &5738063023435190581
 MonoBehaviour:
   m_ObjectHideFlags: 0
