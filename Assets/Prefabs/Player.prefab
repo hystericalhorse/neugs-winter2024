@@ -90,7 +90,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 20
   m_PointLightOuterAngle: 65
   m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 8
+  m_PointLightOuterRadius: 7
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -130,7 +130,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6329460712990585859}
@@ -401,11 +401,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.7225384, y: 4.2148266}
-      - {x: -0.76434267, y: 4.2149553}
-      - {x: -1.572989, y: 3.9041135}
+    - - {x: 1.0198836, y: 5.503498}
+      - {x: -1.0270127, y: 5.506495}
+      - {x: -2.2668257, y: 4.8401384}
       - {x: 0.0013468936, y: 0.02577159}
-      - {x: 1.4941782, y: 3.9002523}
+      - {x: 2.1579328, y: 4.839486}
   m_UseDelaunayMesh: 0
 --- !u!1 &8077167379623047391
 GameObject:
