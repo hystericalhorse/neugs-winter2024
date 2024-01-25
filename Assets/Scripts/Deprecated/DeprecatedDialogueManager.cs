@@ -7,14 +7,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public class Dialogue
+public class DeprecatedDialogue
 {
 	public Sprite[] Portraits;
 	public string ActorName;
 	public string[] Lines;
 }
 
-public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
+public class DeprecatedDialogueManager : MonoBehaviourSingleton<DeprecatedDialogueManager>
 {
 	public bool isRunning = false;
 	public Image imageCutscene;
@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 	public Image portrait;
 	public TextMeshProUGUI text;
 	public TextMeshProUGUI nameText;
+	public TextMeshProUGUI combo;
 	void Awake() => Set(this);
     private void Start()
     {
@@ -35,13 +36,13 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 		
 	}
 
-	Queue<Dialogue> script = new();
+	Queue<DeprecatedDialogue> script = new();
 
-	public Dialogue currentDialogue;
+	public DeprecatedDialogue currentDialogue;
 	public int line;
 	public string display;
 
-	public void AddDialogue(Dialogue[] dlogs)
+	public void AddDialogue(DeprecatedDialogue[] dlogs)
 	{
 		foreach (var dialog in dlogs)
 			script.Enqueue(dialog);
@@ -100,6 +101,7 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 		nameTextBox.enabled = false;
 		nameText.enabled = false;
 		portrait.enabled = false;
+		combo.enabled = false;
 
 		currentDialogue = null;
 	}

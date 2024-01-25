@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3755682887991067349}
   m_Layer: 0
   m_Name: Flashlight
-  m_TagString: Untagged
+  m_TagString: PlayerDetection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6329460712990585859}
   - component: {fileID: 4096632863413581235}
-  - component: {fileID: 528577622467540553}
   - component: {fileID: 7357012063707640483}
   m_Layer: 0
   m_Name: Sprite
@@ -305,36 +304,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &528577622467540553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3839493940036266528}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.25, y: 0, z: 0}
-  - {x: -0.25, y: 0.5, z: 0}
-  - {x: 0.25, y: 0.5, z: 0}
-  - {x: 0.25, y: 0, z: 0}
-  m_ShapePathHash: 0
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 29074
-  m_LocalBounds:
-    m_Center: {x: 0, y: 0.25, z: 0}
-    m_Extent: {x: 0.25, y: 0.25, z: 0}
 --- !u!95 &7357012063707640483
 Animator:
   serializedVersion: 5

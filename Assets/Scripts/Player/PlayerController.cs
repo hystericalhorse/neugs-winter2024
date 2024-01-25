@@ -6,8 +6,8 @@ using UnityEngine.InputSystem.Interactions;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField, Range(1,10)] float WalkSpeed = 5f;
-	[SerializeField, Range(1,10)] float SprintSpeed = 5f;
+	[SerializeField, Range(1,5)] float WalkSpeed = 2.5f;
+	[SerializeField, Range(1,5)] float SprintSpeed = 5f;
 	[SerializeField] bool defaultSprint = false;
 	[SerializeField] private Animator animator;
     [SerializeField, Range(0.1f, 10)] float WalkAnimationSpeed = 1f;
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		rb.velocity = movement.normalized * (sprinting ? SprintSpeed * WalkSpeed : WalkSpeed);
+		rb.velocity = movement.normalized * (sprinting ? SprintSpeed : WalkSpeed);
 	}
 
 	private void LateUpdate()

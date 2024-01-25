@@ -10,7 +10,9 @@ public class MannequinAI : MonoBehaviour {
 
     private GameObject Player;
     private Rigidbody2D RB;
+    private Animator Anim;
     private Vector2 Velocity = Vector2.zero;
+    private bool Detected = false;
 
     private void Awake() {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -19,9 +21,15 @@ public class MannequinAI : MonoBehaviour {
     void Start() {
         RB = GetComponent<Rigidbody2D>();
         spriterenderer = GetComponent<SpriteRenderer>();
+        Anim = GetComponent<Animator>();
     }
 
     void Update() {
+        if (Detected) { 
+            RB.velocity = Vector2.zero;
+            return;
+        }
+
         Vector2 Direction = Player.transform.position - transform.position;
         Direction.Normalize();
         Velocity = Direction * Speed;
@@ -36,8 +44,22 @@ public class MannequinAI : MonoBehaviour {
         //animator.SetFloat("Speed", Velocity.magnitude);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("PlayerDetection")) {
+            Detected = true;
+            Anim.speed = 0;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        Detected = true;
+        Anim.speed = 0;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("PlayerDetection")) {
+            Detected = false;
+            Anim.speed = 1;
+        }
     }
 }

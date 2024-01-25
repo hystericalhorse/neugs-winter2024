@@ -5,9 +5,15 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 {
 	[SerializeField] GameObject playerPawn;
 	public PlayerController playerController;
+	public CameraController cameraController;
 
 	private void Awake() => Set(this);
 	private void OnDestroy() => Release();
+
+	private void Start()
+	{
+		GetPlayerController();
+	}
 
 	public void PlacePlayerController(Vector2 position)
 	{
@@ -29,8 +35,14 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 		return playerController;
 	}
 
-	public void TogglePlayerController()
+	public CameraController GetCameraController()
 	{
-		playerController.enabled = !playerController.enabled;
+		cameraController ??= FindAnyObjectByType<CameraController>()
+			?? Camera.main.gameObject.AddComponent<CameraController>();
+
+		return cameraController;
 	}
+
+	public void TogglePlayerController() => playerController.enabled = !playerController.enabled;
+	public void TogglePlayerController(bool active) => playerController.enabled = active;
 }

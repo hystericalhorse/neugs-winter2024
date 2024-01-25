@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,8 +26,9 @@ public class Room : MonoBehaviour
 
     protected void SetCameraControllerCenter()
     {
-        var cam = GameObject.FindObjectOfType<CameraController>();
-        cam.Limits = roomCenter + RoomBounds;
+        var cam = PlayerManager.instance.GetCameraController();
+        cam.Center = roomCenter;
+        cam.Limits = RoomBounds;
     }
 
 #if UNITY_EDITOR
@@ -41,6 +40,9 @@ public class Room : MonoBehaviour
 	void OnDisable()
 	{
 		SceneView.duringSceneGui -= OnScene;
+
+        onEnterRoom.RemoveAllListeners();
+        onExitRoom.RemoveAllListeners();
 	}
 
 	private void OnScene(SceneView scene)

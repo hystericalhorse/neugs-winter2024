@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VignetteMaterial
+  m_Name: VignetteFogMaterial
   m_Shader: {fileID: -6465566751694194690, guid: f35b59405c7e5494481fbc0d7a89b879, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,11 +54,11 @@ Material:
     - _Fullscreen_DstColorBlend: 10
     - _Fullscreen_SrcAlphaBlend: 1
     - _Fullscreen_SrcColorBlend: 5
-    - _SineDivider: 10
+    - _SineDivider: 6
     - _SineMultiplier: 1
-    - _VignetteIntensity: 0.61
+    - _VignetteIntensity: 0.6
     - _VignetteRadiusPower: 4.85
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5687331, g: 0.5687331, b: 0.5687331, a: 1}
     - _FogSpeed: {r: 0, g: 0.15, b: 0, a: 0}
   m_BuildTextureStacks: []

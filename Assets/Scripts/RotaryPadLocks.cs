@@ -5,6 +5,8 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
+using UnityEngine.UI;
 
 public class RotaryPadLocks : MonoBehaviour
 {
@@ -25,8 +27,10 @@ public class RotaryPadLocks : MonoBehaviour
 
     private PlayerControls playerControls;
     private bool holding = false;
+    private bool speedUp = false;
     private bool direction = false; //false = left
     public bool locked = true;
+    private Transform[] pieces;
 
     private void Awake()
     {
@@ -37,14 +41,16 @@ public class RotaryPadLocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateRandomCombo();
-
         playerControls.RotaryLock.Rotation.performed += LockController;
         playerControls.RotaryLock.Rotation.started += ToggleLock;
         playerControls.RotaryLock.Rotation.canceled += ToggleLock;
-        //playerControls.RotaryLock.Rotation. += LockController;
+        playerControls.RotaryLock.SpeedUp.started += SpeedUp;
+        playerControls.RotaryLock.SpeedUp.canceled += SpeedUp;
+        playerControls.RotaryLock.Exit.performed += Exit;
 
-        playerControls.RotaryLock.Enable();
+        //playerControls.RotaryLock.Rotation. += LockController;
+        pieces = GetComponentsInChildren<Transform>();
+        Deactivate();
     }
 
     // Update is called once per frame
@@ -56,7 +62,8 @@ public class RotaryPadLocks : MonoBehaviour
         if (holding && (dial.rotation.z != currentRotation) && locked) 
         {
             var tempNum = currentNumber;
-            Vector3 rotation = new Vector3(0, 0, currentRotation * Time.deltaTime);
+            Vector3 rotation = new Vector3(0, 0, currentRotation * Time.deltaTime * (speedUp ? 2 : 1));
+            
             dial.Rotate(rotation);
             currentNumber = (short)Mathf.RoundToInt((dial.localEulerAngles.z) / 9);
 
@@ -102,6 +109,8 @@ public class RotaryPadLocks : MonoBehaviour
                     {
                         locked = false;
                         animator.speed = 1;
+                        //testing
+                        Invoke("Deactivate", 2);
                     }
                 }
                 else if (direction || currentFullRotations >= 1)
@@ -111,7 +120,27 @@ public class RotaryPadLocks : MonoBehaviour
                 break;
         }
     }
+    public void Activate()
+    {
+        playerControls.RotaryLock.Enable();
+        FindAnyObjectByType<PlayerController>().DeactivateControls();
 
+        //im tired don't kill me plz
+        foreach (var piece in pieces)
+        {
+            piece.gameObject.SetActive(true);
+        }
+    }
+    public void Deactivate()
+    {
+        playerControls.RotaryLock.Disable();
+        FindAnyObjectByType<PlayerController>().ActivateControls();
+
+        foreach (var piece in pieces)
+        {
+            piece.gameObject.SetActive(false);
+        }
+    }
     public bool CheckCombo()
     {
         bool output = true;
@@ -134,6 +163,15 @@ public class RotaryPadLocks : MonoBehaviour
     private void ToggleLock(InputAction.CallbackContext context)
     {
         holding = !holding;
+    }
+    public void SpeedUp(InputAction.CallbackContext context)
+    {
+        if (context.started) speedUp = true;
+        if (context.canceled) speedUp = false;
+    }
+    public void Exit(InputAction.CallbackContext context)
+    {
+        Deactivate();
     }
     private void ResetLock()
     {

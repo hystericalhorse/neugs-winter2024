@@ -39,7 +39,8 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 		LevelData lvl_dat = GetLevelData(currentLevel.Name);
 		if (lvl_dat != null)
 			currentLevel.InsertData(lvl_dat);
-		
+
+		currentLevel?.Rooms[0]?.OnEnterRoom();
 	}
 
 	LevelData GetLevelData(string name)

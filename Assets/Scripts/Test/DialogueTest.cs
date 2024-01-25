@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class DialogueTest : MonoBehaviour, Interactable
 {
-	[SerializeField] Dialogue dialogue;
+	[SerializeField] DeprecatedDialogue dialogue;
 	[SerializeField] Image imageCutscene;
 	[SerializeField] Image textBox;
 	[SerializeField] Image nameTextBox;
 	[SerializeField] Image portrait;
     public TextMeshProUGUI text;
     public TextMeshProUGUI nameText;
+    public Sprite backgroundSprite;
 
     private void Awake()
     {
@@ -27,13 +28,14 @@ public class DialogueTest : MonoBehaviour, Interactable
 
     public void OnInteract()
 	{
-		if (!DialogueManager.instance.isRunning)
+		if (backgroundSprite != null) imageCutscene.sprite = backgroundSprite;
+		if (!DeprecatedDialogueManager.instance.isRunning)
 		{
-			DialogueManager.instance.AddDialogue(new Dialogue[] { dialogue });
-			DialogueManager.instance.PlayDialogue();
+			DeprecatedDialogueManager.instance.AddDialogue(new DeprecatedDialogue[] { dialogue });
+			DeprecatedDialogueManager.instance.PlayDialogue();
 		}
 			
 		else
-			DialogueManager.instance.NextLine();
+			DeprecatedDialogueManager.instance.NextLine();
 	}
 }

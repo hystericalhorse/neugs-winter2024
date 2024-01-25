@@ -7,9 +7,10 @@ public class CameraController : MonoBehaviour
     public Camera Camera;
 
 	public Vector2 Limits = Vector2.positiveInfinity;
+	public Vector2 Center = Vector2.zero;
 	Vector3 pos = Vector3.zero;
 
-	[SerializeField] bool fixedCamera = false;
+	[SerializeField] public bool fixedCamera = false;
 	[SerializeField,Range(1,10)] float followSpeed = 10;
 	[SerializeField] float zoom; //TODO Implementation
 
@@ -29,8 +30,8 @@ public class CameraController : MonoBehaviour
 
 		// prevents the camera from moving past world limits. this only works well for rectangular maps.
 		// https://forum.unity.com/threads/2d-top-down-camera-edge.233036/
-		pos.x = Mathf.Clamp(pos.x, -Limits.x, Limits.x);
-		pos.y = Mathf.Clamp(pos.y, -Limits.y, Limits.y);
+		pos.x = Mathf.Clamp(pos.x, Center.x - Limits.x * 0.5f, Center.x + Limits.x * 0.5f);
+		pos.y = Mathf.Clamp(pos.y, Center.y - Limits.y * 0.5f, Center.y + Limits.y * 0.5f);
 
 		if (fixedCamera)
 			transform.position = pos;
@@ -42,7 +43,7 @@ public class CameraController : MonoBehaviour
 			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime); // smooth camera motion
 	}
 
-	public void Teleport()
+	public void NoLerpResetPosition()
 	{
 		transform.position = TargetTransform.position;
 	}
