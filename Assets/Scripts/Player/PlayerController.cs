@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
 	private void OnDisable()
 	{
+		rb.velocity = Vector2.zero;
+		animator.speed = 0;
 		DeactivateControls();
 	}
 

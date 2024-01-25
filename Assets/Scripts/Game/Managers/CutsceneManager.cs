@@ -63,7 +63,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		controls = null;
 	}
 
-	public IEnumerator TryDisplayText(string line, float textSpeed = 0.5f)
+	public IEnumerator TryDisplayText(string line, float textSpeed = 0.05f)
 	{
 		if (dialogueTextbox == null)
 			StopCoroutine(TryDisplayText(line, textSpeed));
@@ -83,7 +83,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 				Debug.LogError(e);
 			}
 
-			yield return new WaitForSeconds(Time.deltaTime);
+			yield return new WaitForSeconds(textSpeed);
 
 			currentLineIndex++;
 			if (currentLineIndex >= line.Length)

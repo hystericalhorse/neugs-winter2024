@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     [SerializeField] Room targetRoom;
     [Space]
     [SerializeField] Transform targetTransform;
+	bool transition = true;
 
     public void OnTeleport(bool withTransition = false)
     {
@@ -67,6 +68,6 @@ public class Door : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponent<PlayerController>())
-			OnTeleport(true);
+			OnTeleport(transition);
 	}
 }
