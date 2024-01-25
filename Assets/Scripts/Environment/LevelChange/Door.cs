@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     [SerializeField] Room targetRoom;
     [Space]
     [SerializeField] Transform targetTransform;
-	bool transition = true;
+	[SerializeField] bool transition = true;
 
     public void OnTeleport(bool withTransition = false)
     {
