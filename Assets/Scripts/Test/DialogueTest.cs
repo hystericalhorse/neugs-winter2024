@@ -28,12 +28,8 @@ public class DialogueTest : MonoBehaviour, Interactable
 
     public void OnInteract()
 	{
-<<<<<<< Updated upstream
 		if (backgroundSprite != null) imageCutscene.sprite = backgroundSprite;
-		if (!DialogueManager.instance.isRunning)
-=======
 		if (!DeprecatedDialogueManager.instance.isRunning)
->>>>>>> Stashed changes
 		{
 			DeprecatedDialogueManager.instance.AddDialogue(new DeprecatedDialogue[] { dialogue });
 			DeprecatedDialogueManager.instance.PlayDialogue();

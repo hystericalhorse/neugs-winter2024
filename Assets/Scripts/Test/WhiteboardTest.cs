@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class WhiteboardTest : MonoBehaviour, Interactable
 {
-	[SerializeField] Dialogue dialogue;
+	[SerializeField] DeprecatedDialogue dialogue;
 	[SerializeField] Image imageCutscene;
 	[SerializeField] Image textBox;
 	[SerializeField] Image nameTextBox;
@@ -35,13 +35,13 @@ public class WhiteboardTest : MonoBehaviour, Interactable
 
         combo.text = "              " + combination.y.ToString() + "\n " + combination.x.ToString() + "\n                        " + combination.z.ToString();
         if (backgroundSprite != null) imageCutscene.sprite = backgroundSprite;
-		if (!DialogueManager.instance.isRunning)
+		if (!DeprecatedDialogueManager.instance.isRunning)
 		{
-			DialogueManager.instance.AddDialogue(new Dialogue[] { dialogue });
-			DialogueManager.instance.PlayDialogue();
+			DeprecatedDialogueManager.instance.AddDialogue(new DeprecatedDialogue[] { dialogue });
+			DeprecatedDialogueManager.instance.PlayDialogue();
 		}
 			
 		else
-			DialogueManager.instance.NextLine();
+			DeprecatedDialogueManager.instance.NextLine();
 	}
 }
