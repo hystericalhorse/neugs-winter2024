@@ -16,6 +16,7 @@ public class LightSwitch : MonoBehaviour, Interactable
 
     public void OnInteract()
 	{
+		AudioManager.instance.PlaySound("Lightswitch");
         toggleActive = !toggleActive;
 		foreach (GameObject light in lights)
 		{

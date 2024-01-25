@@ -472,16 +472,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: PlayFootstep
+    functionName: InvokeAnimationAction
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 26e2c8209c7475c408336057ac4975d6, type: 3}
+    objectReferenceParameter: {fileID: 7400000}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.25
-    functionName: PlayFootstep
+    functionName: InvokeAnimationAction
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 26e2c8209c7475c408336057ac4975d6, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

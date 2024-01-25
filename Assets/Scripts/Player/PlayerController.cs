@@ -231,7 +231,7 @@ public class PlayerController : MonoBehaviour
 
 		animator.speed = (sprinting? SprintAnimationSpeed : WalkAnimationSpeed);
     }
-	public void PlayFootstep() { AudioManager.instance.PlaySound("Footsteps"); }
+	//public void PlayFootstep() { AudioManager.instance.PlaySound("Footsteps"); }
     
     #endregion
 
