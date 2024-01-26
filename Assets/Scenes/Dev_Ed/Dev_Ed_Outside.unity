@@ -4511,7 +4511,7 @@ PrefabInstance:
     - target: {fileID: 3239236782209388425, guid: b1b47e15661a97e448895534050a20ce, type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 1487319157}
+      objectReference: {fileID: 0}
     - target: {fileID: 3239236782209388425, guid: b1b47e15661a97e448895534050a20ce, type: 3}
       propertyPath: SprintSpeed
       value: 2.47
@@ -5335,17 +5335,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1487319157 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7728349761238687539, guid: b1b47e15661a97e448895534050a20ce, type: 3}
-  m_PrefabInstance: {fileID: 1336718376}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e03439d0fa96554ab387def815e333b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1490184923
 GameObject:
   m_ObjectHideFlags: 0
@@ -6216,7 +6205,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   boundsCrossColor: {r: 0, g: 1, b: 0.94658923, a: 1}
-  RoomBounds: {x: 0, y: 0}
+  RoomBounds: {x: 3, y: 3}
 --- !u!4 &1739454210
 Transform:
   m_ObjectHideFlags: 0
