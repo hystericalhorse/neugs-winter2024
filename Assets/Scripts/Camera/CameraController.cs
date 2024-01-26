@@ -16,10 +16,7 @@ public class CameraController : MonoBehaviour
 
 	private void Awake()
 	{
-		
 		Camera = GetComponent<Camera>();
-		if (TargetTransform == null) TargetTransform = GameObject.FindGameObjectWithTag("Player").transform;
-		transform.position = TargetTransform.position;
 	}
 
 	private void Update()
@@ -46,5 +43,11 @@ public class CameraController : MonoBehaviour
 	public void NoLerpResetPosition()
 	{
 		transform.position = TargetTransform.position;
+	}
+
+	public void Reset()
+	{
+		TargetTransform = PlayerManager.instance.GetPlayerController().transform;
+		NoLerpResetPosition();
 	}
 }
