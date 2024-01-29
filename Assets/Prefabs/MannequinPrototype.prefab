@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7334586939772360035}
   spriterenderer: {fileID: 4097884230836179474}
-  Speed: 1.5
+  Speed: 1.75
 --- !u!50 &8721357439718563681
 Rigidbody2D:
   serializedVersion: 4
@@ -111,8 +111,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.109998405, y: 1.2574233}
-  m_Size: {x: 1.0341005, y: 1.5785277}
+  m_Offset: {x: -0.03588921, y: -0.7892383}
+  m_Size: {x: 1.2179564, y: 1.929933}
   m_Direction: 0
 --- !u!212 &4097884230836179474
 SpriteRenderer:
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1579987697, guid: 481ba0aa782437445b31b9c28745245d, type: 3}
+  m_Sprite: {fileID: -478548176, guid: 2aa14b0a758523f4b9442da22623a5e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,7 +176,7 @@ Animator:
   m_GameObject: {fileID: 4588837332298252309}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d113254a77af59d429dceace2661f77a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6e7526d92036e754e880aa48e6e4da5d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
