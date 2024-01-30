@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 // Moves the player to a new level.
-public class Door : MonoBehaviour
+public class TriggerDoor : MonoBehaviour
 {
     [SerializeField] Room thisRoom;
     [SerializeField] Room targetRoom;
@@ -36,10 +36,10 @@ public class Door : MonoBehaviour
 	{
 		thisRoom?.OnExitRoom();
 
+		PlayerManager.instance.TogglePlayerController(false);
 		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeIn());
 		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
 
-		PlayerManager.instance.TogglePlayerController(false);
 
 		PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
 		PlayerManager.instance.GetCameraController().NoLerpResetPosition();

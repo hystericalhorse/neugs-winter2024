@@ -15,7 +15,7 @@ public class Room : MonoBehaviour
     private Vector2 roomCenter;
     public Vector2 RoomBounds = Vector2.positiveInfinity;
 
-    public void Start()
+    public void Awake()
 	{
         roomCenter = (Vector2) transform.position;
         onEnterRoom.AddListener(SetCameraControllerCenter);

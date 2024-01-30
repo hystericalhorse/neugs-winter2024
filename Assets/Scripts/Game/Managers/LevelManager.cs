@@ -50,6 +50,8 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 			if (lvl_dat != null)
 				currentLevel.InsertData(lvl_dat);
 
+			// "default room" is the top room in the rooms list
+			PlayerManager.instance.PlacePlayerController(currentLevel.DefaultTransform.position);
 			currentLevel.Rooms[0].OnEnterRoom();
 		}
 		catch (Exception e)
