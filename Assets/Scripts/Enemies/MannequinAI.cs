@@ -39,8 +39,8 @@ public class MannequinAI : MonoBehaviour {
         RB.velocity = Velocity;
 
         // Update the animator
-        //animator.SetFloat("Horizontal", Direction.x);
-        //animator.SetFloat("Vertical", Direction.y);
+        animator.SetFloat("XPosition", Direction.x);
+        animator.SetFloat("YPosition", Direction.y);
         //animator.SetFloat("Speed", Velocity.magnitude);
     }
 
