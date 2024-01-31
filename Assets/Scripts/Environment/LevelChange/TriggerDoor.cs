@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 
 // Moves the player to a new level.
-[RequireComponent(typeof(Collider2D))]
 public class TriggerDoor : MonoBehaviour
 {
     [SerializeField] Room thisRoom;
@@ -13,7 +12,7 @@ public class TriggerDoor : MonoBehaviour
 
 	public void Start()
 	{
-		var col = GetComponent<Collider2D>();
+		var col = GetComponent<Collider2D>() ?? gameObject.AddComponent<BoxCollider2D>();
 		col.isTrigger = true;
 	}
 
