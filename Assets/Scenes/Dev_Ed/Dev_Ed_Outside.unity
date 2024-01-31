@@ -2714,7 +2714,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1632535028}
+  texts: []
+  dails: []
+  padlock: {fileID: 0}
+  answerGener: {fileID: 0}
+  padLockLogic: {fileID: 0}
 --- !u!114 &771889062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4307,7 +4311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1871007765}
+  texts: []
+  dails: []
+  padlock: {fileID: 0}
+  answerGener: {fileID: 0}
+  padLockLogic: {fileID: 0}
 --- !u!114 &1367655801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5168,6 +5176,7 @@ MonoBehaviour:
   Rooms:
   - {fileID: 1739454209}
   - {fileID: 1336517741}
+  DefaultTransform: {fileID: 1961698107}
 --- !u!4 &1513889190
 Transform:
   m_ObjectHideFlags: 0
@@ -6476,7 +6485,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 46257156}
+  texts: []
+  dails: []
+  padlock: {fileID: 0}
+  answerGener: {fileID: 0}
+  padLockLogic: {fileID: 0}
 --- !u!114 &1893699530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6800,6 +6813,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942686240}
   m_CullTransparentMesh: 1
+--- !u!1 &1961698106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961698107}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1961698107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961698106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.221078, y: -1.5091692, z: -0.06377186}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1964654981
 GameObject:
   m_ObjectHideFlags: 0
@@ -6900,11 +6944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answerGener: {fileID: 0}
+  padAnswer: {fileID: 0}
   answered: 0
-  thousandsPlace: {fileID: 1893699529}
-  hundredsPlace: {fileID: 1367655800}
-  tensPlace: {fileID: 2060523429}
-  onesPlace: {fileID: 771889061}
 --- !u!114 &1991746091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7030,7 +7071,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 826033482}
+  texts: []
+  dails: []
+  padlock: {fileID: 0}
+  answerGener: {fileID: 0}
+  padLockLogic: {fileID: 0}
 --- !u!114 &2060523430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7103,3 +7148,4 @@ SceneRoots:
   - {fileID: 1336517742}
   - {fileID: 1739454210}
   - {fileID: 1513889190}
+  - {fileID: 1961698107}
