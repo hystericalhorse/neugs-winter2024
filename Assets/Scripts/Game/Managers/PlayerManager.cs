@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 	{
 		try
 		{
-			playerController.transform.position = (Vector3)position;
+			GetPlayerController().transform.position = (Vector3)position;
 		}
 		catch (Exception e)
 		{

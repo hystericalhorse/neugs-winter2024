@@ -7,6 +7,7 @@ public class Level : MonoBehaviour
 	[SerializeField] public string Name = string.Empty;
 	[SerializeField] public List<Flag> Flags = new();
 	[SerializeField] public List<Room> Rooms = new();
+	[SerializeField] public Transform DefaultTransform;
 
 	private void Start()
 	{
@@ -15,6 +16,8 @@ public class Level : MonoBehaviour
 		AudioManager.instance.PlaySound("HouseAmbience");
 
 		//Rooms.AddRange(FindObjectsOfType<Room>(true));
+
+		if (DefaultTransform == null) DefaultTransform = transform;
 	}
 
 	public LevelData ExtractData()

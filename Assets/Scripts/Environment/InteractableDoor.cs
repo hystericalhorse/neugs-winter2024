@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoorInteractable : MonoBehaviour, Interactable
+public class InteractableDoor : MonoBehaviour, Interactable
 {
     public bool Locked = false;
 	public Transform targetTransform;
