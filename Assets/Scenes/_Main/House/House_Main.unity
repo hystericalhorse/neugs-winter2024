@@ -7327,6 +7327,11 @@ MonoBehaviour:
       m_Calls: []
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
   RoomBounds: {x: 0, y: 0}
+--- !u!4 &806864482 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4274881903622253083, guid: 395d81791da5bd640948a862c72922c9, type: 3}
+  m_PrefabInstance: {fileID: 1258849851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &821144707
 GameObject:
   m_ObjectHideFlags: 0
@@ -14843,7 +14848,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1933464417}
     m_Modifications:
     - target: {fileID: 2087734782425981992, guid: 395d81791da5bd640948a862c72922c9, type: 3}
       propertyPath: m_Name
@@ -14851,15 +14856,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4274881903622253083, guid: 395d81791da5bd640948a862c72922c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.347238
+      value: 0.4042263
       objectReference: {fileID: 0}
     - target: {fileID: 4274881903622253083, guid: 395d81791da5bd640948a862c72922c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.178092
+      value: -0.5306721
       objectReference: {fileID: 0}
     - target: {fileID: 4274881903622253083, guid: 395d81791da5bd640948a862c72922c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0009735599
       objectReference: {fileID: 0}
     - target: {fileID: 4274881903622253083, guid: 395d81791da5bd640948a862c72922c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18383,6 +18388,7 @@ Transform:
   - {fileID: 1442736176}
   - {fileID: 1415222424}
   - {fileID: 999396100}
+  - {fileID: 806864482}
   - {fileID: 301275336}
   m_Father: {fileID: 1840774540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21245,4 +21251,3 @@ SceneRoots:
   - {fileID: 452885065}
   - {fileID: 550254159}
   - {fileID: 262143295}
-  - {fileID: 1258849851}
