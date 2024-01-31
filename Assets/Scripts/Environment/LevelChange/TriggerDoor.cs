@@ -60,7 +60,7 @@ public class TriggerDoor : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.GetComponent<PlayerController>())
+		if (collision.TryGetComponent<PlayerController>(out _))
 			OnTeleport(transition);
 	}
 }
