@@ -7,36 +7,36 @@ public class LockedBox : MonoBehaviour, Interactable
     // Start is called before the first frame update
     //private short[] combination = new short[3];
     private bool locked = true;
-    [SerializeField] private GameObject padLockPrefab;
-    [SerializeField] private RotaryPadLocks padLock;
+    [SerializeField] private GameObject padlockGO;
+    [SerializeField] private RotaryPadLocks padlock;
 
     public void OnInteract()
     {
-        locked = padLock.locked;
+        locked = padlock.locked;
+
         if (locked)
         {
-            padLock.enabled = true;
-            padLock.Activate();
+            padlockGO.SetActive(true);
+            padlock.Activate();
         }
         else
         {
-            Debug.Log("Yippeee!!!");
+            
         }
     }
 
     private void Awake()
     {
-        var temp = Instantiate(padLockPrefab.gameObject, FindAnyObjectByType<Canvas>().transform);
-        padLock = temp.GetComponent<RotaryPadLocks>();
-        padLock.GenerateRandomCombo();
+        var go = Instantiate(padlockGO.gameObject, FindAnyObjectByType<Canvas>().transform);
+        padlock = go.GetComponent<RotaryPadLocks>();
+        padlock.GenerateRandomCombo();
+
+        padlockGO = go;
+        padlockGO.SetActive(false);
     }
+
     public Vector3 GetComboVec3()
     {
-        return padLock.GetComboVec3();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return padlock.GetComboVec3();
     }
 }

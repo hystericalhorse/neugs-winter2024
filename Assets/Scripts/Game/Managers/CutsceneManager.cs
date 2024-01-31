@@ -118,7 +118,8 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		narratorTextbox.SetActive(true);
 		dialogueTextbox.SetActive(true);
 
-		narratorTextbox.GetComponentInChildren<TextMeshProUGUI>().text = currentShot.narrator;
+		narratorTextbox.GetComponentInChildren<TextMeshProUGUI>().text
+			= currentShot.narrator != string.Empty ? currentShot.narrator : "*";
 
 		StartCoroutine(TryDisplayText(currentLine));
 	}
@@ -131,6 +132,11 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 			foreach (Shot shot in cutscene.Get())
 				currentCutscene.Enqueue(shot);
 			StartCoroutine(PlayCutscene()); 
+		}
+		else
+		{
+			foreach (Shot shot in cutscene.Get())
+				currentCutscene.Enqueue(shot);
 		}
 	}
 

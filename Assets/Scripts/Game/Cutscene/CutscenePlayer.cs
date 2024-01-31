@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CutscenePlayer : MonoBehaviour, Interactable
 {
-    [SerializeField] Cutscene cutscene;
+    [SerializeField] protected Cutscene cutscene;
 
 	[ContextMenu("Plays Cutscene")]
     public void Play() => CutsceneManager.instance.StartCutscene(cutscene);
 
-	public void OnInteract()
+	public virtual void OnInteract()
     {
-        CutsceneManager.instance.StartCutscene(cutscene);
+		CutsceneManager.instance.StartCutscene(cutscene);
     }
 }

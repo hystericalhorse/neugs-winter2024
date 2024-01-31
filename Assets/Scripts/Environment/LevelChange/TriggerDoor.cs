@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 // Moves the player to a new level.
+[RequireComponent(typeof(Collider2D))]
 public class TriggerDoor : MonoBehaviour
 {
     [SerializeField] Room thisRoom;
@@ -10,7 +11,13 @@ public class TriggerDoor : MonoBehaviour
     [SerializeField] Transform targetTransform;
 	[SerializeField] bool transition = true;
 
-    public void OnTeleport(bool withTransition = false)
+	public void Start()
+	{
+		var col = GetComponent<Collider2D>();
+		col.isTrigger = true;
+	}
+
+	public void OnTeleport(bool withTransition = false)
     {
 		if (!withTransition)
 		{

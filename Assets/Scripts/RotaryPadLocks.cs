@@ -37,7 +37,9 @@ public class RotaryPadLocks : MonoBehaviour
         playerControls ??= new();
         dial ??= new();
         animator.speed = 0;
-    }
+
+		pieces = GetComponentsInChildren<Transform>();
+	}
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +50,9 @@ public class RotaryPadLocks : MonoBehaviour
         playerControls.RotaryLock.SpeedUp.canceled += SpeedUp;
         playerControls.RotaryLock.Exit.performed += Exit;
 
-        //playerControls.RotaryLock.Rotation. += LockController;
-        pieces = GetComponentsInChildren<Transform>();
-        Deactivate();
-    }
+		//playerControls.RotaryLock.Rotation. += LockController;
+		Deactivate();
+	}
 
     // Update is called once per frame
     [System.Obsolete]
