@@ -14,20 +14,16 @@ public class TriggerDoor : MonoBehaviour
     {
 		if (!withTransition)
 		{
-			if (Vector2.Distance(PlayerManager.instance.GetPlayerController().transform.position, transform.position) > 0.3f)
-			{
-				thisRoom.OnExitRoom();
+			thisRoom.OnExitRoom();
 
-				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
-				PlayerManager.instance.GetCameraController().NoLerpResetPosition();
+			PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+			PlayerManager.instance.GetCameraController().NoLerpResetPosition();
 
-				targetRoom?.OnEnterRoom();
-			}
+			targetRoom?.OnEnterRoom();
 		}
 		else
 		{
-			if (Vector2.Distance(PlayerManager.instance.GetPlayerController().transform.position, transform.position) > 0.3f)
-				StartCoroutine(TransitionTeleport());
+			StartCoroutine(TransitionTeleport());
 		}
 		
 	}
@@ -54,16 +50,13 @@ public class TriggerDoor : MonoBehaviour
 
     public void OnTeleport(Transform targetTransform)
     {
-        if (Vector2.Distance(PlayerManager.instance.GetPlayerController().transform.position, transform.position) > 0.3f)
-        {
-            thisRoom.OnExitRoom();
+		thisRoom.OnExitRoom();
 
-			PlayerManager.instance.PlacePlayerController(targetTransform.transform.position);
-            PlayerManager.instance.GetCameraController().NoLerpResetPosition();
+		PlayerManager.instance.PlacePlayerController(targetTransform.transform.position);
+		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
 
-			targetRoom?.OnEnterRoom();
-		}
-    }
+		targetRoom?.OnEnterRoom();
+	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
