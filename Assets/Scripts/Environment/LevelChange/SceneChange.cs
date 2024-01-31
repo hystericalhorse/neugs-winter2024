@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneChange : MonoBehaviour, Interactable
 {
-    [SerializeField] string sceneName;
+    [SerializeField] public string sceneName;
 
     public void OnInteract()
     {
