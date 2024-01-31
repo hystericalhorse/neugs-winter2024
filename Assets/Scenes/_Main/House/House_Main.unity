@@ -19197,6 +19197,7 @@ GameObject:
   - component: {fileID: 2122968932}
   - component: {fileID: 2122968931}
   - component: {fileID: 2122968933}
+  - component: {fileID: 2122968934}
   m_Layer: 0
   m_Name: Fridge
   m_TagString: Untagged
@@ -19316,6 +19317,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.71875, y: 1.34375}
   m_EdgeRadius: 0
+--- !u!114 &2122968934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122968930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 0}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - The refridgerator seems to be running, but it's completely empty.
+      narrator: '*'
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - ...
+      - I'm hungry.
+      narrator: Ashley
 --- !u!1 &2126787792
 GameObject:
   m_ObjectHideFlags: 0

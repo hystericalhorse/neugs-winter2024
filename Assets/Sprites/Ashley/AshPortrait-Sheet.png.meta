@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AshPortrait-Sheet_0
+      name: Neutral
       rect:
         serializedVersion: 2
         x: 0
@@ -118,7 +118,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AshPortrait-Sheet_1
+      name: Frightened
       rect:
         serializedVersion: 2
         x: 41
@@ -139,7 +139,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AshPortrait-Sheet_2
+      name: Yippee
       rect:
         serializedVersion: 2
         x: 82
@@ -160,7 +160,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AshPortrait-Sheet_4
+      name: BrowFurrow
       rect:
         serializedVersion: 2
         x: 41
@@ -202,7 +202,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AshPortrait-Sheet_5
+      name: Cry
       rect:
         serializedVersion: 2
         x: 82
@@ -223,7 +223,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AshPortrait-Sheet_6
+      name: Dead Inside
       rect:
         serializedVersion: 2
         x: 0
@@ -244,7 +244,7 @@ TextureImporter:
         width: 41
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,13 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AshPortrait-Sheet_0: 1401458194
-      AshPortrait-Sheet_1: -460082068
-      AshPortrait-Sheet_2: -306596442
       AshPortrait-Sheet_3: -1850556505
-      AshPortrait-Sheet_4: 266069620
-      AshPortrait-Sheet_5: -122185505
-      AshPortrait-Sheet_6: -1121674598
+      BrowFurrow: 266069620
+      Cry: -122185505
+      Dead Inside: -1121674598
+      Frightened: -460082068
+      Neutral: 1401458194
+      Yippee: -306596442
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
