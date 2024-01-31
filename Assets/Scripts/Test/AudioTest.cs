@@ -9,10 +9,15 @@ public class AudioTest : MonoBehaviour, Interactable
 	{
 		var col = gameObject.AddComponent<BoxCollider2D>();
 		col.isTrigger = true;
+
 	}
 
-	public void OnInteract()
+
+
+    public void OnInteract()
 	{
 		AudioManager.instance.PlaySound("footsteps");
-	}
+        AudioManager.instance.PlaySound("Ambience");
+        AudioManager.instance.PlaySound("HouseMelody");
+    }
 }

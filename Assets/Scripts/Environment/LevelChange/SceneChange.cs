@@ -8,11 +8,26 @@ public class SceneChange : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
-      // SceneManager.instance.onSceneLoaded += () => {
-              //  PlayerManager.instance.TogglePlayerController();
+        // SceneManager.instance.onSceneLoaded += () => {
+        //  PlayerManager.instance.TogglePlayerController();
         //    };
 
-		SceneManager.instance.LoadScene(sceneName);
+        SceneManager.instance.LoadScene(sceneName);
     }
 
+    public void OnApplicationQuit()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        }
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+
+    }
 }
