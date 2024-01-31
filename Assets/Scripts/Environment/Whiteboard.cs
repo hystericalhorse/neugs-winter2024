@@ -3,6 +3,8 @@ public class Whiteboard : CutscenePlayer
 	public override void OnInteract()
 	{
 		var combination = FindAnyObjectByType<LockedBox>().GetComboVec3();
+		cutscene.Clear();
+
 		Shot shot = new Shot();
 		shot.shotScript.Add(combination.y.ToString() + "-" + combination.x.ToString() + "-" + combination.z.ToString());
 
