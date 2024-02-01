@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 [System.Serializable]
 public class Sound
@@ -65,6 +66,51 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 			{
 				sound.source.Play();
 				return;
+			}
+		}
+	}
+
+	public void PlaySound(string name, float pitch)
+	{
+		foreach (var sound in sounds)
+		{
+			if (sound.name.ToLower() == name.ToLower())
+			{
+				sound.source.pitch = pitch;
+
+				sound.source.Play();
+				StartCoroutine(ResetSound(name, sound.source.clip.length));
+				return;
+			}
+		}
+	}
+
+	public void PlaySound(string name, float pitch, float volume)
+	{
+		foreach (var sound in sounds)
+		{
+			if (sound.name.ToLower() == name.ToLower())
+			{
+				sound.source.pitch = pitch;
+				sound.source.volume = volume;
+
+				sound.source.Play();
+				StartCoroutine(ResetSound(name, sound.source.clip.length));
+				return;
+			}
+		}
+	}
+
+	public IEnumerator ResetSound(string name, float inSeconds)
+	{
+		yield return new WaitForSeconds(inSeconds);
+
+		foreach (var sound in sounds)
+		{
+			if (sound.name.ToLower() == name.ToLower())
+			{
+				sound.source.pitch = sound.pitch;
+				sound.source.volume = sound.volume;
 			}
 		}
 	}
