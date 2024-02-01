@@ -80,7 +80,12 @@ public class RotaryPadLocks : MonoBehaviour
             }
 
             currentPlace %= 3;
-            if (currentNumber != tempNum) currentNumbersPassed++;
+            if (currentNumber != tempNum)
+            {
+                currentNumbersPassed++;
+                AudioManager.instance.PlaySound("Padlock");
+            }
+
             currentFullRotations = (short)(currentNumbersPassed / 40);
 
         }
