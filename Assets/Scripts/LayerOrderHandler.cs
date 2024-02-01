@@ -21,7 +21,7 @@ public class LayerOrderHandler : MonoBehaviour
         //isChild = (transform.parent != null);
 
         renderList = GetComponents<Renderer>().ToList();
-
+        
         if (transform.parent != null)
         {
             //parentOrder = GetComponentInParent<LayerOrderHandler>();
@@ -29,14 +29,15 @@ public class LayerOrderHandler : MonoBehaviour
             if (parentOrder != null) if(parentOrder.gameObject == gameObject) parentOrder = null;
         }
         
-        if (parentOrder != null)
-        {
-            layerOrder = parentOrder.layerOrder;
-        }
-        else
-        {
-            layerOrder = (int)(-transform.position.y * 10);
-        }
+        if (parentOrder != null) parentOrder.CalculateOrder();
+        CalculateOrder();
+    }
+
+    public void CalculateOrder()
+    {
+        renderList ??= GetComponents<Renderer>().ToList();
+        if (parentOrder != null) { layerOrder = parentOrder.layerOrder + 1; }
+        else layerOrder = (int)(-transform.position.y * 10);
         foreach (var render in renderList)
         {
             render.sortingOrder = layerOrder;
@@ -44,20 +45,12 @@ public class LayerOrderHandler : MonoBehaviour
         var sprite = GetComponent<SpriteRenderer>();
         if (sprite != null) sprite.sortingOrder++;
     }
-
     // Update is called once per frame
     void Update()
     {
         if (!isStatic)
         {
-            if (parentOrder != null) { layerOrder = parentOrder.layerOrder; }
-            else layerOrder = (int)(-transform.position.y * 10);
-            foreach (var render in renderList)
-            {
-                render.sortingOrder = layerOrder;
-            }
-            var sprite = GetComponent<SpriteRenderer>();
-            if (sprite != null) sprite.sortingOrder++;
+            CalculateOrder();
         }
     }
 }
