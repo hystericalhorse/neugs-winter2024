@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5003713845886724221}
   - component: {fileID: 749765150596641278}
   - component: {fileID: 4521446952283732342}
+  - component: {fileID: 8151600186444779037}
   m_Layer: 0
   m_Name: Couch
   m_TagString: Untagged
@@ -146,3 +147,57 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &8151600186444779037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294633360808014595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ShapePath:
+  - {x: -0.60936415, y: 0.031258583, z: 0}
+  - {x: -0.6406223, y: 0.031257153, z: 0}
+  - {x: -0.6406242, y: 0.62500143, z: 0}
+  - {x: -0.60937136, y: 0.6249995, z: 0}
+  - {x: -0.6093719, y: 0.65625, z: 0}
+  - {x: -0.51562446, y: 0.65625, z: 0}
+  - {x: -0.5156122, y: 0.6249962, z: 0}
+  - {x: -0.48437256, y: 0.625, z: 0}
+  - {x: -0.4843741, y: 0.59375, z: 0}
+  - {x: 0.48438048, y: 0.5937457, z: 0}
+  - {x: 0.48437724, y: 0.6250024, z: 0}
+  - {x: 0.51562923, y: 0.62499905, z: 0}
+  - {x: 0.5156274, y: 0.6562495, z: 0}
+  - {x: 0.6093748, y: 0.65625, z: 0}
+  - {x: 0.60937357, y: 0.62499857, z: 0}
+  - {x: 0.64062476, y: 0.62500143, z: 0}
+  - {x: 0.64062464, y: 0.03125477, z: 0}
+  - {x: 0.6093764, y: 0.03125286, z: 0}
+  - {x: 0.6093767, y: 0, z: 0}
+  - {x: 0.51562685, y: 0, z: 0}
+  - {x: 0.515638, y: 0.03126669, z: 0}
+  - {x: 0.04687327, y: 0.031253338, z: 0}
+  - {x: 0.046873957, y: 0.00000047683716, z: 0}
+  - {x: -0.04687226, y: 0.00000047683716, z: 0}
+  - {x: -0.046869278, y: 0.031258583, z: 0}
+  - {x: -0.51562476, y: 0.03125143, z: 0}
+  - {x: -0.51562375, y: 0.00000047683716, z: 0}
+  - {x: -0.6093723, y: 0, z: 0}
+  m_ShapePathHash: 2023658256
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -46214
+  m_LocalBounds:
+    m_Center: {x: 0.00000029802322, y: 0.328125, z: 0}
+    m_Extent: {x: 0.6406245, y: 0.328125, z: 0}

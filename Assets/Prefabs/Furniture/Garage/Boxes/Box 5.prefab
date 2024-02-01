@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1311852320085169085}
   - component: {fileID: 716271705825003006}
   - component: {fileID: 6042966023735120036}
+  - component: {fileID: 1642607612566182631}
   m_Layer: 0
   m_Name: Box 5
   m_TagString: Untagged
@@ -146,3 +147,57 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &1642607612566182631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432882298030372720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ShapePath:
+  - {x: -0.25012797, y: 0.34471512, z: 0}
+  - {x: -0.25045234, y: 0.3744297, z: 0}
+  - {x: -0.31458908, y: 0.37362194, z: 0}
+  - {x: -0.31250006, y: 0.71875, z: 0}
+  - {x: -0.2500022, y: 0.7187495, z: 0}
+  - {x: -0.2499997, y: 0.68750095, z: 0}
+  - {x: -0.18749791, y: 0.6875019, z: 0}
+  - {x: -0.18749875, y: 0.65625143, z: 0}
+  - {x: -0.1562472, y: 0.6562519, z: 0}
+  - {x: -0.15624899, y: 0.6250024, z: 0}
+  - {x: 0.15625209, y: 0.62500286, z: 0}
+  - {x: 0.1562491, y: 0.6562519, z: 0}
+  - {x: 0.18750131, y: 0.65625, z: 0}
+  - {x: 0.18750167, y: 0.68750143, z: 0}
+  - {x: 0.2500006, y: 0.68750095, z: 0}
+  - {x: 0.25000924, y: 0.71875334, z: 0}
+  - {x: 0.3125, y: 0.71875, z: 0}
+  - {x: 0.31250077, y: 0.37500858, z: 0}
+  - {x: 0.25000566, y: 0.37500286, z: 0}
+  - {x: 0.2500068, y: 0.34375143, z: 0}
+  - {x: 0.21875036, y: 0.34375095, z: 0}
+  - {x: 0.21874923, y: 0.3125043, z: 0}
+  - {x: 0.18749928, y: 0.31249905, z: 0}
+  - {x: 0.18770075, y: -0.0006117821, z: 0}
+  - {x: -0.18923122, y: 0.0008354187, z: 0}
+  - {x: -0.188304, y: 0.31228113, z: 0}
+  - {x: -0.21862024, y: 0.31253386, z: 0}
+  - {x: -0.21887285, y: 0.3428502, z: 0}
+  m_ShapePathHash: 1619821777
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 47442
+  m_LocalBounds:
+    m_Center: {x: -0.0010441542, y: 0.35907078, z: 0}
+    m_Extent: {x: 0.31354493, y: 0.35968256, z: 0}

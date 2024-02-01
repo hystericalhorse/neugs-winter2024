@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4193469737834332006}
   - component: {fileID: -3416169915245065882}
   - component: {fileID: 6182181918451587762}
+  - component: {fileID: 2295958001731716953}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -146,3 +147,49 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &2295958001731716953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665194742416668404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ShapePath:
+  - {x: -0.48434806, y: 0.12499142, z: 0}
+  - {x: -0.51560974, y: 0.12504387, z: 0}
+  - {x: -0.51562357, y: 1.1250019, z: 0}
+  - {x: -0.48437238, y: 1.1250005, z: 0}
+  - {x: -0.4843259, y: 1.1561904, z: 0}
+  - {x: -0.3905866, y: 1.1562433, z: 0}
+  - {x: -0.39062643, y: 1.1249957, z: 0}
+  - {x: 0.39062524, y: 1.125, z: 0}
+  - {x: 0.39058828, y: 1.1561389, z: 0}
+  - {x: 0.48438525, y: 1.1562619, z: 0}
+  - {x: 0.48437667, y: 1.1250019, z: 0}
+  - {x: 0.5156262, y: 1.1250014, z: 0}
+  - {x: 0.51562476, y: 0.1250019, z: 0}
+  - {x: 0.48437595, y: 0.12500858, z: 0}
+  - {x: 0.48435736, y: 0.03128004, z: 0}
+  - {x: 0.39063716, y: 0.031243801, z: 0}
+  - {x: 0.39061546, y: 0.12508106, z: 0}
+  - {x: -0.390625, y: 0.12503195, z: 0}
+  - {x: -0.39053726, y: 0.031179428, z: 0}
+  - {x: -0.48439264, y: 0.03124857, z: 0}
+  m_ShapePathHash: -836043003
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 50912
+  m_LocalBounds:
+    m_Center: {x: 0.0000013113022, y: 0.5937207, z: 0}
+    m_Extent: {x: 0.5156249, y: 0.56254125, z: 0}

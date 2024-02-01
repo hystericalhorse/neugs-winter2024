@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9148706611799596259}
   - component: {fileID: 9062347354274769250}
   - component: {fileID: 6052846628310476128}
+  - component: {fileID: 1412829885263314938}
   m_Layer: 0
   m_Name: Tub
   m_TagString: Untagged
@@ -146,3 +147,37 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &1412829885263314938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087734782425981992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ShapePath:
+  - {x: -0.515625, y: 0, z: 0}
+  - {x: -0.5156255, y: 0.6249075, z: 0}
+  - {x: -0.48437357, y: 0.625, z: 0}
+  - {x: -0.48437834, y: 0.6562662, z: 0}
+  - {x: 0.4843769, y: 0.65625, z: 0}
+  - {x: 0.4843769, y: 0.625, z: 0}
+  - {x: 0.515625, y: 0.625, z: 0}
+  - {x: 0.515625, y: 0, z: 0}
+  m_ShapePathHash: -415063811
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -41472
+  m_LocalBounds:
+    m_Center: {x: -0.00000023841858, y: 0.3281331, z: 0}
+    m_Extent: {x: 0.51562524, y: 0.3281331, z: 0}

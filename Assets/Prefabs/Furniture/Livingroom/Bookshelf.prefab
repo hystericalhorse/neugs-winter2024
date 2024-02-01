@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6551737009403523403}
   - component: {fileID: 4267542194615756133}
   - component: {fileID: 893485835987822865}
+  - component: {fileID: 6973306894978533991}
   m_Layer: 0
   m_Name: Bookshelf
   m_TagString: Untagged
@@ -146,3 +147,37 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &6973306894978533991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336491889856852757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ShapePath:
+  - {x: -0.31249905, y: 0.031252384, z: 0}
+  - {x: -0.3124988, y: 0.06250334, z: 0}
+  - {x: -0.3437488, y: 0.0625062, z: 0}
+  - {x: -0.34375, y: 1.1875, z: 0}
+  - {x: 0.34375, y: 1.1875, z: 0}
+  - {x: 0.34374905, y: 0.06250334, z: 0}
+  - {x: 0.3124907, y: 0.06251001, z: 0}
+  - {x: 0.31249976, y: 0.031253815, z: 0}
+  m_ShapePathHash: -1030458395
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -62334
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0.6093762, z: 0}
+    m_Extent: {x: 0.34375, y: 0.5781238, z: 0}

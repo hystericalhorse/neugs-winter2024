@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 135053007979632332}
   - component: {fileID: 4625872918191060807}
   - component: {fileID: 7978885111850921754}
+  - component: {fileID: 5487738542709791990}
   m_Layer: 0
   m_Name: Skibidi
   m_TagString: Untagged
@@ -146,3 +147,57 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &5487738542709791990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4309621736568156771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ShapePath:
+  - {x: -0.18749857, y: 0.031253815, z: 0}
+  - {x: -0.18748856, y: 0.09375095, z: 0}
+  - {x: -0.15633678, y: 0.09376049, z: 0}
+  - {x: -0.15626478, y: 0.12501907, z: 0}
+  - {x: -0.21874714, y: 0.12498379, z: 0}
+  - {x: -0.21879005, y: 0.3749895, z: 0}
+  - {x: -0.25001287, y: 0.3750124, z: 0}
+  - {x: -0.25, y: 0.65625, z: 0}
+  - {x: -0.03122902, y: 0.6562247, z: 0}
+  - {x: -0.0312562, y: 0.3749981, z: 0}
+  - {x: 0.18749285, y: 0.37499237, z: 0}
+  - {x: 0.18749857, y: 0.3437519, z: 0}
+  - {x: 0.21874905, y: 0.3437538, z: 0}
+  - {x: 0.2187481, y: 0.3125019, z: 0}
+  - {x: 0.24999857, y: 0.31250286, z: 0}
+  - {x: 0.2500019, y: 0.21875477, z: 0}
+  - {x: 0.21875, y: 0.21875763, z: 0}
+  - {x: 0.21875334, y: 0.1875019, z: 0}
+  - {x: 0.18749666, y: 0.1875, z: 0}
+  - {x: 0.18750095, y: 0.15624714, z: 0}
+  - {x: 0.15623474, y: 0.1562643, z: 0}
+  - {x: 0.15624905, y: 0.12500286, z: 0}
+  - {x: 0.09374809, y: 0.12500763, z: 0}
+  - {x: 0.09376097, y: 0.03123951, z: 0}
+  - {x: 0.06249714, y: 0.031250954, z: 0}
+  - {x: 0.062497616, y: 0.000002861023, z: 0}
+  - {x: -0.15627813, y: 0.0000038146973, z: 0}
+  - {x: -0.15625, y: 0.03125286, z: 0}
+  m_ShapePathHash: -2099441307
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 57778
+  m_LocalBounds:
+    m_Center: {x: -0.0000054836273, y: 0.32812643, z: 0}
+    m_Extent: {x: 0.2500074, y: 0.32812357, z: 0}
