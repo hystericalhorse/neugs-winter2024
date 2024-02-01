@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 175235064987790942}
   - component: {fileID: 7581195678624106340}
   - component: {fileID: 8689053461134689544}
+  - component: {fileID: -6555152079010945322}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -146,3 +147,23 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &-6555152079010945322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835656204296880048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - It's a gas stove. You flick one of the burners, but it doesn't turn on.
+      narrator: '*****'

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1649164989392181324}
   - component: {fileID: 6024484235040278510}
   - component: {fileID: 3386492126532757518}
+  - component: {fileID: 8946048258161244419}
   m_Layer: 0
   m_Name: Sink
   m_TagString: Untagged
@@ -146,3 +147,30 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &8946048258161244419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895101040345187903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - An suprisingly clean, empty sink.
+      - You turn on the faucet, but nothing happens.
+      narrator: '*****'
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: -1121674598, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - Great, no water...
+      narrator: Ashley

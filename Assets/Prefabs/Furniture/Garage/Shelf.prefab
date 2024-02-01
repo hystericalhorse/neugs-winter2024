@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3416169915245065882}
   - component: {fileID: 6182181918451587762}
   - component: {fileID: 2295958001731716953}
+  - component: {fileID: -374467751921651680}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -189,7 +190,34 @@ MonoBehaviour:
   - {x: -0.48439264, y: 0.03124857, z: 0}
   m_ShapePathHash: -836043003
   m_Mesh: {fileID: 0}
-  m_InstanceId: 50912
+  m_InstanceId: 49136
   m_LocalBounds:
     m_Center: {x: 0.0000013113022, y: 0.5937207, z: 0}
     m_Extent: {x: 0.5156249, y: 0.56254125, z: 0}
+--- !u!114 &-374467751921651680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665194742416668404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: -1121674598, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - It's an empty shelf.
+      - Despite being empty, it isn't very dusty
+      narrator: '*****'
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: -1121674598, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - Maybe it's new...?
+      narrator: Ashley

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7500714743495400450}
   - component: {fileID: 3726511602497876222}
   - component: {fileID: 3725809072808007627}
+  - component: {fileID: 2825436832908084334}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -146,3 +147,36 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &2825436832908084334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643562721036884296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - It's an old CRT TV.
+      narrator: '*****'
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - You press the power button, but the TV doesn't turn on.
+      - A faint heat does eminate from the dark CRT screen.
+      narrator: '*****'
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - I don't want to be near this thing if it explodes.
+      narrator: Ashley
