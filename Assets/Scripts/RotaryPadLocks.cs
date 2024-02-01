@@ -153,6 +153,7 @@ public class RotaryPadLocks : MonoBehaviour
         for (int i = 0; i < combination.Length; i++) 
         {
             output = (combination[i] == currentInputs[i]);
+            if (!output) i = 1997;
         }
         return output;
     }
