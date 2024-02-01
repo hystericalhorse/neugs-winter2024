@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7940451898972213892}
   - component: {fileID: -3667065090574169482}
   - component: {fileID: 2849768158170939066}
+  - component: {fileID: -3348471221840809921}
   m_Layer: 0
   m_Name: Toolbox
   m_TagString: Untagged
@@ -177,3 +178,17 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: 0.28125, z: 0}
     m_Extent: {x: 0.265625, y: 0.28125, z: 0}
+--- !u!114 &-3348471221840809921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598632681821555615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131304d5ab362ee42825853ca49ed386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padlockGO: {fileID: 0}
+  padlock: {fileID: 0}
