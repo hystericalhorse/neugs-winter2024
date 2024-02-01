@@ -50,6 +50,11 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 			yield return null;
 		}
 
+		shotImage.sprite = null;
+		leftCharacterImage.sprite = null;
+		rightCharacterImage.sprite = null;
+		shotImage.sprite = null;
+
 		shotImage?.gameObject.SetActive(false);
 		leftCharacterImage?.gameObject.SetActive(false);
 		rightCharacterImage?.gameObject.SetActive(false);
@@ -93,6 +98,11 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 
 	public void TryDisplayShot(Shot shot)
 	{
+		shotImage.sprite = null;
+		leftCharacterImage.sprite = null;
+		rightCharacterImage.sprite = null;
+		shotImage.sprite = null;
+
 		if (shot.shotImage != null && shotImage != null)
 		{
 			shotImage.sprite = shot.shotImage;
