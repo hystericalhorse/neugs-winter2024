@@ -10,9 +10,11 @@ public class LockedBox : MonoBehaviour, Interactable
     [SerializeField] private GameObject padlockGO;
     [SerializeField] private RotaryPadLocks padlock;
 
+
     public void OnInteract()
     {
         locked = padlock.locked;
+     
 
         if (locked)
         {
@@ -37,6 +39,7 @@ public class LockedBox : MonoBehaviour, Interactable
 
     public Vector3 GetComboVec3()
     {
+      
         return padlock.GetComboVec3();
     }
 }

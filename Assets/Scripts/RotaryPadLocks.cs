@@ -22,6 +22,8 @@ public class RotaryPadLocks : MonoBehaviour
     [SerializeField] private short[] currentInputs = new short[3];
     //[SerializeField] private bool[] direction = new short[3];
 
+    [SerializeField] public bool hasKey;
+
     [SerializeField] private RectTransform dial;
     [SerializeField] private Animator animator;
 
@@ -111,8 +113,11 @@ public class RotaryPadLocks : MonoBehaviour
                 {
                     currentInputs[2] = currentNumber;
 
-                    if (CheckCombo())
+                    if (CheckCombo()) // Here is where obtaining the key is available
                     {
+                        hasKey = true;
+                        // Test
+                        Debug.Log("Has Key UwU");
                         locked = false;
                         animator.speed = 1;
                         //testing
