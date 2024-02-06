@@ -54,11 +54,11 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		if (leftCharacterImage) leftCharacterImage.sprite = null;
 		if (rightCharacterImage) rightCharacterImage.sprite = null;
 
-		shotImage?.gameObject.SetActive(false);
-		leftCharacterImage?.gameObject.SetActive(false);
-		rightCharacterImage?.gameObject.SetActive(false);
-		dialogueTextbox?.SetActive(false);
-		narratorTextbox?.SetActive(false);
+		shotImage?.gameObject.RecursiveSetActive(false);
+		leftCharacterImage?.gameObject.RecursiveSetActive(false);
+		rightCharacterImage?.gameObject.RecursiveSetActive(false);
+		dialogueTextbox?.RecursiveSetActive(false);
+		narratorTextbox?.RecursiveSetActive(false);
 
 		PlayerManager.instance.TogglePlayerController(true);
 
@@ -73,14 +73,14 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 			StopCoroutine(TryDisplayText(line, textSpeed));
 
 		typing = true;
-		dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>().text = "";
+		(dialogueTextbox.GetComponent<TextMeshProUGUI>() ?? dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>()).text = "";
 		currentLineIndex = 0;
 		yield return new WaitForEndOfFrame();
 		while (typing)
 		{
 			try
 			{
-				dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>().text = line.Substring(0, currentLineIndex + 1);
+				(dialogueTextbox.GetComponent<TextMeshProUGUI>() ?? dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>()).text = line.Substring(0, currentLineIndex + 1);
 			}
 			catch (Exception e)
 			{
@@ -104,31 +104,31 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		if (shot.shotImage != null && shotImage != null)
 		{
 			shotImage.sprite = shot.shotImage;
-			shotImage.gameObject.SetActive(true);
+			shotImage.gameObject.RecursiveSetActive(true);
 		}
-
 
 		if (shot.leftCharacterImage != null && leftCharacterImage != null)
 		{
 			leftCharacterImage.sprite = shot.leftCharacterImage;
-			leftCharacterImage.gameObject.SetActive(true);
+			leftCharacterImage.gameObject.RecursiveSetActive(true);
 		}
 
 		if (shot.rightCharacterImage != null && rightCharacterImage != null)
 		{
 			rightCharacterImage.sprite = shot.rightCharacterImage;
-			rightCharacterImage.gameObject.SetActive(true);
+			rightCharacterImage.gameObject.RecursiveSetActive(true);
 		}
 
 		currentScriptIndex = 0;
 		currentLine = currentShot.shotScript[currentScriptIndex];
 
-		narratorTextbox.SetActive(true);
-		dialogueTextbox.SetActive(true);
+		narratorTextbox.RecursiveSetActive(true);
+		dialogueTextbox.RecursiveSetActive(true);
 
-		narratorTextbox.GetComponentInChildren<TextMeshProUGUI>().text
+		(narratorTextbox.GetComponent<TextMeshProUGUI>() ?? narratorTextbox.GetComponentInChildren<TextMeshProUGUI>()).text
 			= currentShot.narrator != string.Empty ? currentShot.narrator : "*";
 
+		currentShot.onShotBegin?.Invoke();
 		StartCoroutine(TryDisplayText(currentLine));
 	}
 
@@ -150,29 +150,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 
 	public void Next(InputAction.CallbackContext context)
 	{
-		if (typing)
-		{
-			StopCoroutine(TryDisplayText(currentLine, currentTextSpeed));
-			dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>().text = currentLine;
-			typing = false;
-		}
-		else
-		if (currentScriptIndex < (currentShot.shotScript.Count - 1))
-		{
-			currentScriptIndex++;
-			currentLine = currentShot.shotScript[currentScriptIndex];
-			StartCoroutine(TryDisplayText(currentLine));
-		}
-		else
-		if (currentCutscene.Count > 0)
-		{
-			currentShot = currentCutscene.Dequeue();
-			TryDisplayShot(currentShot);
-		}
-		else
-		{
-			isPlaying = false;
-		}
+		OnNext();
 	}
 
 	[ContextMenu("Next")]
@@ -181,7 +159,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		if (typing)
 		{
 			StopCoroutine(TryDisplayText(currentLine, currentTextSpeed));
-			dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>().text = currentLine;
+			(dialogueTextbox.GetComponent<TextMeshProUGUI>() ?? dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>()).text = currentLine;
 			typing = false;
 		}
 		else
@@ -194,6 +172,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		else
 		if (currentCutscene.Count > 0)
 		{
+			currentShot.onShotEnd?.Invoke();
 			currentShot = currentCutscene.Dequeue();
 			TryDisplayShot(currentShot);
 		}

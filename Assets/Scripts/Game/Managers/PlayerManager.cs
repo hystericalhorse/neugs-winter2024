@@ -7,15 +7,21 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 	public PlayerController playerController;
 	public CameraController cameraController;
 
-	private void Awake() => Set(this);
+	private void Awake()
+	{
+		Set(this);
+	}
+
 	private void OnDestroy() => Release();
 
 	private void Start()
 	{
+#if DEBUG
 		GetPlayerController();
 		var camera = Camera.main;
 
 		camera.gameObject.GetComponent<CameraController>().Reset();
+#endif
 	}
 
 	public void PlacePlayerController(Vector2 position)

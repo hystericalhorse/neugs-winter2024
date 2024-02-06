@@ -47,4 +47,13 @@ public class LevelData
 
 [Serializable]
 public class Flag
-{ [SerializeField] public string name; [SerializeField] public bool value; }
+{
+	public Flag(string name, bool value)
+	{
+		this.name = name;
+		this.value = value;
+	}
+
+	[SerializeField] public string name;
+	[SerializeField] public bool value;
+}

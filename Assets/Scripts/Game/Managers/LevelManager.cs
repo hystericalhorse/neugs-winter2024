@@ -7,15 +7,19 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 	private Level currentLevel;
 	public List<LevelData> LevelData = new();
 
-	private void Awake() => Set(this);
+	private void Awake()
+	{
+		Set(this);
+	}
+
 	private void OnDestroy() => Release();
 
-#if DEBUG
 	private void Start()
 	{
+#if DEBUG
 		LoadLevel();
-	}
 #endif
+	}
 
 	public void LevelsInit()
 	{
@@ -100,5 +104,41 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 		}
 
 		return false;
+	}
+
+	/// <summary>
+	/// Checks if the value of a flag is the same as another, without updating the flag.
+	/// </summary>
+	/// <param name="name">name of the flag</param>
+	/// <param name="value"></param>
+	/// <returns>Returns true if the value matches, else returns false.</returns>
+	public bool FlagEquals(string name, bool value)
+	{
+		var flag = GetFlag(name);
+		return (flag != null && flag.value == value);
+	}
+
+	public bool FlagValue(string name)
+	{
+		var flag = GetFlag(name);
+		if (flag != null) return flag.value;
+
+		return false;
+	}
+
+	public void SetFlag(string name, bool value)
+	{
+		for (var i = 0; i < currentLevel.Flags.Count; i++)
+		{
+			if (currentLevel.Flags[i].name == name)
+			{
+				currentLevel.Flags[i].value = value;
+				return;
+			}
+		}
+
+		// should only reach here if the flag doesn't exist
+
+		currentLevel.Flags.Add(new(name, value));
 	}
 }
