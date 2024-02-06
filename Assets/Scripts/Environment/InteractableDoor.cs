@@ -1,22 +1,72 @@
+using System.Collections;
 using UnityEngine;
 
-public class InteractableDoor : MonoBehaviour, Interactable
+public class InteractableDoor : MonoBehaviour, Interactable, Door
 {
     public bool Locked = false;
-    public Transform targetTransform;
-    RotaryPadLocks padlockUnlock;
 
-    public void OnInteract()
+	[SerializeField] Room thisRoom;
+	[SerializeField] Room targetRoom;
+	[Space]
+    [SerializeField] Transform targetTransform;
+	[SerializeField] bool transition = true;
+
+	public void OnInteract()
     {
-        Debug.Log("HasKey Current Value: " + padlockUnlock.hasKey);
-        if (!Locked && padlockUnlock.hasKey)
+        if (!Locked)
         {
-            Debug.Log("Door is locked");
-            return;
-        }
-        else if (Locked && (padlockUnlock.hasKey == true))
-        {
-            PlayerManager.instance.PlacePlayerController(targetTransform.position);
-        }
+			if (!transition)
+			{
+				thisRoom.OnExitRoom();
+
+				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+				PlayerManager.instance.GetCameraController().NoLerpResetPosition();
+
+				targetRoom?.OnEnterRoom();
+			}
+			else
+			{
+				StartCoroutine(TransitionTeleport());
+			}
+		}
     }
+
+	public IEnumerator TransitionTeleport()
+	{
+		thisRoom?.OnExitRoom();
+
+		PlayerManager.instance.TogglePlayerController(false);
+		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeIn());
+		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
+
+
+		PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
+
+		targetRoom?.OnEnterRoom();
+
+		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeOut());
+		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
+
+		PlayerManager.instance.TogglePlayerController(true);
+	}
+
+	public void OnTeleport(Transform targetTransform)
+	{
+		thisRoom.OnExitRoom();
+
+		PlayerManager.instance.PlacePlayerController(targetTransform.transform.position);
+		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
+
+		targetRoom?.OnEnterRoom();
+	}
+
+	public void Lock()
+	{
+		Locked = true;
+	}
+	public void Unlock()
+	{
+		Locked = false;
+	}
 }

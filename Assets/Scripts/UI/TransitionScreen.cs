@@ -1,12 +1,15 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TransitionScreen : MonoBehaviour
 {
     [SerializeField] Image image;
 	[SerializeField] CanvasGroup canvasGroup;
 	public float transitionTime = 0f;
+	public UnityEvent onTransitionBegin;
+	public UnityEvent onTransitionEnd;
 
 	private void Awake()
 	{
@@ -32,13 +35,9 @@ public class TransitionScreen : MonoBehaviour
 			yield return null;
 		}
 
-		//while (canvasGroup.alpha < 1.0)
-		//{
-		//	canvasGroup.alpha += Time.deltaTime * transitionTime;
-		//	
-		//}
-
 		canvasGroup.alpha = 1;
+		onTransitionBegin?.Invoke();
+		onTransitionBegin?.RemoveAllListeners();
 	}
 
 	public IEnumerator FadeOut()
@@ -57,12 +56,9 @@ public class TransitionScreen : MonoBehaviour
 			yield return null;
 		}
 
-		//while (canvasGroup.alpha > 0)
-		//{
-		//	canvasGroup.alpha -= Time.deltaTime * transitionTime;
-		//	yield return null;
-		//}
-
 		canvasGroup.alpha = 0;
+
+		onTransitionEnd?.Invoke();
+		onTransitionEnd?.RemoveAllListeners();
 	}
 }

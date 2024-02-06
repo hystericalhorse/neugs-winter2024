@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
@@ -33,6 +34,9 @@ public class RotaryPadLocks : MonoBehaviour
     private bool direction = false; //false = left
     public bool locked = true;
     private Transform[] pieces;
+
+    public OnUnlock onUnlock;
+    public delegate void OnUnlock();
 
     private void Awake()
     {
@@ -120,6 +124,8 @@ public class RotaryPadLocks : MonoBehaviour
                         Debug.Log("Has Key UwU");
                         locked = false;
                         animator.speed = 1;
+                        if (onUnlock != null) onUnlock();
+                        onUnlock = null;
                         //testing
                         Invoke("Deactivate", 2);
                     }

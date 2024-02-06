@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LockedBox : MonoBehaviour, Interactable
 {
@@ -9,6 +10,7 @@ public class LockedBox : MonoBehaviour, Interactable
     private bool locked = true;
     [SerializeField] private GameObject padlockGO;
     [SerializeField] private RotaryPadLocks padlock;
+    [SerializeField] UnityEvent onUnlock;
 
 
     public void OnInteract()
@@ -33,13 +35,17 @@ public class LockedBox : MonoBehaviour, Interactable
         padlock = go.GetComponent<RotaryPadLocks>();
         padlock.GenerateRandomCombo();
 
+        padlock.onUnlock += () =>
+        {
+            onUnlock?.Invoke();
+        };
+
         padlockGO = go;
         padlockGO.SetActive(false);
     }
 
     public Vector3 GetComboVec3()
     {
-      
         return padlock.GetComboVec3();
     }
 }

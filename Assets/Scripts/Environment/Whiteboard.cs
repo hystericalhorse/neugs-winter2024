@@ -6,7 +6,7 @@ public class Whiteboard : CutscenePlayer
 		cutscene.Clear();
 
 		Shot shot = new Shot();
-		shot.shotScript.Add(combination.y.ToString() + "-" + combination.x.ToString() + "-" + combination.z.ToString());
+		shot.shotScript.Add(combination.x.ToString() + "-" + combination.y.ToString() + "-" + combination.z.ToString());
 
 		cutscene.Add(shot);
 

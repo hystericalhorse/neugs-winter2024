@@ -1,9 +1,12 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // Moves the player to a new level.
-public class TriggerDoor : MonoBehaviour
+public class TriggerDoor : MonoBehaviour, Door
 {
+	public bool Locked = false;
+
     [SerializeField] Room thisRoom;
     [SerializeField] Room targetRoom;
     [Space]
@@ -67,6 +70,15 @@ public class TriggerDoor : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.TryGetComponent<PlayerController>(out _))
-			OnTeleport(transition);
+			if (!Locked) OnTeleport(transition);
+	}
+
+	public void Lock()
+	{
+		Locked = true;
+	}
+	public void Unlock()
+	{
+		Locked = false;
 	}
 }
