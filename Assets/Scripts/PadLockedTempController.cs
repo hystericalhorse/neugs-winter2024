@@ -27,7 +27,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
 
     [SerializeField] GameObject padlock;
     [SerializeField] GenerateCodeScript answerGener;
-    [SerializeField] PadLockedScript padLockLogic;
+    
 
     private void Awake()
     {
@@ -78,7 +78,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
         {
             active = 4;
         }
-        dails[active].image.color = Color.red;
+        dails[active].image.color = Color.red;  
         
     }
 
@@ -215,10 +215,28 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     {
         if(active == 4)
         {
-            padLockLogic.OnInteract();
+            CheckIfCorrect();
         }
     }
    
+    private void CheckIfCorrect()
+    {
+        float currentAnswer = GetNum();
+
+        float correctAnwer;
+        correctAnwer = answerGener.ReturnCode();
+        //very simple check to see if the generated answer equals the displayed answer filler result
+        if (currentAnswer == correctAnwer)
+        {
+            Debug.Log("Yippie!");
+           
+        }
+        else
+        {
+            Debug.Log("Womp womp");
+           
+        }
+    }
 
     public void OnInteract()
     {
