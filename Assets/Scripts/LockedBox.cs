@@ -27,7 +27,7 @@ public class LockedBox : MonoBehaviour, Interactable
             if (rotary != null) { rotary.Activate(); }
             else
             {
-                var comboLock = padlockGO.GetComponent<PadLockedScript>();
+                var comboLock = padlockGO.GetComponent<PadLockedTempController>();
             }
             //padlock.Activate();
         }
