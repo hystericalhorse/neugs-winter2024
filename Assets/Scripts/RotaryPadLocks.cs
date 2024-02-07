@@ -45,7 +45,9 @@ public class RotaryPadLocks : MonoBehaviour
         animator.speed = 0;
 
 		pieces = GetComponentsInChildren<Transform>();
-	}
+        GenerateRandomCombo();
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -123,6 +125,7 @@ public class RotaryPadLocks : MonoBehaviour
                         // Test
                         Debug.Log("Has Key UwU");
                         locked = false;
+                        FindAnyObjectByType<LockedBox>().Unlock();
                         animator.speed = 1;
                         if (onUnlock != null) onUnlock();
                         onUnlock = null;
@@ -206,6 +209,8 @@ public class RotaryPadLocks : MonoBehaviour
         combo[0] = combination[0];
         combo[1] = combination[1];
         combo[2] = combination[2];
+
+        Debug.Log(combo[0] + " " + combo[1] + " " + combo[2]);
         return combo;
     }
     public Vector3 GetComboVec3()
