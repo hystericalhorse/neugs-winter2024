@@ -17,9 +17,6 @@ public class LockedBox : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
-        //locked = padlockGO.locked;
-     
-
         if (locked)
         {
             padlockGO.SetActive(true);
@@ -29,7 +26,6 @@ public class LockedBox : MonoBehaviour, Interactable
             {
                 var comboLock = padlockGO.GetComponent<PadLockedTempController>();
             }
-            //padlock.Activate();
         }
         else
         {
@@ -40,9 +36,6 @@ public class LockedBox : MonoBehaviour, Interactable
     private void Awake()
     {
         var go = Instantiate(padlockGO.gameObject, FindAnyObjectByType<Canvas>().transform);
-        //padlock = go.GetComponent<RotaryPadLocks>();
-        //padlock.GenerateRandomCombo();
-
 
         padlockGO = go;
         padlockGO.SetActive(false);

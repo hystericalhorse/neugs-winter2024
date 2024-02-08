@@ -13,8 +13,8 @@ public class LightsOutPuzzleLight : MonoBehaviour, Interactable
 
     private void Start()
     {
-        lightObject = GetComponentInChildren<Light2D>().gameObject;
-        puzzle = GetComponentInParent<LightsOutPuzzle>();
+        //lightObject = GetComponentInChildren<Light2D>().gameObject;
+        puzzle = FindAnyObjectByType<LightsOutPuzzle>();
 
         lightObject.SetActive(false);
     }
