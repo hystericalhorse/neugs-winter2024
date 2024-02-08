@@ -73,7 +73,9 @@ public class AdvancedCutscenePlayer : MonoBehaviour, Interactable
 	[SerializeField] bool playOnce = false;
 	[SerializeField] bool hasPlayed = false;
 
-	public void Play(Flag[] exceptions = default) => PlayIf(exceptions);
+	public void Play() => Play(default);
+
+    public void Play(Flag[] exceptions = default) => PlayIf(exceptions);
 	public void Play(int index, Flag[] exceptions = default) => PlayIf(index, exceptions);
 
 	public virtual void OnInteract()

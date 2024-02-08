@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Level : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Level : MonoBehaviour
 	[SerializeField] public List<Flag> Flags = new();
 	[SerializeField] public List<Room> Rooms = new();
 	[SerializeField] public Transform DefaultTransform;
+	[SerializeField] public UnityEvent OnLevelLoad;
 
 	private void Start()
 	{
