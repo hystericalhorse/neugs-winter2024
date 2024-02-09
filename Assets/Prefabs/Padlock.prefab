@@ -2472,7 +2472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7100107741049565663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2535,6 +2535,7 @@ MonoBehaviour:
   rotationSpeed: 90
   combination: 000000000000
   currentInputs: 000000000000
+  hasKey: 0
   dial: {fileID: 3949784071189573268}
   animator: {fileID: 6202711710343466974}
   locked: 1

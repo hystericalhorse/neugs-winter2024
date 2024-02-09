@@ -5924,6 +5924,8 @@ GameObject:
   - component: {fileID: 1279904042}
   - component: {fileID: 1279904041}
   - component: {fileID: 1279904040}
+  - component: {fileID: 1279904043}
+  - component: {fileID: 1279904044}
   m_Layer: 0
   m_Name: Locker (18)
   m_TagString: Untagged
@@ -6083,6 +6085,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1279904043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279904038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dails:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  padlock: {fileID: 2343361830243556503, guid: 66f12d690c25c5347bbeb76e13aa2523, type: 3}
+  answerGener: {fileID: 1279904044}
+--- !u!114 &1279904044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279904038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe67686eaa885f44a51c999aff5c653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285857082
 GameObject:
   m_ObjectHideFlags: 0
@@ -9358,6 +9397,9 @@ MonoBehaviour:
   - {fileID: 613786942}
   - {fileID: 1576823836}
   DefaultTransform: {fileID: 842729650}
+  OnLevelLoad:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2121501715
 Transform:
   m_ObjectHideFlags: 0

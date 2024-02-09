@@ -1364,6 +1364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722672069874215655}
+  - component: {fileID: 318529945372196604}
   m_Layer: 5
   m_Name: Combination Lock
   m_TagString: Untagged
@@ -1391,3 +1392,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &318529945372196604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345256484509867212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 1614361247782641193}
+  - {fileID: 8707271506118070391}
+  - {fileID: 6847740105345871925}
+  - {fileID: 2785221949322781348}
+  dails:
+  - {fileID: 7201977585216165599}
+  - {fileID: 4912213342413835291}
+  - {fileID: 4334873124984560592}
+  - {fileID: 2116345288029147834}
+  - {fileID: 2004075937033172931}
+  padlock: {fileID: 0}
+  answerGener: {fileID: 0}

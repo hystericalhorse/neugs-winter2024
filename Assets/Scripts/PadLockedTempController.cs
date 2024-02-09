@@ -20,12 +20,13 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     float currentOneNum = 0;
     [SerializeField] TextMeshProUGUI[] texts;
     [SerializeField] Button[] dails;
+    
     private Transform[] pieces;
     int active = 0;
     float currentDial;
     private PlayerControls playerControls;
 
-    [SerializeField] GameObject padlock;
+  
     [SerializeField] GenerateCodeScript answerGener;
     
 
@@ -45,7 +46,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
 
         }
         currentDial = 1;
-        padlock.SetActive(false);
+     
         playerControls.CombinationLock.ChangeNumberUp.performed += PressUp;
         playerControls.CombinationLock.ChangeNumberDown.performed += PressDown;
         playerControls.CombinationLock.SwitchDialRight.performed += GoRight;
@@ -197,7 +198,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     {
             playerControls.CombinationLock.Enable();
             FindAnyObjectByType<PlayerController>().DeactivateControls();
-            padlock.SetActive(true);
+           
 
 
        
@@ -206,8 +207,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     {
         playerControls.CombinationLock.Disable();
         FindAnyObjectByType<PlayerController>().ActivateControls();
-        padlock.SetActive(false);
-
+       
       
     }
 
