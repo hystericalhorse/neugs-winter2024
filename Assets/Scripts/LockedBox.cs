@@ -52,10 +52,14 @@ public class LockedBox : MonoBehaviour, Interactable
         }
     }
 
-    public void Unlock()
+	[ContextMenu("Unlock")]
+	public void Unlock()
     {
         locked = false;
-    }
+		var rotary = padlockGO.GetComponent<RotaryPadLocks>();
+
+        rotary.onUnlock?.Invoke();
+	}
 
     public Vector3 GetComboVec3()
     {

@@ -129,6 +129,8 @@ public class PlayerController : MonoBehaviour
 	}
 
 	public void DeregisterControls() => actions.Clear();
+
+	
 	#endregion
 
 	#region Controls
