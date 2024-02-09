@@ -55,9 +55,14 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 				currentLevel.InsertData(lvl_dat);
 
 			// "default room" is the top room in the rooms list
+			PlayerManager.instance.GetCameraController().Center = currentLevel.Rooms[0].transform.position;
+			PlayerManager.instance.GetCameraController().Limits = currentLevel.Rooms[0].RoomBounds;
+			PlayerManager.instance.GetCameraController().transform.position = currentLevel.Rooms[0].transform.position;
+
 			PlayerManager.instance.PlacePlayerController(currentLevel.DefaultTransform.position);
-			currentLevel.OnLevelLoad?.Invoke();
+
 			currentLevel.Rooms[0].OnEnterRoom();
+			currentLevel.OnLevelLoad?.Invoke();
 		}
 		catch (Exception e)
 		{

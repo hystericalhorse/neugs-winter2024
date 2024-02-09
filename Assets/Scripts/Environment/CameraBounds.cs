@@ -67,6 +67,19 @@ public class CameraBounds : MonoBehaviour
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = boundsCrossColor;
+
+		var halfBounds = bounds * 0.5f;
+
+		Vector2 tL = new(center.x - halfBounds.x, center.y - halfBounds.y);
+		Vector2 bL = new(center.x - halfBounds.x, center.y + halfBounds.y);
+		Vector2 tR = new(center.x + halfBounds.x, center.y - halfBounds.y);
+		Vector2 bR = new(center.x + halfBounds.x, center.y + halfBounds.y);
+
+		Gizmos.DrawLine(tL, tR);
+		Gizmos.DrawLine(tR, bR);
+		Gizmos.DrawLine(bR, bL);
+		Gizmos.DrawLine(bL, tL);
+
 		Gizmos.DrawLine(center - (bounds * 0.5f), center + (bounds * 0.5f));
 	}
 #endif

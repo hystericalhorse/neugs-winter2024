@@ -29,6 +29,7 @@ public class Room : MonoBehaviour
         var cam = PlayerManager.instance.GetCameraController();
         cam.Center = roomCenter;
         cam.Limits = RoomBounds;
+        cam.ResetController();
     }
 
 #if UNITY_EDITOR
@@ -53,7 +54,18 @@ public class Room : MonoBehaviour
 	private void OnDrawGizmos()
 	{
         Gizmos.color = boundsCrossColor;
-		Gizmos.DrawLine(roomCenter - (RoomBounds*0.5f), roomCenter + (RoomBounds * 0.5f));
+        var halfBounds = RoomBounds * 0.5f;
+
+        Vector2 tL = new(roomCenter.x-halfBounds.x,roomCenter.y-halfBounds.y);
+        Vector2 bL = new(roomCenter.x-halfBounds.x,roomCenter.y+halfBounds.y);
+        Vector2 tR = new(roomCenter.x+halfBounds.x,roomCenter.y-halfBounds.y);
+        Vector2 bR = new(roomCenter.x+halfBounds.x,roomCenter.y+halfBounds.y);
+
+        Gizmos.DrawLine(tL,tR);
+        Gizmos.DrawLine(tR,bR);
+        Gizmos.DrawLine(bR,bL);
+        Gizmos.DrawLine(bR,bL);
+        Gizmos.DrawLine(bL,tL);
 	}
 #endif
 }

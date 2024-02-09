@@ -19,7 +19,17 @@ public class CameraController : MonoBehaviour
 		Camera = GetComponent<Camera>();
 	}
 
+	private void Start()
+	{
+		
+	}
+
 	private void Update()
+	{
+		
+	}
+
+	private void FixedUpdate()
 	{
 		pos = TargetTransform.position;
 
@@ -32,22 +42,41 @@ public class CameraController : MonoBehaviour
 
 		if (fixedCamera)
 			transform.position = pos;
-	}
-
-	private void FixedUpdate()
-	{	
-		if (!fixedCamera)
+		else
 			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime); // smooth camera motion
 	}
 
 	public void NoLerpResetPosition()
 	{
-		transform.position = TargetTransform.position;
+		if (TargetTransform == null)
+		{
+			transform.position = Center;
+		}
+		else
+		{
+			var pos = TargetTransform.position;
+
+			pos.z = -10;
+
+			if (Limits.x == 0) pos.x = Center.x;
+			else pos.x = Mathf.Clamp(pos.x, Center.x - Limits.x * 0.5f, Center.x + Limits.x * 0.5f);
+
+			if (Limits.y == 0) pos.y = Center.y;
+			else pos.y = Mathf.Clamp(pos.y, Center.y - Limits.y * 0.5f, Center.y + Limits.y * 0.5f);
+
+			transform.position = pos;
+		}
 	}
 
-	public void Reset()
+	public void ResetController()
 	{
 		TargetTransform = PlayerManager.instance.GetPlayerController().transform;
+		NoLerpResetPosition();
+	}
+
+	public void ResetController(Transform t)
+	{
+		TargetTransform = t; //PlayerManager.instance.GetPlayerController().transform;
 		NoLerpResetPosition();
 	}
 }
