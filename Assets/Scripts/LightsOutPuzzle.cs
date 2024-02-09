@@ -14,7 +14,11 @@ public class LightsOutPuzzle : MonoBehaviour
     void Start()
     {
         puzzleLights = GetComponentsInChildren<LightsOutPuzzleLight>().ToList();
-
+        SetPuzzle();
+    }
+    public void SetPuzzle()
+    {
+        ResetPuzzle();
         System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
         int index = rand.Next(0, puzzleLights.Count);
         if (puzzleLights.Count != 0)
@@ -30,7 +34,13 @@ public class LightsOutPuzzle : MonoBehaviour
             }
         }
     }
-
+    public void ResetPuzzle()
+    {
+        foreach(var puzzleLight in puzzleLights)
+        {
+            puzzleLight.SetLightOn(false);
+        }
+    }
     public bool CheckSolved()
     {
         bool output = true;
