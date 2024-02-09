@@ -17,6 +17,8 @@ public class Shot
 
 	public List<string> shotScript = new();
 	public string narrator;
+	public bool silent = false;
+	public string textSound = string.Empty;
 
 	public UnityEvent onShotBegin;
 	public UnityEvent onShotEnd;

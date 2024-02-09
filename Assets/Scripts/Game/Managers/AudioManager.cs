@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Rendering;
 
 [System.Serializable]
 public class Sound
@@ -58,19 +56,21 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
         }
     }
 
-    public void PlaySound(string name)
+    public bool PlaySound(string name)
 	{
 		foreach (var sound in sounds)
 		{
 			if (sound.name.ToLower() == name.ToLower())
 			{
 				sound.source.Play();
-				return;
+				return true;
 			}
 		}
+
+		return false;
 	}
 
-	public void PlaySound(string name, float pitch)
+	public bool PlaySound(string name, float pitch)
 	{
 		foreach (var sound in sounds)
 		{
@@ -80,12 +80,14 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 
 				sound.source.Play();
 				StartCoroutine(ResetSound(name, sound.source.clip.length));
-				return;
+				return true;
 			}
 		}
+
+		return false;
 	}
 
-	public void PlaySound(string name, float pitch, float volume)
+	public bool PlaySound(string name, float pitch, float volume)
 	{
 		foreach (var sound in sounds)
 		{
@@ -96,9 +98,11 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 
 				sound.source.Play();
 				StartCoroutine(ResetSound(name, sound.source.clip.length));
-				return;
+				return true;
 			}
 		}
+
+		return false;
 	}
 
 	public IEnumerator ResetSound(string name, float inSeconds)

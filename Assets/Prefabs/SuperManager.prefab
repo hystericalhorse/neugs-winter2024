@@ -112,6 +112,18 @@ MonoBehaviour:
     volume: 0.05
     pitch: 1
     loop: 0
+  - name: Doorslam
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4d61aba6cfccd754b8e143f5dab02d27, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: typewriter
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 9867a194f4b16ba468fabfd0cbf7537f, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    loop: 0
   music: []
 --- !u!114 &52393877073830651
 MonoBehaviour:
@@ -143,6 +155,7 @@ MonoBehaviour:
   rightCharacterImage: {fileID: 0}
   narratorTextbox: {fileID: 324313255920064070}
   dialogueTextbox: {fileID: 4234550551992550842}
+  defaultTextSound: typewriter
 --- !u!114 &1875141416267767967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c73f2d36d5211a479db912390ba6896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionScreen: {fileID: 0}
 --- !u!114 &5738063023435190581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2437533165743614323, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_text
-      value: Ashley
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2437533165743614323, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_fontSize
@@ -462,7 +476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6913809945776196031, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_text
-      value: God I want to fucking kill myself god damn
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6913809945776196031, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_fontSize
@@ -471,6 +485,10 @@ PrefabInstance:
     - target: {fileID: 6913809945776196031, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_fontSizeBase
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627525448090472712, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
+      propertyPath: transitionTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7879469963177050207, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_AnchorMax.x
@@ -498,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8872384171160820395, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9167545834427767747, guid: 84b5403521dcd0142b6d4e34b618f322, type: 3}
       propertyPath: m_Color.a

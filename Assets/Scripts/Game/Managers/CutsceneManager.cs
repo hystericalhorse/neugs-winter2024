@@ -14,6 +14,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 	[SerializeField] Image rightCharacterImage;
 	[SerializeField] GameObject narratorTextbox;
 	[SerializeField] GameObject dialogueTextbox;
+	[SerializeField] string defaultTextSound;
 	
 	bool isPlaying = false;
 	bool typing = false;
@@ -83,6 +84,10 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 			try
 			{
 				(dialogueTextbox.GetComponent<TextMeshProUGUI>() ?? dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>()).text = line.Substring(0, currentLineIndex + 1);
+
+				if (!currentShot.silent)
+					if (!AudioManager.instance.PlaySound(currentShot.textSound) || currentShot.textSound == string.Empty)
+						AudioManager.instance.PlaySound(defaultTextSound);
 			}
 			catch (Exception e)
 			{
