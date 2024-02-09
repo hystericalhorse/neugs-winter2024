@@ -308,6 +308,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -545,6 +547,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -703,6 +707,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -991,6 +997,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1149,6 +1157,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1505,6 +1515,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1655,14 +1667,6 @@ PrefabInstance:
     - target: {fileID: 3891510089128150636, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4234550551992550842, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484637544134329453, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8466386900169142742, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
       propertyPath: m_Name
@@ -1937,6 +1941,8 @@ MonoBehaviour:
       shotScript:
       - There's a cash register here
       narrator: '*******'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1949,6 +1955,8 @@ MonoBehaviour:
       shotScript:
       - I could take the money if I wanted
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1961,6 +1969,8 @@ MonoBehaviour:
       shotScript:
       - But if nobody but me is here why would I need money?
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1973,6 +1983,8 @@ MonoBehaviour:
       shotScript:
       - It's Empty anyways
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -2329,6 +2341,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -2617,6 +2631,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3035,6 +3051,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3193,6 +3211,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3351,6 +3371,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3509,6 +3531,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3796,6 +3820,8 @@ MonoBehaviour:
       shotScript:
       - It's a Soda Machine
       narrator: '****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3808,6 +3834,8 @@ MonoBehaviour:
       shotScript:
       - Even if i wanted a drink there aren't any cups
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3997,6 +4025,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4285,6 +4315,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4443,6 +4475,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4601,6 +4635,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4759,6 +4795,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5047,6 +5085,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5205,6 +5245,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5363,6 +5405,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5521,6 +5565,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5809,6 +5855,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5923,9 +5971,8 @@ GameObject:
   - component: {fileID: 1279904039}
   - component: {fileID: 1279904042}
   - component: {fileID: 1279904041}
-  - component: {fileID: 1279904040}
-  - component: {fileID: 1279904043}
   - component: {fileID: 1279904044}
+  - component: {fileID: 1279904045}
   m_Layer: 0
   m_Name: Locker (18)
   m_TagString: Untagged
@@ -5948,46 +5995,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 468451471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1279904040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279904038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutscene:
-    timeline:
-    - shotImage: {fileID: 0}
-      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
-      rightCharacterImage: {fileID: 0}
-      shotScript:
-      - 'It''s a locker '
-      - It's locked
-      narrator: '*****'
-      onShotBegin:
-        m_PersistentCalls:
-          m_Calls: []
-      onShotEnd:
-        m_PersistentCalls:
-          m_Calls: []
-    - shotImage: {fileID: 0}
-      leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
-      rightCharacterImage: {fileID: 0}
-      shotScript:
-      - Why is only this one  locked?
-      - Hmm a combination lock. Maybe I can find a code?
-      narrator: Ash
-      onShotBegin:
-        m_PersistentCalls:
-          m_Calls: []
-      onShotEnd:
-        m_PersistentCalls:
-          m_Calls: []
 --- !u!61 &1279904041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6085,31 +6092,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1279904043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279904038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e967e599f7985468427423eac48c0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  dails:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  padlock: {fileID: 2343361830243556503, guid: 66f12d690c25c5347bbeb76e13aa2523, type: 3}
-  answerGener: {fileID: 1279904044}
 --- !u!114 &1279904044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6122,6 +6104,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe67686eaa885f44a51c999aff5c653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1279904045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279904038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+  - conditions: []
+    cutscene:
+      timeline:
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - It's a locker
+        - It's locked
+        narrator: '*****'
+        silent: 0
+        textSound: 
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - Why is this the only one thats locked?
+        - Hmmm. A combination lock. Maybe there's a code?
+        narrator: Ash
+        silent: 0
+        textSound: 
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+  - conditions: []
+    cutscene:
+      timeline:
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - Why is this the only one thats locked?
+        - Hmmm. A combination lock. Maybe there's a code?
+        narrator: Ash
+        silent: 0
+        textSound: 
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+  currentIndex: 0
+  loopScenes: 0
+  playOnce: 0
+  hasPlayed: 0
 --- !u!1 &1285857082
 GameObject:
   m_ObjectHideFlags: 0
@@ -6259,6 +6309,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6514,6 +6566,8 @@ MonoBehaviour:
       - Yo no way! Is that my favorite bag of chips??
       - And it hasnt been open!
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6526,6 +6580,8 @@ MonoBehaviour:
       shotScript:
       - '*RIIIIIP*'
       narrator: '******'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6538,6 +6594,8 @@ MonoBehaviour:
       shotScript:
       - It's empty
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6599,6 +6657,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6757,6 +6817,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6915,6 +6977,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -7351,6 +7415,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -7639,6 +7705,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -7797,6 +7865,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8012,6 +8082,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8170,6 +8242,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8328,6 +8402,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8486,6 +8562,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8644,6 +8722,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9028,6 +9108,8 @@ MonoBehaviour:
       shotScript:
       - It's an empty shelf
       narrator: '****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9040,6 +9122,8 @@ MonoBehaviour:
       shotScript:
       - Too much to hope a gas station actually contained food I guess...
       narrator: Ash
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9101,6 +9185,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9259,6 +9345,8 @@ MonoBehaviour:
       - 'It''s a locker '
       - It's Empty
       narrator: '*****'
+      silent: 0
+      textSound: 
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
