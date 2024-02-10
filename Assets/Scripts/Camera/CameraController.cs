@@ -26,11 +26,6 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
 	{
-		
-	}
-
-	private void FixedUpdate()
-	{
 		pos = TargetTransform.position;
 
 		pos.z = -10; // z-value doesn't particularly matter if the camera is orthographic.
@@ -42,7 +37,13 @@ public class CameraController : MonoBehaviour
 
 		if (fixedCamera)
 			transform.position = pos;
-		else
+	}
+
+	private void FixedUpdate()
+	{
+		
+		
+		if (!fixedCamera)
 			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime); // smooth camera motion
 	}
 
@@ -50,11 +51,12 @@ public class CameraController : MonoBehaviour
 	{
 		if (TargetTransform == null)
 		{
+			pos = Center;
 			transform.position = Center;
 		}
 		else
 		{
-			var pos = TargetTransform.position;
+			pos = TargetTransform.position;
 
 			pos.z = -10;
 
