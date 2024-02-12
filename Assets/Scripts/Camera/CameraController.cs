@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour
 	[SerializeField,Range(1,10)] float followSpeed = 10;
 	[SerializeField] float zoom; //TODO Implementation
 
+	private bool paused;
+
 	private void Awake()
 	{
 		Camera = GetComponent<Camera>();
@@ -26,6 +28,8 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
 	{
+		if (paused) return;
+
 		pos = TargetTransform.position;
 
 		pos.z = -10; // z-value doesn't particularly matter if the camera is orthographic.
@@ -41,8 +45,8 @@ public class CameraController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		
-		
+		if (paused) return;
+
 		if (!fixedCamera)
 			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime); // smooth camera motion
 	}
@@ -66,7 +70,7 @@ public class CameraController : MonoBehaviour
 			if (Limits.y == 0) pos.y = Center.y;
 			else pos.y = Mathf.Clamp(pos.y, Center.y - Limits.y * 0.5f, Center.y + Limits.y * 0.5f);
 
-			transform.position = pos;
+			if (!paused) transform.position = pos;
 		}
 	}
 
@@ -81,4 +85,7 @@ public class CameraController : MonoBehaviour
 		TargetTransform = t; //PlayerManager.instance.GetPlayerController().transform;
 		NoLerpResetPosition();
 	}
+
+	public void Pause() => paused = true;
+	public void Unpause() => paused = false;
 }

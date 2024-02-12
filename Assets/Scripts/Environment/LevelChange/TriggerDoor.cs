@@ -19,58 +19,50 @@ public class TriggerDoor : MonoBehaviour, Door
 		col.isTrigger = true;
 	}
 
-	public void OnTeleport(bool withTransition = false)
+	public void OnInteract(bool withTransition = false)
     {
-		if (!withTransition)
+		if (!Locked)
 		{
-			thisRoom.OnExitRoom();
+			Thru(transition);
+		}
+		
+	}
 
+	public void Thru(bool withTransition = false)
+	{
+		thisRoom?.OnExitRoom();
+
+		if (withTransition)
+		{
+			var ts = FindAnyObjectByType<TransitionScreen>();
+
+			ts.onTransitionBegin.AddListener(() => {
+				PlayerManager.instance.playerController.DeactivateControls();
+				PlayerManager.instance.GetCameraController().Pause();
+				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+			});
+
+			ts.onTransitionEnd.AddListener(() => {
+				PlayerManager.instance.GetCameraController().Unpause();
+				PlayerManager.instance.playerController.ActivateControls();
+				targetRoom?.OnEnterRoom();
+			});
+
+			ts.Transition(0);
+		}
+		else
+		{
 			PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
 			PlayerManager.instance.GetCameraController().NoLerpResetPosition();
 
 			targetRoom?.OnEnterRoom();
 		}
-		else
-		{
-			StartCoroutine(TransitionTeleport());
-		}
-		
-	}
-
-	public IEnumerator TransitionTeleport()
-	{
-		thisRoom?.OnExitRoom();
-
-		PlayerManager.instance.TogglePlayerController(false);
-		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeIn());
-		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
-
-
-		PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
-		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
-
-		targetRoom?.OnEnterRoom();
-
-		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeOut());
-		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
-
-		PlayerManager.instance.TogglePlayerController(true);
-	}
-
-    public void OnTeleport(Transform targetTransform)
-    {
-		thisRoom.OnExitRoom();
-
-		PlayerManager.instance.PlacePlayerController(targetTransform.transform.position);
-		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
-
-		targetRoom?.OnEnterRoom();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.TryGetComponent<PlayerController>(out _))
-			if (!Locked) OnTeleport(transition);
+			OnInteract();
 	}
 
 	public void Lock()

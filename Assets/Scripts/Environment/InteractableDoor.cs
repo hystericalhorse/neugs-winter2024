@@ -15,50 +15,40 @@ public class InteractableDoor : MonoBehaviour, Interactable, Door
     {
         if (!Locked)
         {
-			if (!transition)
-			{
-				thisRoom.OnExitRoom();
-
-				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
-				PlayerManager.instance.GetCameraController().NoLerpResetPosition();
-
-				targetRoom?.OnEnterRoom();
-			}
-			else
-			{
-				StartCoroutine(TransitionTeleport());
-			}
+			Thru(transition);
 		}
     }
 
-	public IEnumerator TransitionTeleport()
+	public void Thru(bool withTransition = false)
 	{
 		thisRoom?.OnExitRoom();
 
-		PlayerManager.instance.TogglePlayerController(false);
-		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeIn());
-		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
+		if (withTransition)
+		{
+			var ts = FindAnyObjectByType<TransitionScreen>();
 
+			ts.onTransitionBegin.AddListener(() => {
+				PlayerManager.instance.playerController.DeactivateControls();
+				PlayerManager.instance.GetCameraController().Pause();
+				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+			});
 
-		PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
-		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
+			ts.onTransitionEnd.AddListener(() => {
+				PlayerManager.instance.GetCameraController().Unpause();
+				PlayerManager.instance.playerController.ActivateControls();
 
-		targetRoom?.OnEnterRoom();
+				targetRoom?.OnEnterRoom();
+			});
 
-		StartCoroutine(FindAnyObjectByType<TransitionScreen>().FadeOut());
-		yield return new WaitForSeconds(FindAnyObjectByType<TransitionScreen>().transitionTime);
+			ts.Transition(0);
+		}
+		else
+		{
+			PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+			PlayerManager.instance.GetCameraController().NoLerpResetPosition();
 
-		PlayerManager.instance.TogglePlayerController(true);
-	}
-
-	public void OnTeleport(Transform targetTransform)
-	{
-		thisRoom.OnExitRoom();
-
-		PlayerManager.instance.PlacePlayerController(targetTransform.transform.position);
-		PlayerManager.instance.GetCameraController().NoLerpResetPosition();
-
-		targetRoom?.OnEnterRoom();
+			targetRoom?.OnEnterRoom();
+		}
 	}
 
 	public void Lock()

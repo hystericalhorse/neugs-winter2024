@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class TransitionScreen : MonoBehaviour
 {
@@ -19,9 +20,20 @@ public class TransitionScreen : MonoBehaviour
 		canvasGroup.alpha = 0;
 	}
 
-	public IEnumerator FadeIn()
+	public void Transition(float seconds = 0)
+	{
+		StopCoroutine(FadeIn());
+		StopCoroutine(FadeOut());
+
+		StartCoroutine(FadeIn(true));
+	}
+
+	public IEnumerator FadeIn(bool fadeOut = false)
 	{
 		StopCoroutine(FadeOut());
+
+		onTransitionBegin?.Invoke();
+		onTransitionBegin?.RemoveAllListeners();
 
 		if (transitionTime <= 0)
 		{
@@ -29,9 +41,11 @@ public class TransitionScreen : MonoBehaviour
 			StopCoroutine(FadeIn());
 		}
 
+		float time = 0;
 		while (canvasGroup.alpha < 1)
 		{
-			canvasGroup.alpha += Time.deltaTime * transitionTime;
+			canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 1, time / transitionTime);
+			time += Time.deltaTime;
 			yield return null;
 		}
 
@@ -41,14 +55,18 @@ public class TransitionScreen : MonoBehaviour
 		//	yield return null;
 		//}
 
+		yield return new WaitForFixedUpdate();
 		canvasGroup.alpha = 1;
-		onTransitionBegin?.Invoke();
-		onTransitionBegin?.RemoveAllListeners();
+
+		if (fadeOut) StartCoroutine(FadeOut());
 	}
 
 	public IEnumerator FadeOut()
 	{
 		StopCoroutine(FadeIn());
+
+		onTransitionEnd?.Invoke();
+		onTransitionEnd?.RemoveAllListeners();
 
 		if (transitionTime <= 0)
 		{
@@ -56,9 +74,11 @@ public class TransitionScreen : MonoBehaviour
 			StopCoroutine(FadeOut());
 		}
 
+		float time = 0;
 		while (canvasGroup.alpha > 0)
 		{
-			canvasGroup.alpha -= Time.deltaTime * transitionTime;
+			canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 0, time / transitionTime);
+			time += Time.deltaTime;
 			yield return null;
 		}
 
@@ -68,9 +88,8 @@ public class TransitionScreen : MonoBehaviour
 		//	yield return null;
 		//}
 
-		canvasGroup.alpha = 0;
+		yield return new WaitForFixedUpdate();
 
-		onTransitionEnd?.Invoke();
-		onTransitionEnd?.RemoveAllListeners();
+		canvasGroup.alpha = 0;
 	}
 }
