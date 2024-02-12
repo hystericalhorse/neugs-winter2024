@@ -16,7 +16,7 @@ public static class ExtensionMethods
 
 	public static T GetRandom<T>(this T[] array)
 	{
-		var i = Helpers.random.Next(0, array.Length);
+		var i = Helpers.random.Next(0, (array.Length - 1));
 		return array[i];
 	}
 
