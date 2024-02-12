@@ -11,15 +11,18 @@ public class Level : MonoBehaviour
 	[SerializeField] public Transform DefaultTransform;
 	[SerializeField] public UnityEvent OnLevelLoad;
 
-	private void Start()
+	private void Awake()
 	{
 		// M.A.D.
 		if (FindObjectOfType<Level>() != this) Destroy(gameObject);
 		AudioManager.instance.PlaySound("HouseAmbience");
 
-		//Rooms.AddRange(FindObjectsOfType<Room>(true));
-
 		if (DefaultTransform == null) DefaultTransform = transform;
+	}
+
+	private void Start()
+	{
+		
 	}
 
 	public LevelData ExtractData()

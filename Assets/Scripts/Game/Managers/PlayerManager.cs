@@ -18,9 +18,6 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 	{
 #if DEBUG
 		GetPlayerController();
-		var camera = Camera.main;
-
-		camera.gameObject.GetComponent<CameraController>().Reset();
 #endif
 	}
 
@@ -29,6 +26,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 		try
 		{
 			GetPlayerController().transform.position = (Vector3)position;
+			GetCameraController().NoLerpResetPosition();
 		}
 		catch (Exception e)
 		{

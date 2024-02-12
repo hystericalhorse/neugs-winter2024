@@ -29,11 +29,17 @@ public class TransitionScreen : MonoBehaviour
 			StopCoroutine(FadeIn());
 		}
 
-		for (float f = transitionTime; f > 0; f -= Time.deltaTime)
+		while (canvasGroup.alpha < 1)
 		{
 			canvasGroup.alpha += Time.deltaTime * transitionTime;
 			yield return null;
 		}
+
+		//for (float f = transitionTime; f > 0; f -= Time.deltaTime)
+		//{
+		//	canvasGroup.alpha += Time.deltaTime * transitionTime;
+		//	yield return null;
+		//}
 
 		canvasGroup.alpha = 1;
 		onTransitionBegin?.Invoke();
@@ -50,11 +56,17 @@ public class TransitionScreen : MonoBehaviour
 			StopCoroutine(FadeOut());
 		}
 
-		for (float f = transitionTime; f > 0; f -= Time.deltaTime)
+		while (canvasGroup.alpha > 0)
 		{
 			canvasGroup.alpha -= Time.deltaTime * transitionTime;
 			yield return null;
 		}
+
+		//for (float f = transitionTime; f > 0; f -= Time.deltaTime)
+		//{
+		//	canvasGroup.alpha -= Time.deltaTime * transitionTime;
+		//	yield return null;
+		//}
 
 		canvasGroup.alpha = 0;
 

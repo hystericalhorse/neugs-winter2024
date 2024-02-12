@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 1875141416267767967}
   - component: {fileID: 3834632976285226439}
   - component: {fileID: 5738063023435190581}
-  - component: {fileID: 2243939192245509872}
   m_Layer: 0
   m_Name: SuperManager
   m_TagString: Untagged
@@ -121,7 +120,7 @@ MonoBehaviour:
   - name: typewriter
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 9867a194f4b16ba468fabfd0cbf7537f, type: 3}
-    volume: 0.5
+    volume: 0.1
     pitch: 0.5
     loop: 0
   music: []
@@ -208,20 +207,6 @@ MonoBehaviour:
   fontStyle: 1
   alignment: 0
   textDropShadow: 0
---- !u!114 &2243939192245509872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466386900169142742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutscene:
-    timeline: []
 --- !u!1001 &2512732718062575302
 PrefabInstance:
   m_ObjectHideFlags: 0
