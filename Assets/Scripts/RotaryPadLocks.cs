@@ -123,6 +123,7 @@ public class RotaryPadLocks : MonoBehaviour
                     {
                         hasKey = true;
                         // Test
+                        AudioManager.instance.PlaySound("Lightswitch");
                         Debug.Log("Has Key UwU");
                         locked = false;
                         FindAnyObjectByType<LockedBox>().Unlock();

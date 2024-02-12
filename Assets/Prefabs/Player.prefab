@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Battery: 100
   DrainMultiplier: 1
-  Active: 1
+  Active: 0
   light: {fileID: 6888122137844642766}
   Hitbox: {fileID: 7743854890530202717}
 --- !u!114 &6888122137844642766
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.085
+  m_Intensity: 0.05
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 618edd12000000001d96f6a113b4d49b
