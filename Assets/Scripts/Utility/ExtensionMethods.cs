@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public static class ExtensionMethods
 {
@@ -10,5 +12,17 @@ public static class ExtensionMethods
 		}
 
 		obj.SetActive(state);
+	}
+
+	public static T GetRandom<T>(this T[] array)
+	{
+		var i = Helpers.random.Next(0, array.Length);
+		return array[i];
+	}
+
+	public static T GetRandom<T>(this List<T> array)
+	{
+		var i = Helpers.random.Next(0, array.Count);
+		return array[i];
 	}
 }
