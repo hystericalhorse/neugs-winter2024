@@ -6,7 +6,7 @@ public class Flashlight : MonoBehaviour
 {
     [SerializeField] private float Battery = 100f;
     [SerializeField] private float DrainMultiplier = 1f;
-    [SerializeField] private bool Active = true;
+    [SerializeField] private bool Active = false;
     [SerializeField] private new Light2D light = null;
     [SerializeField] private PolygonCollider2D Hitbox = null;
 
