@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 86117815}
   - component: {fileID: 86117814}
   m_Layer: 0
-  m_Name: Locker (13)
+  m_Name: AnswerLocation3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -503,9 +503,9 @@ GameObject:
   - component: {fileID: 132210122}
   - component: {fileID: 132210125}
   - component: {fileID: 132210124}
-  - component: {fileID: 132210123}
+  - component: {fileID: 132210126}
   m_Layer: 0
-  m_Name: Locker (4)
+  m_Name: AnswerLocation4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,35 +526,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 468451471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &132210123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132210121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutscene:
-    timeline:
-    - shotImage: {fileID: 0}
-      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
-      rightCharacterImage: {fileID: 0}
-      shotScript:
-      - 'It''s a locker '
-      - It's Empty
-      narrator: '*****'
-      silent: 0
-      textSound: 
-      onShotBegin:
-        m_PersistentCalls:
-          m_Calls: []
-      onShotEnd:
-        m_PersistentCalls:
-          m_Calls: []
 --- !u!61 &132210124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -652,6 +623,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &132210126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132210121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 0}
+      rightCharacterImage: {fileID: 0}
+      shotScript: []
+      narrator: 
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1870124157}
+            m_TargetAssemblyTypeName: SplitComboLockCode, Assembly-CSharp
+            m_MethodName: OnInteract
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!1 &206723480
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +718,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -998,7 +1008,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1158,7 +1168,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1516,7 +1526,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1887,6 +1897,9 @@ MonoBehaviour:
   targetRoom: {fileID: 613786942}
   targetTransform: {fileID: 1446074619}
   transition: 0
+  lockedInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &527182629
 Transform:
   m_ObjectHideFlags: 0
@@ -1942,7 +1955,7 @@ MonoBehaviour:
       - There's a cash register here
       narrator: '*******'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1956,7 +1969,7 @@ MonoBehaviour:
       - I could take the money if I wanted
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1970,7 +1983,7 @@ MonoBehaviour:
       - But if nobody but me is here why would I need money?
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -1984,7 +1997,7 @@ MonoBehaviour:
       - It's Empty anyways
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -2342,7 +2355,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -2632,7 +2645,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3052,7 +3065,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3212,7 +3225,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3372,7 +3385,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3532,7 +3545,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3821,7 +3834,7 @@ MonoBehaviour:
       - It's a Soda Machine
       narrator: '****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -3835,7 +3848,7 @@ MonoBehaviour:
       - Even if i wanted a drink there aren't any cups
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4026,7 +4039,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4316,7 +4329,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4476,7 +4489,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4636,7 +4649,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -4796,7 +4809,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5043,7 +5056,7 @@ GameObject:
   - component: {fileID: 1039192764}
   - component: {fileID: 1039192763}
   m_Layer: 0
-  m_Name: Locker (33)
+  m_Name: AnswerLocation2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5086,7 +5099,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5246,7 +5259,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5406,7 +5419,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5566,7 +5579,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5856,7 +5869,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -5971,10 +5984,9 @@ GameObject:
   - component: {fileID: 1279904039}
   - component: {fileID: 1279904042}
   - component: {fileID: 1279904041}
-  - component: {fileID: 1279904044}
   - component: {fileID: 1279904045}
   m_Layer: 0
-  m_Name: Locker (18)
+  m_Name: LockedLocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6092,18 +6104,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1279904044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279904038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fe67686eaa885f44a51c999aff5c653, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1279904045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6128,7 +6128,7 @@ MonoBehaviour:
         - It's locked
         narrator: '*****'
         silent: 0
-        textSound: 
+        textSounds: []
         onShotBegin:
           m_PersistentCalls:
             m_Calls: []
@@ -6143,13 +6143,37 @@ MonoBehaviour:
         - Hmmm. A combination lock. Maybe there's a code?
         narrator: Ash
         silent: 0
-        textSound: 
+        textSounds: []
         onShotBegin:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1866487856}
+              m_TargetAssemblyTypeName: GenerateCodeScript, Assembly-CSharp
+              m_MethodName: OnInteract
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
         onShotEnd:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 0}
+              m_TargetAssemblyTypeName: 
+              m_MethodName: 
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
   - conditions: []
     cutscene:
       timeline:
@@ -6157,11 +6181,11 @@ MonoBehaviour:
         leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
         rightCharacterImage: {fileID: 0}
         shotScript:
-        - Why is this the only one thats locked?
-        - Hmmm. A combination lock. Maybe there's a code?
+        - I still don't know what the code is
+        - Did I check every locker?
         narrator: Ash
         silent: 0
-        textSound: 
+        textSounds: []
         onShotBegin:
           m_PersistentCalls:
             m_Calls: []
@@ -6310,7 +6334,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6567,7 +6591,7 @@ MonoBehaviour:
       - And it hasnt been open!
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6581,7 +6605,7 @@ MonoBehaviour:
       - '*RIIIIIP*'
       narrator: '******'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6595,7 +6619,7 @@ MonoBehaviour:
       - It's empty
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6658,7 +6682,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6818,7 +6842,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -6978,7 +7002,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -7162,6 +7186,9 @@ MonoBehaviour:
   targetRoom: {fileID: 1576823836}
   targetTransform: {fileID: 527182629}
   transition: 0
+  lockedInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1446074619
 Transform:
   m_ObjectHideFlags: 0
@@ -7416,7 +7443,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -7706,7 +7733,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -7866,7 +7893,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8022,6 +8049,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8083,7 +8122,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8243,7 +8282,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8403,7 +8442,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8507,6 +8546,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1866487855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1866487857}
+  - component: {fileID: 1866487856}
+  m_Layer: 0
+  m_Name: CodeGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1866487856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866487855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe67686eaa885f44a51c999aff5c653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1866487857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866487855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.45, y: 33.63, z: -1.5332434}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1870124156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870124158}
+  - component: {fileID: 1870124157}
+  m_Layer: 0
+  m_Name: CodeSplitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1870124157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870124156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32187dae22f6a2e41ad1eb5ee821683b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline: []
+  genCode: {fileID: 1866487856}
+  lockers:
+  - {fileID: 2096347663}
+  - {fileID: 1039192761}
+  - {fileID: 86117812}
+  - {fileID: 132210121}
+--- !u!4 &1870124158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870124156}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.37, y: 32.25, z: -1.5333717}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1907338654
 GameObject:
   m_ObjectHideFlags: 0
@@ -8563,7 +8698,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -8723,7 +8858,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9109,7 +9244,7 @@ MonoBehaviour:
       - It's an empty shelf
       narrator: '****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9123,7 +9258,7 @@ MonoBehaviour:
       - Too much to hope a gas station actually contained food I guess...
       narrator: Ash
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9186,7 +9321,7 @@ MonoBehaviour:
       - It's Empty
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
           m_Calls: []
@@ -9303,7 +9438,7 @@ GameObject:
   - component: {fileID: 2096347666}
   - component: {fileID: 2096347665}
   m_Layer: 0
-  m_Name: Locker (10)
+  m_Name: AnswerLocation1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9342,14 +9477,26 @@ MonoBehaviour:
       leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
       rightCharacterImage: {fileID: 0}
       shotScript:
-      - 'It''s a locker '
-      - It's Empty
+      - 
+      - 
       narrator: '*****'
       silent: 0
-      textSound: 
+      textSounds: []
       onShotBegin:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1870124157}
+            m_TargetAssemblyTypeName: SplitComboLockCode, Assembly-CSharp
+            m_MethodName: OnInteract
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       onShotEnd:
         m_PersistentCalls:
           m_Calls: []
@@ -9521,3 +9668,5 @@ SceneRoots:
   - {fileID: 1323602484}
   - {fileID: 555807144}
   - {fileID: 468451471}
+  - {fileID: 1866487857}
+  - {fileID: 1870124158}
