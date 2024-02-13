@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
 	private void LateUpdate()
 	{
 		lastMovement = movement;
-		UpdateDirection();
 	}
 
 	private void OnDestroy()
@@ -141,8 +140,10 @@ public class PlayerController : MonoBehaviour
 	{
 		movement = context.ReadValue<Vector2>();
 
-		if (movement.magnitude != 0)
+		if (movement.magnitude > 0)
 		{
+			UpdateDirection();
+
 			flashlight.transform.localPosition = ((Vector3)movement.normalized * 0.5f) + centerY;
 			flashlight.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI, -Vector3.forward);
 		}
@@ -152,7 +153,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if (movement.magnitude > 0)
 		{
-			direction = movement.Cardinalize(ExtensionMethods.Axis.Horizontal);
+			direction = movement.Cardinalize(ExtensionMethods.Axis.Vertical);
+
 			Debug.Log(direction);
 
 			animator.SetBool("FaceUp", movement.y > 0);
