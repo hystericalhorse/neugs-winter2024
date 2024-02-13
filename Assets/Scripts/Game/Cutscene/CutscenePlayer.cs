@@ -11,4 +11,9 @@ public class CutscenePlayer : MonoBehaviour, Interactable
     {
 		CutsceneManager.instance.StartCutscene(cutscene);
     }
+
+    public void AddSHot(Shot shot = default)
+    {
+        cutscene.Add(shot);
+    }
 }

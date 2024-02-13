@@ -9,11 +9,15 @@ public class GenerateCodeScript : MonoBehaviour, Interactable
     //Feel free to adjust as you see fit please leave comments on what you changed and how it now workd :D
     float code;
     bool codeGenerated = false;
-   
+
+    private void Start()
+    {
+        GenrateCode();
+        
+    }
 
     public void OnInteract()
     {
-        GenrateCode();
         Debug.Log(code);
     }
 
