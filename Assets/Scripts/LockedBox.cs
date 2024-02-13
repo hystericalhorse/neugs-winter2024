@@ -8,7 +8,6 @@ public class LockedBox : MonoBehaviour, Interactable
 {
     // Start is called before the first frame update
     //private short[] combination = new short[3];
-    private bool locked = true;
     [SerializeField] private GameObject padlockGO;
     //[SerializeField] private RotaryPadLocks padlock;
     [SerializeField] private List<int> combo;
@@ -17,28 +16,20 @@ public class LockedBox : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
-        if (locked)
-        {
-            padlockGO.SetActive(true);
-            var rotary = padlockGO.GetComponent<RotaryPadLocks>();
-            if (rotary != null) { rotary.Activate(); }
-            else
-            {
-                var comboLock = padlockGO.GetComponent<PadLockedTempController>();
-            }
-        }
-        else
-        {
-            
-        }
-    }
+		padlockGO.SetActive(true);
+		var rotary = padlockGO.GetComponent<RotaryPadLocks>();
+		if (rotary != null) { rotary.Activate(); }
+		else
+		{
+			var comboLock = padlockGO.GetComponent<PadLockedTempController>();
+		}
+	}
 
     private void Awake()
     {
         var go = Instantiate(padlockGO.gameObject, FindAnyObjectByType<Canvas>().transform);
 
         padlockGO = go;
-        padlockGO.SetActive(false);
 
         var rotary = padlockGO.GetComponent<RotaryPadLocks>();
         if (rotary != null)
@@ -49,15 +40,15 @@ public class LockedBox : MonoBehaviour, Interactable
             };
 
             combo = rotary.GetComboInt().ToList();
-        }
+
+			padlockGO.SetActive(false);
+		}
     }
 
 	[ContextMenu("Unlock")]
 	public void Unlock()
     {
-        locked = false;
 		var rotary = padlockGO.GetComponent<RotaryPadLocks>();
-
         rotary.onUnlock?.Invoke();
 	}
 

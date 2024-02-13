@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7940451898972213892}
   - component: {fileID: -3667065090574169482}
   - component: {fileID: 2849768158170939066}
+  - component: {fileID: 8559049616096109492}
   - component: {fileID: -3348471221840809921}
   m_Layer: 0
   m_Name: Toolbox
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598632681821555615}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.102, y: 0.0028915405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -174,10 +175,53 @@ MonoBehaviour:
   - {x: 0.265625, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -26086
+  m_InstanceId: -1388
   m_LocalBounds:
     m_Center: {x: 0, y: 0.28125, z: 0}
     m_Extent: {x: 0.265625, y: 0.28125, z: 0}
+--- !u!114 &8559049616096109492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598632681821555615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - It's a combination lock.
+      - I haven't seen one of these since high school.
+      - I think you're supposed to rotate it 3 times counter-clockwise to reset it
+        before you can put in the code....
+      narrator: Ashley
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: -3348471221840809921}
+            m_TargetAssemblyTypeName: LockedBox, Assembly-CSharp
+            m_MethodName: OnInteract
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!114 &-3348471221840809921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,5 +234,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131304d5ab362ee42825853ca49ed386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  padlockGO: {fileID: 0}
-  padlock: {fileID: 0}
+  padlockGO: {fileID: 2343361830243556503, guid: 66f12d690c25c5347bbeb76e13aa2523, type: 3}
+  combo: 
+  onUnlock:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InteractableDoor, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

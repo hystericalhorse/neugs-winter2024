@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
 		{
 			direction = movement.Cardinalize(ExtensionMethods.Axis.Vertical);
 
-			Debug.Log(direction);
+			//Debug.Log(direction);
 
 			animator.SetBool("FaceUp", movement.y > 0);
 			animator.SetBool("FaceRight", movement.x >= 0);

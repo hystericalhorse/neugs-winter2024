@@ -68,6 +68,8 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		controls.Player.Interact.performed -= Next;
 		controls.Disable();
 		controls = null;
+
+		currentShot.onShotEnd?.Invoke();
 	}
 
 	public IEnumerator TryDisplayText(string line, float textSpeed = 0.05f)
@@ -155,10 +157,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		}
 	}
 
-	public void Next(InputAction.CallbackContext context)
-	{
-		OnNext();
-	}
+	public void Next(InputAction.CallbackContext context) => OnNext();
 
 	[ContextMenu("Next")]
 	public void OnNext()
