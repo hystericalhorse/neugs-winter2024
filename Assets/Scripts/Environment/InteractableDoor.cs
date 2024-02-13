@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableDoor : MonoBehaviour, Interactable, Door
 {
@@ -10,12 +11,18 @@ public class InteractableDoor : MonoBehaviour, Interactable, Door
 	[Space]
     [SerializeField] Transform targetTransform;
 	[SerializeField] bool transition = true;
+	[Space]
+	[SerializeField] UnityEvent lockedInteraction;
 
 	public void OnInteract()
     {
         if (!Locked)
         {
 			Thru(transition);
+		}
+		else
+		{
+			lockedInteraction?.Invoke();
 		}
     }
 

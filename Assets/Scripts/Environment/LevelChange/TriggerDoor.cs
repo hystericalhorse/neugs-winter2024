@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Moves the player to a new level.
 public class TriggerDoor : MonoBehaviour, Door
@@ -12,6 +13,8 @@ public class TriggerDoor : MonoBehaviour, Door
     [Space]
     [SerializeField] Transform targetTransform;
 	[SerializeField] bool transition = true;
+	[Space]
+	[SerializeField] UnityEvent lockedInteraction;
 
 	public void Start()
 	{
@@ -24,6 +27,10 @@ public class TriggerDoor : MonoBehaviour, Door
 		if (!Locked)
 		{
 			Thru(transition);
+		}
+		else
+		{
+			lockedInteraction?.Invoke();
 		}
 		
 	}

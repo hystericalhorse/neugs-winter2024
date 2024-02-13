@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using static UnityEditor.Rendering.FilterWindow;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] Flashlight flashlight;
 
 	Vector2 movement = Vector2.zero;
+	Vector2 lastMovement = Vector2.zero;
 	Vector2 direction = Vector2.zero;
 	bool sprinting;
 
@@ -63,7 +65,8 @@ public class PlayerController : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		
+		lastMovement = movement;
+		UpdateDirection();
 	}
 
 	private void OnDestroy()
@@ -130,7 +133,6 @@ public class PlayerController : MonoBehaviour
 
 	public void DeregisterControls() => actions.Clear();
 
-	
 	#endregion
 
 	#region Controls
@@ -141,33 +143,33 @@ public class PlayerController : MonoBehaviour
 
 		if (movement.magnitude != 0)
 		{
-			if (movement.normalized.x > movement.normalized.y)
-			{
-				if (movement.normalized.x > 0)
-					direction = Vector2.right;
-				else
-					direction = Vector2.left;
-			}
-			else
-			{
-				if (movement.normalized.y > 0)
-					direction = Vector2.up;
-				else
-					direction = Vector2.down;
-			}
-
-			flashlight.transform.localPosition = ((Vector3) movement.normalized * 0.5f) + centerY;
+			flashlight.transform.localPosition = ((Vector3)movement.normalized * 0.5f) + centerY;
 			flashlight.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI, -Vector3.forward);
 		}
 	}
 
+	public void UpdateDirection()
+	{
+		if (movement.magnitude > 0)
+		{
+			direction = movement.Cardinalize(ExtensionMethods.Axis.Horizontal);
+			Debug.Log(direction);
+
+			animator.SetBool("FaceUp", movement.y > 0);
+			animator.SetBool("FaceRight", movement.x >= 0);
+		}
+			
+	}
+
 	public void Interact(InputAction.CallbackContext context)
 	{
-		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 1, 0, direction, 1);
+		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 0.5f, 0, direction, 1);
+		ExtDebug.DrawBoxCastBox(transform.position, Vector2.one * 0.25f, Quaternion.identity, direction, 1, Color.blue);
 			
 		foreach (var hit in hits)
 		{
-			Debug.DrawRay(hit.point, Vector3.up, Color.red, 5.0f);
+			Debug.DrawRay(hit.point, Vector3.up * 0.1f, Color.red, 5.0f);
+			Debug.DrawRay(hit.point, Vector3.right * 0.1f, Color.red, 5.0f);
 
 			if (hit.collider == null) continue;
 			if (hit.transform.gameObject.GetComponent<Interactable>() != null)
@@ -200,33 +202,7 @@ public class PlayerController : MonoBehaviour
 	public void Animate()
 	{
 		if (animator == null) return;
-
 		
-		if(direction == Vector2.up)
-		{
-			animator.SetBool("FaceUp", true);
-            animator.SetBool("FaceRight", false);
-			
-        }
-        if (direction == Vector2.down)
-        {
-            animator.SetBool("FaceRight", false);
-            animator.SetBool("FaceUp", false);
-			
-        }
-        if (direction == Vector2.right)
-        {
-            animator.SetBool("FaceRight", true);
-            animator.SetBool("FaceUp", false);
-			
-        }
-        if (direction == Vector2.left)
-        {
-            animator.SetBool("FaceUp", false);
-            animator.SetBool("FaceRight", false);
-			
-			
-        }
         //AudioManager.instance.PauseSounds();
         animator.SetFloat("XSpeed", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("YSpeed", Mathf.Abs(rb.velocity.y));

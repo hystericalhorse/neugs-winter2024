@@ -13,7 +13,6 @@ public class Flashlight : MonoBehaviour
 	private void Start()
 	{
 		light = gameObject.GetComponent<Light2D>();
-        //Hitbox = gameObject.GetComponent<PolygonCollider2D>();
 	}
 
 	void Update()
