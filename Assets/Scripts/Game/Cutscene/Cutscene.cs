@@ -16,7 +16,7 @@ public class Shot
 	public Sprite rightCharacterImage = null;
 
 	public List<string> shotScript = new();
-	public string narrator;
+	public string narrator = string.Empty;
 	public bool silent = false;
 	public string[] textSounds = { };
 

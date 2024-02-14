@@ -12,8 +12,13 @@ public class CutscenePlayer : MonoBehaviour, Interactable
 		CutsceneManager.instance.StartCutscene(cutscene);
     }
 
-    public void AddSHot(Shot shot = default)
+    public void AddShot(Shot shot = default)
     {
         cutscene.Add(shot);
     }
+
+    public void ClearShots()
+    {
+		cutscene.Clear();
+	}
 }

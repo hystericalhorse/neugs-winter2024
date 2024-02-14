@@ -85,7 +85,9 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		{
 			try
 			{
-				(dialogueTextbox.GetComponent<TextMeshProUGUI>() ?? dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>()).text = line.Substring(0, currentLineIndex + 1);
+
+				(dialogueTextbox.GetComponent<TextMeshProUGUI>() ?? dialogueTextbox.GetComponentInChildren<TextMeshProUGUI>()).text =
+					(line.Length > 0) ? line.Substring(0, currentLineIndex + 1) : line;
 
 				if (!currentShot.silent)
 					if (currentShot.textSounds.Length <= 0 || !AudioManager.instance.PlaySound(currentShot.textSounds.GetRandom()))
