@@ -81,6 +81,7 @@ public class AdvancedCutscenePlayer : MonoBehaviour, Interactable
 	public virtual void OnInteract()
 	{
 		if (hasPlayed && playOnce) return;
+		//if (hasPlayed == true) return;
 
 		if (PlayIf())
 		{
