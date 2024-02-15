@@ -7,7 +7,7 @@ public class GenerateCodeScript : MonoBehaviour, Interactable
     //Used to generate the code for the padlock puzzle, apply this to any object that needs to generate a code from 0 - 9999
     //Unoptimized :( currently needs to be attached to the object that genrates the code and needs that object to be refenced to the padlock/ whatever you need to enter the code into
     //Feel free to adjust as you see fit please leave comments on what you changed and how it now workd :D
-    float code;
+   public static float code;
     bool codeGenerated = false;
 
     private void Start()

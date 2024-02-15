@@ -27,7 +27,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     private PlayerControls playerControls;
 
   
-    [SerializeField] GenerateCodeScript answerGener;
+    GenerateCodeScript answerGener;
     
 
     private void Awake()
@@ -52,13 +52,14 @@ public class PadLockedTempController : MonoBehaviour, Interactable
         playerControls.CombinationLock.SwitchDialRight.performed += GoRight;
         playerControls.CombinationLock.SwitchDialLeflt.performed += GoLeft;
         playerControls.CombinationLock.CheckAnswer.performed += CheckAnswer;
-        playerControls.CombinationLock.Exit.performed += Deactivate;
+        playerControls.CombinationLock.Exit.performed += Exit;
+        Deactivate();
+        
     }   
 
     private void GoRight(InputAction.CallbackContext context)
     {
-        //FUCK 
-        //Yeah, fuck
+        
 
         dails[active].image.color = Color.white;
         active += 1;
@@ -71,8 +72,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     }
     private void GoLeft(InputAction.CallbackContext context)
     {
-        //FUCK 
-        //Yeah, fuck
+       
         dails[active].image.color = Color.white;
         active -= 1;
         if (active < 0)
@@ -196,19 +196,19 @@ public class PadLockedTempController : MonoBehaviour, Interactable
 
     public void Activate()
     {
-            playerControls.CombinationLock.Enable();
-            FindAnyObjectByType<PlayerController>().DeactivateControls();
-           
+        playerControls.CombinationLock.Enable();
+        FindAnyObjectByType<PlayerController>().DeactivateControls();
+        foreach(var dail in dails)
+        {
+            dail.gameObject.SetActive(true);
+        }
 
 
        
     }
-    public void Deactivate(InputAction.CallbackContext context)
+    public void Exit(InputAction.CallbackContext context)
     {
-        playerControls.CombinationLock.Disable();
-        FindAnyObjectByType<PlayerController>().ActivateControls();
-       
-      
+        Deactivate();
     }
 
     public void CheckAnswer(InputAction.CallbackContext context)
@@ -218,13 +218,25 @@ public class PadLockedTempController : MonoBehaviour, Interactable
             CheckIfCorrect();
         }
     }
+
+    private void Deactivate()
+    {
+        playerControls.CombinationLock.Disable();
+        FindAnyObjectByType<PlayerController>().ActivateControls();
+
+       foreach(var dail in dails)
+        {
+            dail.gameObject.SetActive(false);
+        }
+
+    }
    
     private void CheckIfCorrect()
     {
         float currentAnswer = GetNum();
 
         float correctAnwer;
-        correctAnwer = answerGener.ReturnCode();
+        correctAnwer = GenerateCodeScript.code;
         //very simple check to see if the generated answer equals the displayed answer filler result
         if (currentAnswer == correctAnwer)
         {

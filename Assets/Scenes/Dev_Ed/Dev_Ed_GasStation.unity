@@ -5961,6 +5961,7 @@ GameObject:
   - component: {fileID: 1279904042}
   - component: {fileID: 1279904041}
   - component: {fileID: 1279904045}
+  - component: {fileID: 1279904046}
   m_Layer: 0
   m_Name: LockedLocker
   m_TagString: Untagged
@@ -6117,6 +6118,7 @@ MonoBehaviour:
         shotScript:
         - Why is this the only one thats locked?
         - Hmmm. A combination lock. Maybe there's a code?
+        - I should check to see if I missed anything
         narrator: Ash
         silent: 0
         textSounds: []
@@ -6157,8 +6159,7 @@ MonoBehaviour:
         leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
         rightCharacterImage: {fileID: 0}
         shotScript:
-        - I still don't know what the code is
-        - Did I check every locker?
+        - Let's see if i cant give this code a try
         narrator: Ash
         silent: 0
         textSounds: []
@@ -6167,11 +6168,40 @@ MonoBehaviour:
             m_Calls: []
         onShotEnd:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1279904046}
+              m_TargetAssemblyTypeName: CallCombinationLock, Assembly-CSharp
+              m_MethodName: OnInteract
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
   currentIndex: 0
   loopScenes: 0
   playOnce: 0
   hasPlayed: 0
+--- !u!114 &1279904046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279904038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312bb65b87ce1f144b90e9589ba2e367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combinationLock: {fileID: 8345256484509867212, guid: c454b4c81328f2a44ae7afb9685c0d8a, type: 3}
+  comboGen: {fileID: 1866487856}
+  onUnlock:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1285857082
 GameObject:
   m_ObjectHideFlags: 0
@@ -8035,11 +8065,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9997073
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9987006
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
