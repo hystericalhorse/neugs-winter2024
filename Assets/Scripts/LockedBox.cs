@@ -16,9 +16,12 @@ public class LockedBox : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
-		padlockGO.SetActive(true);
 		var rotary = padlockGO.GetComponent<RotaryPadLocks>();
-		if (rotary != null) { rotary.Activate(); }
+		if (rotary != null)
+		{
+			padlockGO.SetActive(true);
+			rotary.Activate();
+		}
 		else
 		{
 			var comboLock = padlockGO.GetComponent<PadLockedTempController>();
@@ -27,23 +30,25 @@ public class LockedBox : MonoBehaviour, Interactable
 
     private void Awake()
     {
-        var go = Instantiate(padlockGO.gameObject, FindAnyObjectByType<Canvas>().transform);
+        var go = Instantiate(padlockGO, FindAnyObjectByType<Canvas>().transform);
 
         padlockGO = go;
+		padlockGO.SetActive(true);
+	}
 
-        var rotary = padlockGO.GetComponent<RotaryPadLocks>();
-        if (rotary != null)
-        {
-            rotary.onUnlock += () =>
-            {
-                onUnlock?.Invoke();
-            };
-
-            combo = rotary.GetComboInt().ToList();
-
-			padlockGO.SetActive(false);
+	private void Start()
+	{
+		var rotary = padlockGO.GetComponent<RotaryPadLocks>();
+		if (rotary != null)
+		{
+			rotary.onUnlock += () =>
+			{
+				onUnlock?.Invoke();
+			};
+			
+			combo = rotary.GetComboInt().ToList();
 		}
-    }
+	}
 
 	[ContextMenu("Unlock")]
 	public void Unlock()

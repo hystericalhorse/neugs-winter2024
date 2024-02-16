@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0.1f, 10)] float SprintAnimationSpeed = 2f;
     Rigidbody2D rb;
 	PlayerControls controls;
+	public bool HasActiveControls;
 	
 	[SerializeField] Flashlight flashlight;
 
@@ -106,11 +107,13 @@ public class PlayerController : MonoBehaviour
 	public void ActivateControls()
 	{
 		foreach (var kvp in actions) kvp.Value.Enable();
+		HasActiveControls = true;
 	}
 
 	public void DeactivateControls()
 	{
 		foreach (var kvp in actions) kvp.Value.Disable();
+		HasActiveControls = false;
 	}
 
 	public void UnassignControls()

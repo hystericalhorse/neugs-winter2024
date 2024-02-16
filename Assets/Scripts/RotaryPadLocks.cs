@@ -40,23 +40,23 @@ public class RotaryPadLocks : MonoBehaviour
 
     private void Awake()
     {
-        playerControls ??= new();
-        dial ??= new();
-        animator.speed = 0;
+		playerControls ??= new();
+		dial ??= new();
+		animator.speed = 0;
 
 		pieces = GetComponentsInChildren<Transform>();
-        GenerateRandomCombo();
+		GenerateRandomCombo();
+	}
 
-    }
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
-        playerControls.RotaryLock.Rotation.performed += LockController;
-        playerControls.RotaryLock.Rotation.started += ToggleLock;
-        playerControls.RotaryLock.Rotation.canceled += ToggleLock;
-        playerControls.RotaryLock.SpeedUp.started += SpeedUp;
-        playerControls.RotaryLock.SpeedUp.canceled += SpeedUp;
-        playerControls.RotaryLock.Exit.performed += Exit;
+		playerControls.RotaryLock.Rotation.performed += LockController;
+		playerControls.RotaryLock.Rotation.started += ToggleLock;
+		playerControls.RotaryLock.Rotation.canceled += ToggleLock;
+		playerControls.RotaryLock.SpeedUp.started += SpeedUp;
+		playerControls.RotaryLock.SpeedUp.canceled += SpeedUp;
+		playerControls.RotaryLock.Exit.performed += Exit;
 
 		//playerControls.RotaryLock.Rotation. += LockController;
 		Deactivate();
@@ -66,6 +66,10 @@ public class RotaryPadLocks : MonoBehaviour
     [System.Obsolete]
     void LateUpdate()
     {
+        if (!isActiveAndEnabled) return;
+        if (PlayerManager.instance.playerController.HasActiveControls)
+            PlayerManager.instance.playerController.DeactivateControls();
+
         var tempDir = direction;
         //Only allow player to interact with the lock if the lock is actually locked
         if (holding && (dial.rotation.z != currentRotation) && locked) 
@@ -76,8 +80,6 @@ public class RotaryPadLocks : MonoBehaviour
             dial.Rotate(rotation);
             currentNumber = (short)Mathf.RoundToInt((dial.localEulerAngles.z) / 9);
 
-            
-            
             direction = (currentRotation >= 0);
 
             if (direction != tempDir) 
