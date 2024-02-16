@@ -108,26 +108,46 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 
 	public void TryDisplayShot(Shot shot)
 	{
-		if (shotImage) shotImage.sprite = null;
-		if (leftCharacterImage) leftCharacterImage.sprite = null;
-		if (rightCharacterImage) rightCharacterImage.sprite = null;
-
-		if (shot.shotImage != null && shotImage != null)
+		if (shotImage != null)
 		{
-			shotImage.sprite = shot.shotImage;
-			shotImage.gameObject.RecursiveSetActive(true);
+			if (shot.shotImage != null)
+			{
+				shotImage.sprite = shot.shotImage;
+				shotImage.gameObject.RecursiveSetActive(true);
+			}
+			else
+			{
+				shotImage.sprite = null;
+				shotImage.gameObject.RecursiveSetActive(false);
+			}
 		}
 
-		if (shot.leftCharacterImage != null && leftCharacterImage != null)
+		if (leftCharacterImage != null)
 		{
-			leftCharacterImage.sprite = shot.leftCharacterImage;
-			leftCharacterImage.gameObject.RecursiveSetActive(true);
+			if (shot.leftCharacterImage != null)
+			{
+				leftCharacterImage.sprite = shot.leftCharacterImage;
+				leftCharacterImage.gameObject.RecursiveSetActive(true);
+			}
+			else
+			{
+				leftCharacterImage.sprite = null;
+				leftCharacterImage.gameObject.RecursiveSetActive(false);
+			}
 		}
 
-		if (shot.rightCharacterImage != null && rightCharacterImage != null)
+		if (rightCharacterImage != null)
 		{
-			rightCharacterImage.sprite = shot.rightCharacterImage;
-			rightCharacterImage.gameObject.RecursiveSetActive(true);
+			if (shot.rightCharacterImage != null)
+			{
+				rightCharacterImage.sprite = shot.rightCharacterImage;
+				rightCharacterImage.gameObject.RecursiveSetActive(true);
+			}
+			else
+			{
+				rightCharacterImage.sprite = null;
+				rightCharacterImage.gameObject.RecursiveSetActive(false);
+			}
 		}
 
 		currentScriptIndex = 0;
