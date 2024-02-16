@@ -15,14 +15,13 @@ public class Level : MonoBehaviour
 	{
 		// M.A.D.
 		if (FindObjectOfType<Level>() != this) Destroy(gameObject);
-		AudioManager.instance.PlaySound("HouseAmbience");
 
 		if (DefaultTransform == null) DefaultTransform = transform;
 	}
 
 	private void Start()
 	{
-		
+		LevelManager.instance.LoadLevel();
 	}
 
 	public LevelData ExtractData()

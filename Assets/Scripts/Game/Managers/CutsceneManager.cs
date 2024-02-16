@@ -41,7 +41,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		controls.Enable();
 
 		//PlayerManager.instance.TogglePlayerController(false);
-		PlayerManager.instance.playerController.DeactivateControls();
+		PlayerManager.instance.GetPlayerController().DeactivateControls();
 
 		isPlaying = true;
 		currentShot = currentCutscene.Dequeue();
@@ -63,7 +63,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		narratorTextbox?.RecursiveSetActive(false);
 
 		//PlayerManager.instance.TogglePlayerController(true);
-		PlayerManager.instance.playerController.ActivateControls();
+		PlayerManager.instance.GetPlayerController().ActivateControls();
 
 		controls.Player.Interact.performed -= Next;
 		controls.Disable();

@@ -10,16 +10,12 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 	private void Awake()
 	{
 		Set(this);
-
-
 	}
 	private void OnDestroy() => Release();
 
 	private void Start()
 	{
-#if DEBUG
-		gameData = new();
-#endif
+
 	}
 
 	public void StartNewSession()

@@ -8,11 +8,11 @@ public class PlayerAnimationHandler : MonoBehaviour
 
 	public void SetBool(bool b)
     {
-        PlayerManager.instance.playerController.GetComponent<Animator>().SetBool(targetName, b);
+        PlayerManager.instance.GetPlayerController().GetComponent<Animator>().SetBool(targetName, b);
     }
 
 	public void SetFloat(float f)
 	{
-		PlayerManager.instance.playerController.GetComponent<Animator>().SetFloat(targetName, f);
+		PlayerManager.instance.GetPlayerController().GetComponent<Animator>().SetFloat(targetName, f);
 	}
 }

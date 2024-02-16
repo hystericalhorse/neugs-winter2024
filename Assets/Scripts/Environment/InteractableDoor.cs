@@ -35,14 +35,14 @@ public class InteractableDoor : MonoBehaviour, Interactable, Door
 			var ts = FindAnyObjectByType<TransitionScreen>();
 
 			ts.onTransitionBegin.AddListener(() => {
-				PlayerManager.instance.playerController.DeactivateControls();
+				PlayerManager.instance.GetPlayerController().DeactivateControls();
 				PlayerManager.instance.GetCameraController().Pause();
 				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
 			});
 
 			ts.onTransitionEnd.AddListener(() => {
 				PlayerManager.instance.GetCameraController().Unpause();
-				PlayerManager.instance.playerController.ActivateControls();
+				PlayerManager.instance.GetPlayerController().ActivateControls();
 
 				targetRoom?.OnEnterRoom();
 			});

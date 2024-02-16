@@ -67,8 +67,8 @@ public class RotaryPadLocks : MonoBehaviour
     void LateUpdate()
     {
         if (!isActiveAndEnabled) return;
-        if (PlayerManager.instance.playerController.HasActiveControls)
-            PlayerManager.instance.playerController.DeactivateControls();
+        if (PlayerManager.instance.GetPlayerController().HasActiveControls)
+            PlayerManager.instance.GetPlayerController().DeactivateControls();
 
         var tempDir = direction;
         //Only allow player to interact with the lock if the lock is actually locked

@@ -16,13 +16,6 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 
 	private void Start()
 	{
-#if DEBUG
-		LoadLevel();
-#endif
-	}
-
-	public void LevelsInit()
-	{
 
 	}
 

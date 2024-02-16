@@ -3,9 +3,10 @@ using System;
 
 public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 {
-	[SerializeField] GameObject playerPawn;
-	public PlayerController playerController;
-	public CameraController cameraController;
+	[SerializeField] GameObject playerPrefab;
+	[SerializeField] GameObject cameraPrefab;
+	private PlayerController playerController;
+	private CameraController cameraController;
 
 	private void Awake()
 	{
@@ -16,9 +17,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 
 	private void Start()
 	{
-#if DEBUG
-		GetPlayerController();
-#endif
+
 	}
 
 	public void PlacePlayerController(Vector2 position)
@@ -37,7 +36,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 	public PlayerController GetPlayerController()
 	{
 		playerController ??= FindAnyObjectByType<PlayerController>()
-			?? Instantiate(playerPawn).GetComponent<PlayerController>();
+			?? Instantiate(playerPrefab).GetComponent<PlayerController>();
 
 		return playerController;
 	}
@@ -45,7 +44,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 	public CameraController GetCameraController()
 	{
 		cameraController ??= FindAnyObjectByType<CameraController>()
-			?? Camera.main.gameObject.AddComponent<CameraController>();
+			?? Instantiate(cameraPrefab).GetComponent<CameraController>();
 
 		return cameraController;
 	}

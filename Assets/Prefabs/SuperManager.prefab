@@ -64,9 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72d177ca01101942a24ac7b49ddac08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPawn: {fileID: 3504480937074480171, guid: b1b47e15661a97e448895534050a20ce, type: 3}
-  playerController: {fileID: 0}
-  cameraController: {fileID: 0}
+  playerPrefab: {fileID: 3504480937074480171, guid: b1b47e15661a97e448895534050a20ce, type: 3}
+  cameraPrefab: {fileID: 1624854164306027706, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
 --- !u!114 &3437735441822643309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,17 +80,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 24300002, guid: 2726b2c288b63d64798313522f85c011, type: 2}
   sounds:
-  - name: ambience
-    source: {fileID: 0}
-    clip: {fileID: 8300000, guid: 74e60dc1e5b158c45aa3eeef3d7b3107, type: 3}
-    volume: 0.25
-    pitch: 0.5
-    loop: 0
   - name: Footsteps
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 26e2c8209c7475c408336057ac4975d6, type: 3}
-    volume: 1
-    pitch: 0.5
+    volume: 0.005
+    pitch: 1
     loop: 0
   - name: Flashlight
     source: {fileID: 0}
@@ -108,7 +101,7 @@ MonoBehaviour:
   - name: Padlock
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 82ba18b941c7f164e895fc5f2ee534e9, type: 3}
-    volume: 0.05
+    volume: 0.25
     pitch: 1
     loop: 0
   - name: Doorslam
@@ -117,11 +110,29 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-  - name: typewriter
+  - name: NarrativeSpeech1
     source: {fileID: 0}
-    clip: {fileID: 8300000, guid: 9867a194f4b16ba468fabfd0cbf7537f, type: 3}
-    volume: 0.1
-    pitch: 0.5
+    clip: {fileID: 8300000, guid: 8bc5294f33da69641acbd5677faedbf0, type: 3}
+    volume: 0.4
+    pitch: 0.241
+    loop: 0
+  - name: NarrativeSpeech2
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 2b9b9818d7d320544ad38a02cb350498, type: 3}
+    volume: 0.4
+    pitch: 0.339
+    loop: 0
+  - name: NarrativeSpeech3
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 286b39694b8c5c24ba0a1e7b235f616f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+  - name: NarrativeSpeech4
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: c02cd258822872147852f602aa6f9d02, type: 3}
+    volume: 0.422
+    pitch: 1
     loop: 0
   music: []
 --- !u!114 &52393877073830651
@@ -154,7 +165,7 @@ MonoBehaviour:
   rightCharacterImage: {fileID: 0}
   narratorTextbox: {fileID: 324313255920064070}
   dialogueTextbox: {fileID: 4234550551992550842}
-  defaultTextSound: typewriter
+  defaultTextSound: NarrativeSpeech1
 --- !u!114 &1875141416267767967
 MonoBehaviour:
   m_ObjectHideFlags: 0
