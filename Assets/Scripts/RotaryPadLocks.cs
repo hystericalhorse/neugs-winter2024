@@ -146,7 +146,7 @@ public class RotaryPadLocks : MonoBehaviour
     public void Activate()
     {
         playerControls.RotaryLock.Enable();
-        FindAnyObjectByType<PlayerController>().DeactivateControls();
+        FindAnyObjectByType<PlayerController>()?.DeactivateControls();
 
         //im tired don't kill me plz
         foreach (var piece in pieces)
@@ -157,7 +157,7 @@ public class RotaryPadLocks : MonoBehaviour
     public void Deactivate()
     {
         playerControls.RotaryLock.Disable();
-        FindAnyObjectByType<PlayerController>().ActivateControls();
+        FindAnyObjectByType<PlayerController>()?.ActivateControls();
 
         foreach (var piece in pieces)
         {
