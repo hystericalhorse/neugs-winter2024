@@ -46,6 +46,13 @@ public class RotaryPadLocks : MonoBehaviour
 
 		pieces = GetComponentsInChildren<Transform>();
 		GenerateRandomCombo();
+
+		playerControls.RotaryLock.Disable();
+
+		foreach (var piece in pieces)
+		{
+			piece.gameObject.SetActive(false);
+		}
 	}
 
 	// Start is called before the first frame update
@@ -59,7 +66,7 @@ public class RotaryPadLocks : MonoBehaviour
 		playerControls.RotaryLock.Exit.performed += Exit;
 
 		//playerControls.RotaryLock.Rotation. += LockController;
-		Deactivate();
+		//Deactivate();
 	}
 
     // Update is called once per frame
@@ -146,7 +153,7 @@ public class RotaryPadLocks : MonoBehaviour
     public void Activate()
     {
         playerControls.RotaryLock.Enable();
-        FindAnyObjectByType<PlayerController>()?.DeactivateControls();
+		PlayerManager.instance.GetPlayerController()?.DeactivateControls();
 
         //im tired don't kill me plz
         foreach (var piece in pieces)
@@ -157,7 +164,7 @@ public class RotaryPadLocks : MonoBehaviour
     public void Deactivate()
     {
         playerControls.RotaryLock.Disable();
-        FindAnyObjectByType<PlayerController>()?.ActivateControls();
+		PlayerManager.instance.GetPlayerController()?.ActivateControls();
 
         foreach (var piece in pieces)
         {
