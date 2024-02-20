@@ -11,6 +11,7 @@ public class CallCombinationLock : MonoBehaviour, Interactable
     [SerializeField] private GameObject combinationLock;
     //[SerializeField] private RotaryPadLocks padlock;
     [SerializeField] private GenerateCodeScript comboGen;
+    [SerializeField] private TriggerDoor lockedDoor;
     //[SerializeField] private RotaryPadLocks padlock;
     [SerializeField] UnityEvent onUnlock;
 
@@ -45,8 +46,7 @@ public class CallCombinationLock : MonoBehaviour, Interactable
 	[ContextMenu("Unlock")]
 	public void Unlock()
     {
-		var rotary = combinationLock.GetComponent<RotaryPadLocks>();
-        rotary.onUnlock?.Invoke();
+		lockedDoor.Unlock();
 	}
 
     

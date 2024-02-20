@@ -5,15 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PadLockedTempController : MonoBehaviour, Interactable
+public class PadLockedTempController : MonoBehaviour
 
 {
-    //I fully expect this file to get reworked
-    //It is a very clunky way to get the actual functionality of the padlock to work though it ignores everything evolving the current movement system
-    //I don't like how its done at all tbh
-
-    //This is currently intended to be for every single individual padlock chain (so if there are four numbers each number will have this script)
-    
     float currentThousandNum = 0;
     float currentHundredNum = 0;
     float currentTenNum = 0;
@@ -222,7 +216,7 @@ public class PadLockedTempController : MonoBehaviour, Interactable
     private void Deactivate()
     {
         playerControls.CombinationLock.Disable();
-        FindAnyObjectByType<PlayerController>().ActivateControls();
+        FindAnyObjectByType<PlayerController>()?.ActivateControls();
 
        foreach(var dail in dails)
         {
@@ -231,37 +225,18 @@ public class PadLockedTempController : MonoBehaviour, Interactable
 
     }
    
-    private void CheckIfCorrect()
+    public void CheckIfCorrect()
     {
         float currentAnswer = GetNum();
-
+      
         float correctAnwer;
         correctAnwer = GenerateCodeScript.code;
-        //very simple check to see if the generated answer equals the displayed answer filler result
+       
+      
         if (currentAnswer == correctAnwer)
         {
-            Debug.Log("Yippie!");
-           
-        }
-        else
-        {
-            Debug.Log("Womp womp");
-           
+            FindObjectOfType<TriggerDoor>()?.Unlock();
         }
     }
 
-    public void OnInteract()
-    {
-        if (answerGener.CheckedAnswer())
-        {
-            //This check ensures Ash checks the location where the answer is told to her before she can input anything.
-            Activate();
-        }
-        else
-        {
-            //This part would be what happens when Ash says that she needs to check the whiteboard or whatever it is she needs to look at.
-            Debug.Log("Ash needs to check the code first >:(");
-        }
-
-    }
 }

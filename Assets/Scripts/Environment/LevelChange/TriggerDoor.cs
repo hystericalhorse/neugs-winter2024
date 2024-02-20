@@ -79,5 +79,6 @@ public class TriggerDoor : MonoBehaviour, Door
 	public void Unlock()
 	{
 		Locked = false;
+	
 	}
 }
