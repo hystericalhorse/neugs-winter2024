@@ -106,12 +106,14 @@ public class PlayerController : MonoBehaviour
 	public void ActivateControls()
 	{
 		foreach (var kvp in actions) kvp.Value.Enable();
+		controls.Enable();
 		HasActiveControls = true;
 	}
 
 	public void DeactivateControls()
 	{
 		foreach (var kvp in actions) kvp.Value.Disable();
+		controls.Disable();
 		HasActiveControls = false;
 	}
 

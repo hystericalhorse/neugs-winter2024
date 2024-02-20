@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7940451898972213892}
   - component: {fileID: -3667065090574169482}
   - component: {fileID: 2849768158170939066}
-  - component: {fileID: 6964905583083023286}
-  - component: {fileID: -3348471221840809921}
   - component: {fileID: 203428293909699125}
+  - component: {fileID: -3348471221840809921}
+  - component: {fileID: 2084654562096654454}
   m_Layer: 0
   m_Name: Toolbox
   m_TagString: Untagged
@@ -35,7 +35,8 @@ Transform:
   m_LocalPosition: {x: -1.102, y: 0.0028915405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1197166304580628946}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4383680331181249343
@@ -176,78 +177,10 @@ MonoBehaviour:
   - {x: 0.265625, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1500
+  m_InstanceId: 70342
   m_LocalBounds:
     m_Center: {x: 0, y: 0.28125, z: 0}
     m_Extent: {x: 0.265625, y: 0.28125, z: 0}
---- !u!114 &6964905583083023286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598632681821555615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99cba771e00d3cb45a43edc42e18346d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 203428293909699125}
-        m_TargetAssemblyTypeName: AdvancedCutscenePlayer, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -3348471221840809921}
-        m_TargetAssemblyTypeName: LockedBox, Assembly-CSharp
-        m_MethodName: OnInteract
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-3348471221840809921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598632681821555615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 131304d5ab362ee42825853ca49ed386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  padlockGO: {fileID: 2343361830243556503, guid: 66f12d690c25c5347bbeb76e13aa2523, type: 3}
-  combo: 
-  onUnlock:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InteractableDoor, Assembly-CSharp
-        m_MethodName: Unlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &203428293909699125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,8 +214,135 @@ MonoBehaviour:
             m_Calls: []
         onShotEnd:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: -3348471221840809921}
+              m_TargetAssemblyTypeName: LockedBox, Assembly-CSharp
+              m_MethodName: OnInteract
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+            - m_Target: {fileID: 2084654562096654454}
+              m_TargetAssemblyTypeName: ScriptDestroyer, Assembly-CSharp
+              m_MethodName: Destroy
+              m_Mode: 2
+              m_Arguments:
+                m_ObjectArgument: {fileID: 203428293909699125}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
   currentIndex: 0
   loopScenes: 0
   playOnce: 1
   hasPlayed: 0
+--- !u!114 &-3348471221840809921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598632681821555615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131304d5ab362ee42825853ca49ed386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padlockGO: {fileID: 2343361830243556503, guid: 66f12d690c25c5347bbeb76e13aa2523, type: 3}
+  combo: 
+  onUnlock:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InteractableDoor, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2084654562096654454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598632681821555615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b8d77e9806b7b4db620e0a5b985bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &3239351815247684417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 55888692799657743}
+    m_Modifications:
+    - target: {fileID: 2348238638039904776, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_Name
+      value: ParticleObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.309
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+--- !u!4 &1197166304580628946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4353095423846683283, guid: b23f772a3b620904cb6d6657b244dd50, type: 3}
+  m_PrefabInstance: {fileID: 3239351815247684417}
+  m_PrefabAsset: {fileID: 0}
