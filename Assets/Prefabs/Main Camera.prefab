@@ -64,9 +64,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0.9997073
-    height: 0.9987006
+    y: 0.7556818
+    width: 0.50958467
+    height: 0.5097656
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -157,7 +157,8 @@ MonoBehaviour:
   Center: {x: 0, y: 0}
   fixedCamera: 0
   followSpeed: 4.48
-  zoom: 0
+  targetZoom: 1
+  zoomSpeed: 0.5
 --- !u!114 &4140206600923975466
 MonoBehaviour:
   m_ObjectHideFlags: 0

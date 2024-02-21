@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 [RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
@@ -12,13 +13,18 @@ public class CameraController : MonoBehaviour
 
 	[SerializeField] public bool fixedCamera = false;
 	[SerializeField,Range(1,10)] float followSpeed = 10;
-	[SerializeField] float zoom; //TODO Implementation
+	[Range(0, 4)] float zoom = 1;
+	[SerializeField, Range(0, 4)] public float targetZoom;
+	public float zoomSpeed = 0.1f;
+
+	private PixelPerfectCamera ppc;
 
 	private bool paused;
 
 	private void Awake()
 	{
 		Camera = GetComponent<Camera>();
+		ppc ??= GetComponent<PixelPerfectCamera>();
 	}
 
 	private void Start()
@@ -41,6 +47,12 @@ public class CameraController : MonoBehaviour
 
 		if (fixedCamera)
 			transform.position = pos;
+
+		if (zoom != targetZoom)
+		{
+			zoom = Mathf.Lerp(zoom, targetZoom, Time.deltaTime * zoomSpeed);
+			ppc.assetsPPU = (int) (zoom * 64);
+		}
 	}
 
 	private void FixedUpdate()
