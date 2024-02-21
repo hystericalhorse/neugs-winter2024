@@ -25,6 +25,7 @@ public class LightsOutPuzzleLight : MonoBehaviour, Interactable
         foreach(var neighbor in neighbors) 
         {
             neighbor.ToggleLightOn();
+            neighbor.puzzle.InitializeMap();
         }
         puzzle.CheckSolved();
     }
