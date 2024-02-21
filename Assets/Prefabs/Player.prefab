@@ -142,6 +142,7 @@ MonoBehaviour:
   animator: {fileID: 7627273898388890884}
   WalkAnimationSpeed: 0.32
   SprintAnimationSpeed: 0.71
+  HasActiveControls: 0
   flashlight: {fileID: 6325039488727949031}
 --- !u!50 &2140223452602964879
 Rigidbody2D:
@@ -356,8 +357,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1577675235
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: -1736942679, guid: b25fc327cae47a841924b8df18fdb847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -398,7 +399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3504480937074480171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d711cec434f5b4344bba30c595a2a8e6, type: 3}
   m_Name: 
@@ -477,7 +478,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 0.5
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf1d96f6a113b4d49b
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf87f587311d96f6a1
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -559,7 +560,7 @@ MonoBehaviour:
   m_Intensity: 0.05
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 618edd12000000001d96f6a113b4d49b
+  m_ApplyToSortingLayers: 618edd120000000013b4d49b1d96f6a1
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
