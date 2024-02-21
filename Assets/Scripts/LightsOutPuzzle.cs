@@ -5,19 +5,25 @@ using System.Linq;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class LightsOutPuzzle : MonoBehaviour
 {
     [SerializeField] private List<LightsOutPuzzleLight> puzzleLights;
+
     private bool isSolved = false;
+    // INSTANTIATE LIGHTS MINIMAP
+    public List<UnityEngine.UI.Image> imgLights; // Get images
+    private Color onColor, offColor; // Change color of image
     [SerializeField] private GameObject tempExplosion;
 
     // Start is called before the first frame update
     void Start()
     {
         puzzleLights = GetComponentsInChildren<LightsOutPuzzleLight>().ToList();
+        //imgLights = new List<UnityEngine.UI.Image>(puzzleLights.Count);
         SetPuzzle();
-        InitializeMap();
+        
     }
     public void SetPuzzle()
     {
@@ -26,7 +32,7 @@ public class LightsOutPuzzle : MonoBehaviour
         int index = rand.Next(0, puzzleLights.Count);
         if (puzzleLights.Count != 0)
         {
-           
+
             //at least one light will be turned on
             puzzleLights[index].SetLightOn(true);
             int count = rand.Next(0, (int)(puzzleLights.Count * 0.5f));
@@ -37,15 +43,16 @@ public class LightsOutPuzzle : MonoBehaviour
                 puzzleLights[index].SetLightOn(true);
             }
         }
+        InitializeMap();
     }
     public void ResetPuzzle()
     {
-        InitializeMap();
         foreach (var puzzleLight in puzzleLights)
         {
-            
+
             puzzleLight.SetLightOn(false);
         }
+        InitializeMap();
     }
     public bool CheckSolved()
     {
@@ -64,32 +71,33 @@ public class LightsOutPuzzle : MonoBehaviour
     }
 
 
-    // INSTANTIATE LIGHTS MINIMAP
-    public List<Image> imgLights; // Get images
-    private Color onColor, offColor; // Change color of image
+
 
     public void InitializeMap()
     {
-        int index = 0; // Index of the arrays
-        onColor = new Color(255, 238, 109);
+        // int index = 0; // Index of the arrays
+        onColor = new Color(255, 255, 0);
         offColor = new Color(0, 0, 0);
         // Iterate through the Lists of lights
         // When we iterate we have to make it match the index of the images
 
-
-        for (index = 0; index < puzzleLights.Count(); index++)
+        for (int index = 0; index < puzzleLights.Count(); index++)
         {
             if ((puzzleLights[index].GetOn() == true))
             {
-                Debug.Log("Current Index: " + puzzleLights[index] + " imgLights: " + imgLights[index]);
+                Debug.Log("Current Index: " + puzzleLights[index].GetOn() + " LIGHT INDEX : " + puzzleLights[index] + " imgLights: " + imgLights[index]);
                 imgLights[index].color = onColor;
             }
-            else imgLights[index].color = offColor;
+            else if ((puzzleLights[index].GetOn() == false))
+            {
+                imgLights[index].color = offColor;
+
+            }
+
+
+
+
         }
 
-
-
-
     }
-
 }
