@@ -42129,7 +42129,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 460175733}
-        m_TargetAssemblyTypeName: AdvancedCutscenePlayer, Assembly-CSharp
+        m_TargetAssemblyTypeName: CutscenePlayer, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -42164,35 +42164,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 460175730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exceptions: []
   cutscene:
-  - conditions: []
-    cutscene:
-      timeline:
-      - shotImage: {fileID: 0}
-        leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
-        rightCharacterImage: {fileID: 0}
-        shotScript:
-        - Huuh
-        - Where is everyone...
-        - I should see if anyone is here
-        narrator: Ashley
-        silent: 0
-        textSounds:
-        - 
-        onShotBegin:
-          m_PersistentCalls:
-            m_Calls: []
-        onShotEnd:
-          m_PersistentCalls:
-            m_Calls: []
-  currentIndex: 0
-  loopScenes: 0
-  playOnce: 0
-  hasPlayed: 0
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - Where is everyone?
+      - Why is it dark?
+      - I should check for people
+      narrator: Ashley
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!1 &467334050
 GameObject:
   m_ObjectHideFlags: 0
