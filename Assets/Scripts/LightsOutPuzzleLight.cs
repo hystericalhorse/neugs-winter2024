@@ -21,6 +21,7 @@ public class LightsOutPuzzleLight : MonoBehaviour, Interactable
     public void OnInteract()
     {
         ToggleLightOn();
+        puzzle.InitializeMap();
         foreach(var neighbor in neighbors) 
         {
             neighbor.ToggleLightOn();
