@@ -16,12 +16,14 @@ public class LightsOutPuzzle : MonoBehaviour
     public List<UnityEngine.UI.Image> imgLights; // Get images
     private Color onColor, offColor; // Change color of image
     [SerializeField] private GameObject tempExplosion;
+    [SerializeField] private Cutscene cutscenePlayer;
+    [SerializeField] private Canvas miniCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
         puzzleLights = GetComponentsInChildren<LightsOutPuzzleLight>().ToList();
-        //imgLights = new List<UnityEngine.UI.Image>(puzzleLights.Count);
+        
         SetPuzzle();
         
     }
@@ -67,7 +69,10 @@ public class LightsOutPuzzle : MonoBehaviour
 
     public void TestSolve()
     {
-        Instantiate(tempExplosion);
+        //Instantiate(tempExplosion);
+        CutsceneManager.instance.StartCutscene(cutscenePlayer);
+        Destroy(miniCanvas);
+        
     }
 
 
