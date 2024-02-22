@@ -4150,7 +4150,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4171,7 +4171,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4179,6 +4179,69 @@ TextureImporter:
       bones: []
       spriteID: 5f1edcd3303657943b1702b698475007
       internalID: -2113275476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OutsideTileMap_194
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59aebc2f7a07ea409bc2ec94c088636
+      internalID: -714625729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OutsideTileMap_195
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e48f1aabcc279848bd6df358a2aad88
+      internalID: -1462744901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OutsideTileMap_196
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a78e5c3e3a2feb4486909b9d5e44cc0
+      internalID: 685551577
       vertices: []
       indices: 
       edges: []
@@ -4300,6 +4363,9 @@ TextureImporter:
       OutsideTileMap_191: 1612060855
       OutsideTileMap_192: 243681894
       OutsideTileMap_193: -2113275476
+      OutsideTileMap_194: -714625729
+      OutsideTileMap_195: -1462744901
+      OutsideTileMap_196: 685551577
       OutsideTileMap_2: 596131309
       OutsideTileMap_20: 593452351
       OutsideTileMap_21: 823956867
