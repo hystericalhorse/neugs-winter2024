@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SceneChange : MonoBehaviour, Interactable
 {
     [SerializeField] public string sceneName;
+    [SerializeField] private SceneManager sceneManager;
 
     public void OnInteract()
     {
         // SceneManager.instance.onSceneLoaded += () => {
-        //  PlayerManager.instance.TogglePlayerController();
-        //    };
-
-        FindObjectOfType<TransitionScreen>().onTransitionEnd.AddListener(() => { SceneManager.instance.LoadScene(sceneName); });
-        FindObjectOfType<TransitionScreen>().Transition(0);
+        // PlayerManager.instance.TogglePlayerController();
+        //  };
+        sceneManager.LoadScene(sceneName);
+       // FindObjectOfType<TransitionScreen>().onTransitionEnd.AddListener(() => { SceneManager.instance.LoadScene(sceneName); });
+        //FindObjectOfType<TransitionScreen>().Transition(0);
 
 	}
+
+    
+    
 
     public void OnApplicationQuit()
     {
