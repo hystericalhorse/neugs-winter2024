@@ -647,7 +647,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""25b30722-667e-450b-9eb4-0879d3fb9297"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

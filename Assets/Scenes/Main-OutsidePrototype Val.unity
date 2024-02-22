@@ -51547,10 +51547,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 243802473}
     m_Modifications:
-    - target: {fileID: 52393877073830651, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
-      propertyPath: LevelData.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3891510089128150636, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.2818754
@@ -51591,21 +51587,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6475907885204701400, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
-      propertyPath: playerPawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6475907885204701400, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
-      propertyPath: cameraController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6475907885204701400, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8466386900169142742, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
       propertyPath: m_Name
       value: SuperManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466386900169142742, guid: 4bf029f83806ae14b9230645c1a6e0ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52741,6 +52729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1624854164306027706, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2151962110366386841, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52795,15 +52787,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.3576998
       objectReference: {fileID: 0}
     - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.4487043
       objectReference: {fileID: 0}
     - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.34649122
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
