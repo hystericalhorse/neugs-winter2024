@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 	[SerializeField] GameObject cameraPrefab;
 	private PlayerController playerController;
 	private CameraController cameraController;
+	public ObjectiveList objectiveList;
 
 	private void Awake()
 	{
@@ -17,7 +18,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 
 	private void Start()
 	{
-
+		
 	}
 
 	public void PlacePlayerController(Vector2 position)
