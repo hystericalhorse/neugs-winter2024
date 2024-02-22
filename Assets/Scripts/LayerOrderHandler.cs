@@ -35,10 +35,7 @@ public class LayerOrderHandler : MonoBehaviour
 
     public void CalculateOrder()
     {
-        if (transform.position.y <= PlayerManager.instance.GetPlayerController().transform.position.y)
-			GetComponent<SpriteRenderer>().sortingLayerName = "FrontOfPlayer";
-        else
-			GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+        
 
 		renderList ??= GetComponents<Renderer>().ToList();
         if (parentOrder != null) { layerOrder = parentOrder.layerOrder + 1; }
@@ -53,14 +50,17 @@ public class LayerOrderHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (transform.position.y <= PlayerManager.instance.GetPlayerController().transform.position.y)
-			GetComponent<SpriteRenderer>().sortingLayerName = "FrontOfPlayer";
-		else
-			GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+		if (PlayerManager.instance.GetPlayerController() != null)
+		{
+			if (transform.position.y <= PlayerManager.instance.GetPlayerController().transform.position.y)
+				GetComponent<SpriteRenderer>().sortingLayerName = "FrontOfPlayer";
+			else
+				GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+		}
 
 		//if (!isStatic)
-        //{
-        //    CalculateOrder();
-        //}
-    }
+		//{
+		//    CalculateOrder();
+		//}
+	}
 }
