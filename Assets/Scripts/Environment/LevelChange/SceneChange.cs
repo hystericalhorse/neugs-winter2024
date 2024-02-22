@@ -13,14 +13,18 @@ public class SceneChange : MonoBehaviour, Interactable
         // SceneManager.instance.onSceneLoaded += () => {
         // PlayerManager.instance.TogglePlayerController();
         //  };
-        sceneManager.LoadScene(sceneName);
-       // FindObjectOfType<TransitionScreen>().onTransitionEnd.AddListener(() => { SceneManager.instance.LoadScene(sceneName); });
-        //FindObjectOfType<TransitionScreen>().Transition(0);
+        FindObjectOfType<TransitionScreen>().onTransitionEnd.AddListener(() => { SceneManager.instance.LoadScene(sceneName); });
+        FindObjectOfType<TransitionScreen>().Transition(0);
 
 	}
 
-    
-    
+    public void TitleScreenChange()
+    {
+        sceneManager.LoadScene(sceneName);
+        
+    }
+
+
 
     public void OnApplicationQuit()
     {

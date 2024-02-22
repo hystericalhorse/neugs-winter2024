@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: UI Menu
+  sceneManager: {fileID: 0}
 --- !u!1 &330445273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1191501707}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: OnInteract
+        m_MethodName: TitleScreenChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1182,6 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: House_Main
+  sceneManager: {fileID: 758472194}
 --- !u!1 &1376710022
 GameObject:
   m_ObjectHideFlags: 0
