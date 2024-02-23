@@ -10,8 +10,9 @@ public class ObjectiveList : MonoBehaviour
 
     //[SerializeField] List<string> objectivesList;
     [SerializeField] List<(string, string)> objectives;
-    List<TextMeshProUGUI> textBoxes = new();
+    List<TMP_Text> textBoxes = new();
     [SerializeField] private TextMeshProUGUI textBox;
+	[SerializeField] private TMP_Text titleBox;
     // Start is called before the first frame update
 
 
@@ -29,99 +30,83 @@ public class ObjectiveList : MonoBehaviour
     void Awake()
     {
         objectives = new();
-        UpdateText();
-    }
-
-    //public void RemoveCompletedObjective()
-    //{
-    //    if (objectivesList.Count != 0)
-    //    {
-    //        objectivesList.RemoveAt(0);
-    //        Debug.Log(objectivesList.Count);
-    //        UpdateText();
-    //    }
-    //}
-
-    private void UpdateText()
-    {
-		gameObject.SetActive(objectives.Count() > 0);
-
-        textBox.text = string.Empty;
-        foreach (var objective in objectives)
-        {
-            textBox.text += "\n" + objective.Item2;
-		}
-
-        //if(objectivesList.Count == 0) 
-        //{
-        //    textBoxs[0].text = "You completed all your tasks";
-        //    textBoxs[1].text = "";
-        //    textBoxs[2].text = "";
-        //}
-        //
-        //if(objectivesList.Count >= textBoxs.Count)
-        //{
-        //    for (int i = 0; i < textBoxs.Count; i++)
-        //    {
-        //        textBoxs[i].text = objectivesList[i];
-        //    }
-        //}
-        //else
-        //{
-        //    int difference = textBoxs.Count - objectivesList.Count;
-        //    if(difference == 1)
-        //    {
-        //        for(int i = 0;i < textBoxs.Count -1;i++)
-        //        {
-        //            textBoxs[i].text = objectivesList[i];
-        //        }
-        //        textBoxs[2].text = "";
-        //    }
-        //    if(difference == 2)
-        //    {
-        //        textBoxs[0].text = objectivesList[0];
-        //        textBoxs[1].text = "";
-        //        textBoxs[2].text = "";
-        //    }
-        //}
+		gameObject.RecursiveSetActive(false);
     }
 
     private IEnumerator CrossOutText(string name)
     {
-        int index = 0;
-        foreach (var objective in objectives)
+		for (int i = 0; i < objectives.Count; i++)
         {
-			if (objective.Item1 == name)
+			if (objectives[i].Item1 == name)
 			{
-                int indexB = index + objective.Item2.Length;
+				var textBox = textBoxes[i];
+				var text = textBox.text;
+                int indexB = text.Length;
 
-                string textB = textBox.text.Substring(0, index);
-				string text = textBox.text.Substring(index,objective.Item2.Length);
-                string textA = textBox.text.Substring(indexB, textBox.text.Length - (textB.Length + text.Length));
-
-				for (var i = index; i < text.Length; i++)
+				for (var index = 0; index < indexB; index++)
 				{
-					textBox.text = textB + "<s>" + text.Substring(0, i) + "</s>" + text.Substring(i, text.Length - i) + textA;
-
-					yield return new WaitForSeconds(0.1f);
+					textBox.text = "<s>" + text.Substring(0, index) + "</s>" + text.Substring(index, text.Length - (index + 1));
+					yield return new WaitForFixedUpdate();
 				}
 
-				objectives.Remove(objective);
+				objectives.Remove(objectives[i]);
+				yield return new WaitForSeconds(1f);
+				StartCoroutine(FadeOut(textBox));
                 break;
 			}
-
-			index += objective.Item2.Length - 1;
 		}	
 
         yield return new WaitForSeconds(0.5f);
-		UpdateText();
+		UpdateObjectives();
     }
 
-    public void AddObjective(string name, string description)
+    private void UpdateObjectives()
     {
-        objectives.Add((name,description));
+		if (!gameObject.activeSelf && objectives.Count() > 0)
+        {
+			gameObject.RecursiveSetActive(true);
+			StartCoroutine(FadeIn());
+            return;
+		}
+	}
 
-        UpdateText();
+    private IEnumerator FadeOut(TMP_Text textBox)
+    {
+		while (textBox.text.Length > 2)
+		{
+			textBox.text = textBox.text.Substring(1, textBox.text.Length - 1);
+			yield return new WaitForFixedUpdate();
+		}
+
+		textBoxes.Remove(textBox);
+		Destroy(textBox.gameObject);
+
+		if (textBoxes.Count < 1)
+			gameObject.RecursiveSetActive(false); //TODO: Animate Hide List
+		else
+			UpdateTextboxes();
+	}
+
+    private IEnumerator FadeIn()
+    {
+		yield return new WaitForFixedUpdate();
+	}
+
+	public void AddObjective(string name, string description)
+    {
+		gameObject.RecursiveSetActive(true);
+
+		objectives.Add((name,description));
+		var textbox = Instantiate(textBox.gameObject).GetComponent<TMP_Text>();
+		textbox.rectTransform.SetParent(gameObject.GetComponent<RectTransform>());
+
+		textbox.text = description;
+
+		textBoxes.Add(textbox);
+
+		UpdateTextboxes();
+
+		UpdateObjectives();
     }
 
     public void RemoveObjective(string name)
@@ -129,21 +114,17 @@ public class ObjectiveList : MonoBehaviour
         StartCoroutine(CrossOutText(name));
 	}
 
-    [ContextMenu("StrikeThat")]
-    public void TestStrikeThrough()
-    {
-        RemoveObjective("explore");
-    }
-
-    //public void NewObjective(string description)
-    //{
-	//	objectivesList.Add(description);
-    //    UpdateText();
-	//}
-
-    //public void RemoveObjective(int index)
-    //{
-	//	objectivesList.RemoveAt(index);
-    //    UpdateText();
-	//}
+	private void UpdateTextboxes()
+	{
+		var tbRect = textBoxes[0].rectTransform.rect;
+		tbRect.width = gameObject.GetComponent<RectTransform>().rect.width;
+		textBoxes[0].rectTransform.localScale = Vector3.one;
+		textBoxes[0].rectTransform.anchoredPosition = titleBox.rectTransform.anchoredPosition - (Vector2.up * titleBox.rectTransform.rect.height);
+		for (int i = 1; i < textBoxes.Count; i++)
+		{
+			var tbRect_ = textBoxes[i].rectTransform.rect;
+			textBoxes[i].rectTransform.localScale = Vector3.one;
+			textBoxes[i].rectTransform.anchoredPosition = textBoxes[i - 1].rectTransform.anchoredPosition - (Vector2.up * textBoxes[i - 1].rectTransform.rect.height);
+		}
+	}
 }
