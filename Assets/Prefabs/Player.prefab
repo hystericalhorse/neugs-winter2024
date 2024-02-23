@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 7480832826925462356}
   - component: {fileID: 7627273898388890884}
   - component: {fileID: -5584046985104064650}
+  - component: {fileID: 2085373072254928132}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -357,8 +358,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1577675235
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -1736942679, guid: b25fc327cae47a841924b8df18fdb847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3504480937074480171}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d711cec434f5b4344bba30c595a2a8e6, type: 3}
   m_Name: 
@@ -407,6 +408,38 @@ MonoBehaviour:
   isStatic: 0
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &2085373072254928132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504480937074480171}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf9fb3b4801d96f6a187f5873113b4d49be3b7e1d4
+  m_ShapePath:
+  - {x: -0.16339278, y: -0.014286339, z: 0}
+  - {x: -0.19464707, y: 0.9808645, z: 0}
+  - {x: 0.13377225, y: 1.0992671, z: 0}
+  - {x: 0.269814, y: 1.0379169, z: 0}
+  - {x: 0.23195863, y: 0.61869854, z: 0}
+  - {x: 0.17509103, y: -0.006646037, z: 0}
+  m_ShapePathHash: -362660539
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 45836
+  m_LocalBounds:
+    m_Center: {x: 0.03758347, y: 0.5424904, z: 0}
+    m_Extent: {x: 0.23223054, y: 0.55677676, z: 0}
 --- !u!1 &3770767722459160792
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665000263762377190}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.639, y: 0.63564944, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -166,10 +166,28 @@ MonoBehaviour:
       rightCharacterImage: {fileID: 0}
       shotScript:
       - It's an unbranded coffee maker.
-      narrator: '*****'
+      narrator: 
+      silent: 0
+      textSounds:
+      - 
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
     - shotImage: {fileID: 0}
       leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
       rightCharacterImage: {fileID: 0}
       shotScript:
       - I could really go for some coffee
       narrator: Ashley
+      silent: 0
+      textSounds:
+      - 
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
