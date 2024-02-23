@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class MannequinAI : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriterenderer;
     [SerializeField] private float Speed = 10;
-
+    [SerializeField] private SceneManager sceneManager;
     private GameObject Player;
     private Rigidbody2D RB;
     private Animator Anim;
@@ -44,10 +45,27 @@ public class MannequinAI : MonoBehaviour {
         //animator.SetFloat("Speed", Velocity.magnitude);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("GET SHIT ON YOU FUCKING CRAP GRAHHH");
+            sceneManager.LoadScene("Dev_Ed_GameOver");
+
+            
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision) {
+      
         if (collision.gameObject.CompareTag("PlayerDetection")) {
             Detected = true;
             Anim.speed = 0;
+        }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("YOU JUST GOT MURDERED!");
         }
     }
 
