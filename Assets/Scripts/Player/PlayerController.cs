@@ -187,10 +187,10 @@ public class PlayerController : MonoBehaviour
 			var ints = flashlight.GetComponent<Light2D>().GetLayers();
 			//Debug.Log(ints.ToString());
 
-			if (direction == Vector2.up)
-				flashlight.GetComponent<Light2D>().SetLayers(noplayer);
-			else
-				flashlight.GetComponent<Light2D>().SetLayers(withplayer);
+			//if (direction == Vector2.up)
+			//	flashlight.GetComponent<Light2D>().SetLayers(noplayer);
+			//else
+			//	flashlight.GetComponent<Light2D>().SetLayers(withplayer);
 
 			animator.SetBool("FaceUp", movement.y > 0);
 			animator.SetBool("FaceRight", movement.x >= 0);

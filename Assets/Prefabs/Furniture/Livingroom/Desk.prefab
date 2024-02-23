@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6864563540956792172}
   - component: {fileID: 6832605134556453747}
   - component: {fileID: 5881969829481986813}
+  - component: {fileID: 4924671577935419890}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -27,11 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6038993443477360974}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00045776367, y: -0.42000008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4350713786915446985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6864563540956792172
@@ -146,3 +148,113 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &4924671577935419890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038993443477360974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - It's a desk pushed up against the wall.
+      - Its surface is spotless and smells slightly of lemons
+      narrator: 
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - ...
+      - I wish my desk was this clean.
+      narrator: Ashley
+      silent: 0
+      textSounds:
+      - NarrativeSpeech1
+      - NarrativeSpeech2
+      - NarrativeSpeech3
+      - NarrativeSpeech4
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!1001 &5980330862317126992
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5762612175620014436}
+    m_Modifications:
+    - target: {fileID: 138248943644003086, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_Name
+      value: ParticleInteractable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0009735599
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+--- !u!4 &4350713786915446985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7971002010634462617, guid: 537ad6cd86b841b43a27b8d0fc096f5a, type: 3}
+  m_PrefabInstance: {fileID: 5980330862317126992}
+  m_PrefabAsset: {fileID: 0}

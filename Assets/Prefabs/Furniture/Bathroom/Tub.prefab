@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 9062347354274769250}
   - component: {fileID: 6052846628310476128}
   - component: {fileID: 1412829885263314938}
+  - component: {fileID: 5853252241436160578}
+  - component: {fileID: 7031302264956957022}
   m_Layer: 0
   m_Name: Tub
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087734782425981992}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.40999985, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -177,7 +179,133 @@ MonoBehaviour:
   - {x: 0.515625, y: 0, z: 0}
   m_ShapePathHash: -415063811
   m_Mesh: {fileID: 0}
-  m_InstanceId: -41472
+  m_InstanceId: -4618
   m_LocalBounds:
     m_Center: {x: -0.00000023841858, y: 0.3281331, z: 0}
     m_Extent: {x: 0.51562524, y: 0.3281331, z: 0}
+--- !u!114 &5853252241436160578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087734782425981992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exceptions: []
+  cutscene:
+  - conditions: []
+    cutscene:
+      timeline:
+      - shotImage: {fileID: 21300000, guid: 592a1de0fdfdc804dbe310fdab900364, type: 3}
+        leftCharacterImage: {fileID: 0}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - The bathtub is running
+        - There is...something coming out of it
+        - ...
+        narrator: 
+        silent: 0
+        textSounds: []
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+      - shotImage: {fileID: 21300000, guid: 592a1de0fdfdc804dbe310fdab900364, type: 3}
+        leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - What is that coming out of it??
+        - It smells like gasoline and lemons
+        narrator: Ashley
+        silent: 0
+        textSounds:
+        - NarrativeSpeech1
+        - NarrativeSpeech2
+        - NarrativeSpeech3
+        - NarrativeSpeech4
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 7031302264956957022}
+              m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+              m_MethodName: PlaySound
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      - shotImage: {fileID: 21300000, guid: 592a1de0fdfdc804dbe310fdab900364, type: 3}
+        leftCharacterImage: {fileID: -460082068, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - WHAT WAS THAT??
+        - Sounds like it came from downstairs
+        narrator: Ashley
+        silent: 0
+        textSounds:
+        - NarrativeSpeech1
+        - NarrativeSpeech2
+        - NarrativeSpeech3
+        - NarrativeSpeech4
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 0}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+            - m_Target: {fileID: 0}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+  currentIndex: 0
+  loopScenes: 0
+  playOnce: 1
+  hasPlayed: 0
+--- !u!114 &7031302264956957022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087734782425981992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4804bb2e6df4a44817bb32c6d9c4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundName: Doorslam
+  volume: 0.4
+  pitch: 0.5

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 749765150596641278}
   - component: {fileID: 4521446952283732342}
   - component: {fileID: 8151600186444779037}
+  - component: {fileID: 2556219003119370193}
   m_Layer: 0
   m_Name: Couch
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4294633360808014595}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8569994, y: -1.2666788, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -197,7 +198,73 @@ MonoBehaviour:
   - {x: -0.6093723, y: 0, z: 0}
   m_ShapePathHash: 2023658256
   m_Mesh: {fileID: 0}
-  m_InstanceId: -46214
+  m_InstanceId: -5100
   m_LocalBounds:
     m_Center: {x: 0.00000029802322, y: 0.328125, z: 0}
     m_Extent: {x: 0.6406245, y: 0.328125, z: 0}
+--- !u!114 &2556219003119370193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294633360808014595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exceptions: []
+  cutscene:
+  - conditions: []
+    cutscene:
+      timeline:
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 0}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - 'You rummage through the '
+        narrator: 
+        silent: 0
+        textSounds: []
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+  - conditions: []
+    cutscene:
+      timeline:
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 0}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - You rummage through the cushions and find... nothing.
+        narrator: 
+        silent: 0
+        textSounds: []
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - Damn.
+        narrator: Ashley
+        silent: 0
+        textSounds: []
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+  currentIndex: 0
+  loopScenes: 0
+  playOnce: 0
+  hasPlayed: 0
