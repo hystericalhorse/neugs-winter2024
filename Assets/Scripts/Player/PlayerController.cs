@@ -1,18 +1,27 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField, Range(1,10)] float WalkSpeed = 5f;
+	[SerializeField, Range(1,5)] float WalkSpeed = 2.5f;
+	[SerializeField, Range(1,5)] float SprintSpeed = 5f;
 	[SerializeField] bool defaultSprint = false;
-
+	[SerializeField] private Animator animator;
+    [SerializeField, Range(0.1f, 10)] float WalkAnimationSpeed = 1f;
+    [SerializeField, Range(0.1f, 10)] float SprintAnimationSpeed = 2f;
     Rigidbody2D rb;
 	PlayerControls controls;
+	public bool HasActiveControls;
+	
+	[SerializeField] Flashlight flashlight;
 
 	Vector2 movement = Vector2.zero;
+	Vector2 lastMovement = Vector2.zero;
+	Vector2 direction = Vector2.zero;
 	bool sprinting;
 
 	#region MonoBehaviour
@@ -20,6 +29,8 @@ public class PlayerController : MonoBehaviour
 	{
 		rb ??= gameObject.GetComponent<Rigidbody2D>();
 		rb.gravityScale = 0f;
+
+		flashlight ??= gameObject.GetComponent<Flashlight>();
 
 		controls ??= new();
 
@@ -38,22 +49,24 @@ public class PlayerController : MonoBehaviour
 
 	private void OnDisable()
 	{
+		rb.velocity = Vector2.zero;
+		animator.speed = 0;
 		DeactivateControls();
 	}
 
 	private void Update()
 	{
-		//TODO
+		Animate();
 	}
 
 	private void FixedUpdate()
 	{
-		rb.velocity = movement.normalized * (sprinting ? 2 * WalkSpeed : WalkSpeed);
+		rb.velocity = movement.normalized * (sprinting ? SprintSpeed : WalkSpeed);
 	}
 
 	private void LateUpdate()
 	{
-		//TODO
+		lastMovement = movement;
 	}
 
 	private void OnDestroy()
@@ -71,6 +84,7 @@ public class PlayerController : MonoBehaviour
 		actions.Add("interact",controls.Player.Interact);
 		actions.Add("pause",controls.Player.Pause);
 		actions.Add("sprint",controls.Player.Sprint);
+		actions.Add("flashlight",controls.Player.Flashlight);
 
 		AssignControls();
 	}
@@ -86,16 +100,22 @@ public class PlayerController : MonoBehaviour
 
 		actions["sprint"].started += Sprint;
 		actions["sprint"].canceled += Sprint;
-	}
+
+        actions["flashlight"].performed += Flashlight;
+    }
 
 	public void ActivateControls()
 	{
 		foreach (var kvp in actions) kvp.Value.Enable();
+		controls.Enable();
+		HasActiveControls = true;
 	}
 
 	public void DeactivateControls()
 	{
 		foreach (var kvp in actions) kvp.Value.Disable();
+		controls.Disable();
+		HasActiveControls = false;
 	}
 
 	public void UnassignControls()
@@ -110,24 +130,84 @@ public class PlayerController : MonoBehaviour
 		actions["sprint"].started -= Sprint;
 		actions["sprint"].canceled -= Sprint;
 
+		actions["flashlight"].performed -= Flashlight;
+
 		DeregisterControls();
 	}
 
 	public void DeregisterControls() => actions.Clear();
+
 	#endregion
 
 	#region Controls
+	private readonly Vector3 centerY = new(0,0.5f,0);
 	public void Move(InputAction.CallbackContext context)
 	{
 		movement = context.ReadValue<Vector2>();
+
+		if (movement.magnitude > 0)
+		{
+			UpdateDirection();
+
+			flashlight.transform.localPosition = ((Vector3)movement.normalized * 0.5f) + centerY;
+			flashlight.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI, -Vector3.forward);
+		}
+	}
+	//[0] = 316509793
+	//[1] = 1531769671
+	//[2] = 0
+	//[3] = -1342338525
+	//[4] = -1577675235
+	//[5] = -1680559085
+	//[6] = 830993799
+	//[7] = -723404829
+	readonly int[] noplayer =
+	{
+		316509793,
+		1531769671,
+		0,
+		-1342338525,
+		830993799
+	};
+	readonly int[] withplayer =
+	{
+		316509793,
+		1531769671,
+		0,
+		-1342338525,
+		-1577675235,
+		830993799
+	};
+	public void UpdateDirection()
+	{
+		if (movement.magnitude > 0)
+		{
+			direction = movement.Cardinalize(ExtensionMethods.Axis.Vertical);
+
+			var ints = flashlight.GetComponent<Light2D>().GetLayers();
+			//Debug.Log(ints.ToString());
+
+			//if (direction == Vector2.up)
+			//	flashlight.GetComponent<Light2D>().SetLayers(noplayer);
+			//else
+			//	flashlight.GetComponent<Light2D>().SetLayers(withplayer);
+
+			animator.SetBool("FaceUp", movement.y > 0);
+			animator.SetBool("FaceRight", movement.x >= 0);
+		}
+			
 	}
 
 	public void Interact(InputAction.CallbackContext context)
 	{
-		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 2, 0, Vector2.up, 0);
-		
+		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 0.5f, 0, direction, 1);
+		ExtDebug.DrawBoxCastBox(transform.position, Vector2.one * 0.25f, Quaternion.identity, direction, 1, Color.blue);
+			
 		foreach (var hit in hits)
 		{
+			Debug.DrawRay(hit.point, Vector3.up * 0.1f, Color.red, 5.0f);
+			Debug.DrawRay(hit.point, Vector3.right * 0.1f, Color.red, 5.0f);
+
 			if (hit.collider == null) continue;
 			if (hit.transform.gameObject.GetComponent<Interactable>() != null)
 			{
@@ -148,5 +228,28 @@ public class PlayerController : MonoBehaviour
 		//TODO
 	}
 
+	public void Flashlight(InputAction.CallbackContext context)
+	{
+		flashlight.Toggle();
+	}
+
 	#endregion
+
+	#region Animator
+	public void Animate()
+	{
+		if (animator == null) return;
+		
+        //AudioManager.instance.PauseSounds();
+        animator.SetFloat("XSpeed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("YSpeed", Mathf.Abs(rb.velocity.y));
+
+		animator.speed = (sprinting? SprintAnimationSpeed : WalkAnimationSpeed);
+    }
+	//public void PlayFootstep() { AudioManager.instance.PlaySound("Footsteps"); }
+    
+    #endregion
+
+
+
 }

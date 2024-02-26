@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Flashlight"",
+                    ""type"": ""Button"",
+                    ""id"": ""0efc3468-db7d-415a-8103-149b3ae85bd3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -273,6 +282,378 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4238298-e9d4-4446-a369-b66034b38dbf"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48e03db2-3489-4115-9853-55080a7b5cc5"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flashlight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52c13f47-8726-414e-a282-fc5a42b0ace4"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flashlight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""RotaryLock"",
+            ""id"": ""9f790a2b-3f27-47e8-a183-19cc5f8db056"",
+            ""actions"": [
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""16b20d8f-7260-4b5c-9922-7de01c19b6e9"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SpeedUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""15c1a3d2-561d-4081-bd85-f598997e1e9e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c134ec1-acb7-4069-8475-e09bd1b20c7f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Left/Right_WASD"",
+                    ""id"": ""e63886b2-d690-45cc-b53e-ec0283592def"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""6ba25dad-2842-4d29-a34b-382bf3b60b36"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1587fdc3-f388-49bb-a3f6-a5ce62342615"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right_ARRW"",
+                    ""id"": ""90a237f3-d13a-4c97-b523-1e3b590acee3"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""3ec1402c-2522-4866-8f8d-b5e454f31a0c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1a8cebbc-7c27-4056-937b-a18bf623080d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left/Right_DPAD"",
+                    ""id"": ""b47b0960-e6f0-47e9-83a7-9b4e9766e854"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""95d3b9a7-f861-4a9b-80cf-0ba78149b95e"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b411694d-e1cf-43f5-ab9f-8452ded9a5fe"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""605a6970-fc07-4402-a615-5f250a163c08"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04b94b03-4419-47f0-aa2b-007ce6c56735"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpeedUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""962db2cb-6e54-4fe6-91d6-99307bdc329d"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""CombinationLock"",
+            ""id"": ""57f4d894-0ccf-4f81-827a-99196bfc8b2f"",
+            ""actions"": [
+                {
+                    ""name"": ""Switch Dial Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc91d546-b0b7-4d00-b623-7eff4419ab53"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Change Number Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""6688d274-78fb-400f-ba54-83ef2b1aa47b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""cde571c0-e731-452e-aabf-1fab9066f466"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Change Number Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""d22d6220-455d-4bbd-8a31-454dfd2bdd49"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch Dial Leflt"",
+                    ""type"": ""Button"",
+                    ""id"": ""1279e743-a74b-49e9-b270-ee3e41251190"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CheckAnswer"",
+                    ""type"": ""Button"",
+                    ""id"": ""01af20d0-fbb5-42e3-84a3-2da78188a6dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""746b4153-389f-420d-b6f1-3c197433da32"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Dial Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6ec86e5-6136-4ae9-96d6-c6f4f9df4e22"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Dial Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f90a718c-8490-46b1-b567-88d68ec41bc1"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change Number Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7951a4b-0a10-4f21-a5d7-4964e334bf83"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change Number Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""736bd9ba-a544-45ba-a396-499739b13fa9"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bef3064a-150a-4fd1-bc22-107d4471282f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change Number Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1f1855b-56e9-444d-989a-ab0fee4caca6"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change Number Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2415c6b4-0a46-4c7e-a37b-805086d86469"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Dial Leflt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e4af6af-20bb-4d26-9e0c-2e966db6b6b6"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Dial Leflt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25b30722-667e-450b-9eb4-0879d3fb9297"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CheckAnswer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -285,6 +666,20 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Flashlight = m_Player.FindAction("Flashlight", throwIfNotFound: true);
+        // RotaryLock
+        m_RotaryLock = asset.FindActionMap("RotaryLock", throwIfNotFound: true);
+        m_RotaryLock_Rotation = m_RotaryLock.FindAction("Rotation", throwIfNotFound: true);
+        m_RotaryLock_SpeedUp = m_RotaryLock.FindAction("SpeedUp", throwIfNotFound: true);
+        m_RotaryLock_Exit = m_RotaryLock.FindAction("Exit", throwIfNotFound: true);
+        // CombinationLock
+        m_CombinationLock = asset.FindActionMap("CombinationLock", throwIfNotFound: true);
+        m_CombinationLock_SwitchDialRight = m_CombinationLock.FindAction("Switch Dial Right", throwIfNotFound: true);
+        m_CombinationLock_ChangeNumberUp = m_CombinationLock.FindAction("Change Number Up", throwIfNotFound: true);
+        m_CombinationLock_Exit = m_CombinationLock.FindAction("Exit", throwIfNotFound: true);
+        m_CombinationLock_ChangeNumberDown = m_CombinationLock.FindAction("Change Number Down", throwIfNotFound: true);
+        m_CombinationLock_SwitchDialLeflt = m_CombinationLock.FindAction("Switch Dial Leflt", throwIfNotFound: true);
+        m_CombinationLock_CheckAnswer = m_CombinationLock.FindAction("CheckAnswer", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -350,6 +745,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Flashlight;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -358,6 +754,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @Flashlight => m_Wrapper.m_Player_Flashlight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -379,6 +776,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @Flashlight.started += instance.OnFlashlight;
+            @Flashlight.performed += instance.OnFlashlight;
+            @Flashlight.canceled += instance.OnFlashlight;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -395,6 +795,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @Flashlight.started -= instance.OnFlashlight;
+            @Flashlight.performed -= instance.OnFlashlight;
+            @Flashlight.canceled -= instance.OnFlashlight;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -412,11 +815,175 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // RotaryLock
+    private readonly InputActionMap m_RotaryLock;
+    private List<IRotaryLockActions> m_RotaryLockActionsCallbackInterfaces = new List<IRotaryLockActions>();
+    private readonly InputAction m_RotaryLock_Rotation;
+    private readonly InputAction m_RotaryLock_SpeedUp;
+    private readonly InputAction m_RotaryLock_Exit;
+    public struct RotaryLockActions
+    {
+        private @PlayerControls m_Wrapper;
+        public RotaryLockActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Rotation => m_Wrapper.m_RotaryLock_Rotation;
+        public InputAction @SpeedUp => m_Wrapper.m_RotaryLock_SpeedUp;
+        public InputAction @Exit => m_Wrapper.m_RotaryLock_Exit;
+        public InputActionMap Get() { return m_Wrapper.m_RotaryLock; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RotaryLockActions set) { return set.Get(); }
+        public void AddCallbacks(IRotaryLockActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Add(instance);
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
+            @SpeedUp.started += instance.OnSpeedUp;
+            @SpeedUp.performed += instance.OnSpeedUp;
+            @SpeedUp.canceled += instance.OnSpeedUp;
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+        }
+
+        private void UnregisterCallbacks(IRotaryLockActions instance)
+        {
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
+            @SpeedUp.started -= instance.OnSpeedUp;
+            @SpeedUp.performed -= instance.OnSpeedUp;
+            @SpeedUp.canceled -= instance.OnSpeedUp;
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+        }
+
+        public void RemoveCallbacks(IRotaryLockActions instance)
+        {
+            if (m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IRotaryLockActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RotaryLockActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RotaryLockActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public RotaryLockActions @RotaryLock => new RotaryLockActions(this);
+
+    // CombinationLock
+    private readonly InputActionMap m_CombinationLock;
+    private List<ICombinationLockActions> m_CombinationLockActionsCallbackInterfaces = new List<ICombinationLockActions>();
+    private readonly InputAction m_CombinationLock_SwitchDialRight;
+    private readonly InputAction m_CombinationLock_ChangeNumberUp;
+    private readonly InputAction m_CombinationLock_Exit;
+    private readonly InputAction m_CombinationLock_ChangeNumberDown;
+    private readonly InputAction m_CombinationLock_SwitchDialLeflt;
+    private readonly InputAction m_CombinationLock_CheckAnswer;
+    public struct CombinationLockActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CombinationLockActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SwitchDialRight => m_Wrapper.m_CombinationLock_SwitchDialRight;
+        public InputAction @ChangeNumberUp => m_Wrapper.m_CombinationLock_ChangeNumberUp;
+        public InputAction @Exit => m_Wrapper.m_CombinationLock_Exit;
+        public InputAction @ChangeNumberDown => m_Wrapper.m_CombinationLock_ChangeNumberDown;
+        public InputAction @SwitchDialLeflt => m_Wrapper.m_CombinationLock_SwitchDialLeflt;
+        public InputAction @CheckAnswer => m_Wrapper.m_CombinationLock_CheckAnswer;
+        public InputActionMap Get() { return m_Wrapper.m_CombinationLock; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CombinationLockActions set) { return set.Get(); }
+        public void AddCallbacks(ICombinationLockActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CombinationLockActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CombinationLockActionsCallbackInterfaces.Add(instance);
+            @SwitchDialRight.started += instance.OnSwitchDialRight;
+            @SwitchDialRight.performed += instance.OnSwitchDialRight;
+            @SwitchDialRight.canceled += instance.OnSwitchDialRight;
+            @ChangeNumberUp.started += instance.OnChangeNumberUp;
+            @ChangeNumberUp.performed += instance.OnChangeNumberUp;
+            @ChangeNumberUp.canceled += instance.OnChangeNumberUp;
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+            @ChangeNumberDown.started += instance.OnChangeNumberDown;
+            @ChangeNumberDown.performed += instance.OnChangeNumberDown;
+            @ChangeNumberDown.canceled += instance.OnChangeNumberDown;
+            @SwitchDialLeflt.started += instance.OnSwitchDialLeflt;
+            @SwitchDialLeflt.performed += instance.OnSwitchDialLeflt;
+            @SwitchDialLeflt.canceled += instance.OnSwitchDialLeflt;
+            @CheckAnswer.started += instance.OnCheckAnswer;
+            @CheckAnswer.performed += instance.OnCheckAnswer;
+            @CheckAnswer.canceled += instance.OnCheckAnswer;
+        }
+
+        private void UnregisterCallbacks(ICombinationLockActions instance)
+        {
+            @SwitchDialRight.started -= instance.OnSwitchDialRight;
+            @SwitchDialRight.performed -= instance.OnSwitchDialRight;
+            @SwitchDialRight.canceled -= instance.OnSwitchDialRight;
+            @ChangeNumberUp.started -= instance.OnChangeNumberUp;
+            @ChangeNumberUp.performed -= instance.OnChangeNumberUp;
+            @ChangeNumberUp.canceled -= instance.OnChangeNumberUp;
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+            @ChangeNumberDown.started -= instance.OnChangeNumberDown;
+            @ChangeNumberDown.performed -= instance.OnChangeNumberDown;
+            @ChangeNumberDown.canceled -= instance.OnChangeNumberDown;
+            @SwitchDialLeflt.started -= instance.OnSwitchDialLeflt;
+            @SwitchDialLeflt.performed -= instance.OnSwitchDialLeflt;
+            @SwitchDialLeflt.canceled -= instance.OnSwitchDialLeflt;
+            @CheckAnswer.started -= instance.OnCheckAnswer;
+            @CheckAnswer.performed -= instance.OnCheckAnswer;
+            @CheckAnswer.canceled -= instance.OnCheckAnswer;
+        }
+
+        public void RemoveCallbacks(ICombinationLockActions instance)
+        {
+            if (m_Wrapper.m_CombinationLockActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICombinationLockActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CombinationLockActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CombinationLockActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CombinationLockActions @CombinationLock => new CombinationLockActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnFlashlight(InputAction.CallbackContext context);
+    }
+    public interface IRotaryLockActions
+    {
+        void OnRotation(InputAction.CallbackContext context);
+        void OnSpeedUp(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+    }
+    public interface ICombinationLockActions
+    {
+        void OnSwitchDialRight(InputAction.CallbackContext context);
+        void OnChangeNumberUp(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnChangeNumberDown(InputAction.CallbackContext context);
+        void OnSwitchDialLeflt(InputAction.CallbackContext context);
+        void OnCheckAnswer(InputAction.CallbackContext context);
     }
 }

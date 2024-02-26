@@ -1,0 +1,800 @@
+fileFormatVersion: 2
+guid: 3d3affb2ddc324c448b7a02fecc37b02
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 2
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ParticleGlow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b646ab2c286017740bde25ed9f13abb3
+      internalID: 159459868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ffffbccef029147b02bd40701f1ee5
+      internalID: 1451218727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c97285e326b7943926ab0d374877ae
+      internalID: -1316986112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584c4b7849286a243b074483cfb1b1f0
+      internalID: 1199311750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529ca6724d593304bb57f0da9c118535
+      internalID: -3581877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32129e0917f5b64ba4fc0710be1ba61
+      internalID: 1430805828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237c3fb516637164d829e247329474d7
+      internalID: -2031700135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_7
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163e873a492e3cb4ba2700cb33f1d2c5
+      internalID: 2090969093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_8
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b389b6bcb17d39449482e5bf5a830dd
+      internalID: -596913850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_9
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f06930b5515ab4438ed11e01744ba26
+      internalID: -1747124147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc3a412fe5c46745ab0e080f84f6180
+      internalID: 768148067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb0456e6f6c7194daed5bb37d8a6428
+      internalID: 2074329412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_12
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a73607551fb72b449070466cbef4a94
+      internalID: -416919753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_13
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 813d5f434f162854db34a2002f7204b0
+      internalID: 560520479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_14
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616771b7050707e49b853dbcfbeb5b8c
+      internalID: 658617404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb6a18a00944664baeb0b52b71e266f
+      internalID: 798129465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_16
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6783b8d977a91143abe7937e2586661
+      internalID: -1497646124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_17
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d27a5a8972e73439e770ad4d5817e8
+      internalID: 2143736169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_18
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf446b6e9381bdd4d91db2168feb4335
+      internalID: -1346274097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_19
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5287a5850bc8a4a811336fe1bcde8b
+      internalID: 1225997702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b8bd719630bf546bb84d3011e5da5a
+      internalID: 1962042190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_21
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79db9f32559a254dbf66a982f654d16
+      internalID: 1135936055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_22
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71720e402cf506f4f91c8a37bf50a321
+      internalID: 631295289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_23
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc32e850492e564fb09f58789f00a46
+      internalID: -157336956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_24
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d223400f2d98c4542a97a49c0116a27a
+      internalID: 2054772425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_25
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688470e9a5accdc4bbecddaa84303b02
+      internalID: 809554683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_26
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f198c641a9fe1479f9141776180afe
+      internalID: -21699837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_27
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f14cd0a71342b74491b1d92fb07ce73
+      internalID: 1042034772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_28
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cc9e3a1c2c5584e8da66fbd6ba0f73
+      internalID: -746547658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleGlow_29
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee91715aed9e58145b336b5fbcff7ff2
+      internalID: -831907150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ParticleGlow_0: 159459868
+      ParticleGlow_1: 1451218727
+      ParticleGlow_10: 768148067
+      ParticleGlow_11: 2074329412
+      ParticleGlow_12: -416919753
+      ParticleGlow_13: 560520479
+      ParticleGlow_14: 658617404
+      ParticleGlow_15: 798129465
+      ParticleGlow_16: -1497646124
+      ParticleGlow_17: 2143736169
+      ParticleGlow_18: -1346274097
+      ParticleGlow_19: 1225997702
+      ParticleGlow_2: -1316986112
+      ParticleGlow_20: 1962042190
+      ParticleGlow_21: 1135936055
+      ParticleGlow_22: 631295289
+      ParticleGlow_23: -157336956
+      ParticleGlow_24: 2054772425
+      ParticleGlow_25: 809554683
+      ParticleGlow_26: -21699837
+      ParticleGlow_27: 1042034772
+      ParticleGlow_28: -746547658
+      ParticleGlow_29: -831907150
+      ParticleGlow_3: 1199311750
+      ParticleGlow_4: -3581877
+      ParticleGlow_5: 1430805828
+      ParticleGlow_6: -2031700135
+      ParticleGlow_7: 2090969093
+      ParticleGlow_8: -596913850
+      ParticleGlow_9: -1747124147
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
