@@ -14,7 +14,7 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 	private void Awake() => Set(this);
 	private void OnDestroy() => Release();
 
-	public IEnumerator WaitForSceneLoad(UnityEngine.AsyncOperation operation, bool fade = false)
+	public IEnumerator WaitForSceneLoad(UnityEngine.AsyncOperation operation, bool fadeIn = false)
 	{
 		sceneLoaded = false;
 
@@ -27,13 +27,16 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 
 		sceneLoaded = true;
 
-		if (onSceneLoaded is not null) onSceneLoaded();
+		if (onSceneLoaded != null) onSceneLoaded();
 		onSceneLoaded = null;
+
+		if (fadeIn)
+			StartCoroutine(FindObjectOfType<TransitionScreen>().FadeOut());
 	}
 
-	public void LoadScene(string sceneName, LoadSceneMode loadSceneMode = LoadSceneMode.Single, bool fade = false)
+	public void LoadScene(string sceneName, LoadSceneMode loadSceneMode = LoadSceneMode.Single, bool fadeIn = false)
 	{
-		StartCoroutine(WaitForSceneLoad(UnitySceneManager.LoadSceneAsync(sceneName, loadSceneMode), fade));
+		StartCoroutine(WaitForSceneLoad(UnitySceneManager.LoadSceneAsync(sceneName, loadSceneMode), fadeIn));
 	}
 
 	public void UnloadScene(string sceneName, LoadSceneMode loadSceneMode = LoadSceneMode.Single)

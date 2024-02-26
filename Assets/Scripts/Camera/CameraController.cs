@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
 	{
-		if (paused) return;
+		if (paused || TargetTransform == null) return;
 
 		pos = TargetTransform.position;
 
