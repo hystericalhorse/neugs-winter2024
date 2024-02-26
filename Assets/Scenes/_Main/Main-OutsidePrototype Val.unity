@@ -26251,7 +26251,7 @@ MonoBehaviour:
   Flags: []
   Rooms:
   - {fileID: 1590462320}
-  DefaultTransform: {fileID: 0}
+  DefaultTransform: {fileID: 1363309895}
   OnLevelLoad:
     m_PersistentCalls:
       m_Calls:
@@ -50928,6 +50928,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1363309894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363309895}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1363309895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363309894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.47, y: 5.96, z: 0.179058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1367655799
 GameObject:
   m_ObjectHideFlags: 0
@@ -52713,7 +52744,7 @@ PrefabInstance:
     - target: {fileID: 3015733357173621578, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: TargetTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9205952330516880182, guid: b1b47e15661a97e448895534050a20ce, type: 3}
     - target: {fileID: 3864098044859111688, guid: caf8654662c67c4418f9a6f16426c972, type: 3}
       propertyPath: orthographic size
       value: 2.8125
@@ -58098,7 +58129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2344409730058034405, guid: fcb802eb972ec3e4e8f7598dac4426be, type: 3}
       propertyPath: m_Name
-      value: MONSTER
+      value: MONSTER(TEST)
       objectReference: {fileID: 0}
     - target: {fileID: 2344409730058034405, guid: fcb802eb972ec3e4e8f7598dac4426be, type: 3}
       propertyPath: m_IsActive
@@ -58301,3 +58332,4 @@ SceneRoots:
   - {fileID: 1324621929}
   - {fileID: 930029963}
   - {fileID: 4728386328385708874}
+  - {fileID: 1363309895}
