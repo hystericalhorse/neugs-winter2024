@@ -9,8 +9,10 @@ public class TransitionScreen : MonoBehaviour
     [SerializeField] Image image;
 	[SerializeField] CanvasGroup canvasGroup;
 	public float transitionTime = 0f;
-	public UnityEvent onTransitionBegin;
-	public UnityEvent onTransitionEnd;
+	public UnityEvent beforeFadeIn;
+	public UnityEvent afterFadeIn;
+	public UnityEvent beforeFadeOut;
+	public UnityEvent afterFadeOut;
 
 	private void Awake()
 	{
@@ -20,20 +22,20 @@ public class TransitionScreen : MonoBehaviour
 		canvasGroup.alpha = 0;
 	}
 
-	public void Transition(float seconds = 0)
+	public void Transition(float seconds = 0, bool autoFadeOut = true)
 	{
 		StopCoroutine(FadeIn());
 		StopCoroutine(FadeOut());
 
-		StartCoroutine(FadeIn(true));
+		StartCoroutine(FadeIn(autoFadeOut));
 	}
 
-	public IEnumerator FadeIn(bool fadeOut = false)
+	public IEnumerator FadeIn(bool fadeOut = true)
 	{
 		StopCoroutine(FadeOut());
 
-		onTransitionBegin?.Invoke();
-		onTransitionBegin?.RemoveAllListeners();
+		beforeFadeIn?.Invoke();
+		beforeFadeIn?.RemoveAllListeners();
 
 		if (transitionTime <= 0)
 		{
@@ -58,6 +60,9 @@ public class TransitionScreen : MonoBehaviour
 		yield return new WaitForFixedUpdate();
 		canvasGroup.alpha = 1;
 
+		afterFadeIn?.Invoke();
+		afterFadeIn?.RemoveAllListeners();
+
 		if (fadeOut) StartCoroutine(FadeOut());
 	}
 
@@ -65,8 +70,8 @@ public class TransitionScreen : MonoBehaviour
 	{
 		StopCoroutine(FadeIn());
 
-		onTransitionEnd?.Invoke();
-		onTransitionEnd?.RemoveAllListeners();
+		beforeFadeOut?.Invoke();
+		beforeFadeOut?.RemoveAllListeners();
 
 		if (transitionTime <= 0)
 		{
@@ -91,5 +96,8 @@ public class TransitionScreen : MonoBehaviour
 		yield return new WaitForFixedUpdate();
 
 		canvasGroup.alpha = 0;
+
+		afterFadeOut?.Invoke();
+		afterFadeOut?.RemoveAllListeners();
 	}
 }

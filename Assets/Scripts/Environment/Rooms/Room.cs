@@ -18,7 +18,7 @@ public class Room : MonoBehaviour
     public void Awake()
 	{
         roomCenter = (Vector2) transform.position;
-        onEnterRoom.AddListener(SetCameraControllerCenter);
+        onEnterRoom?.AddListener(SetCameraControllerCenter);
 	}
 
     public void OnEnterRoom() => onEnterRoom?.Invoke();
@@ -26,10 +26,13 @@ public class Room : MonoBehaviour
 
     protected void SetCameraControllerCenter()
     {
-        var cam = PlayerManager.instance.GetCameraController();
-        cam.Center = roomCenter;
-        cam.Limits = RoomBounds;
-        cam.ResetController();
+        var cam = PlayerManager.instance?.GetCameraController();
+        if (cam)
+        {
+			cam.Center = roomCenter;
+			cam.Limits = RoomBounds;
+			cam.ResetController();
+		}
     }
 
 #if UNITY_EDITOR
@@ -42,8 +45,8 @@ public class Room : MonoBehaviour
 	{
 		SceneView.duringSceneGui -= OnScene;
 
-        onEnterRoom.RemoveAllListeners();
-        onExitRoom.RemoveAllListeners();
+        onEnterRoom?.RemoveAllListeners();
+        onExitRoom?.RemoveAllListeners();
 	}
 
 	private void OnScene(SceneView scene)

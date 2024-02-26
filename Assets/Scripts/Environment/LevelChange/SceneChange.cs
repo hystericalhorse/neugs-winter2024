@@ -6,39 +6,18 @@ using UnityEngine;
 public class SceneChange : MonoBehaviour, Interactable
 {
     [SerializeField] public string sceneName;
-    [SerializeField] private SceneManager sceneManager;
 
     public void OnInteract()
     {
-        // SceneManager.instance.onSceneLoaded += () => {
-        // PlayerManager.instance.TogglePlayerController();
-        //  };
-        FindObjectOfType<TransitionScreen>().onTransitionEnd.AddListener(() => { SceneManager.instance.LoadScene(sceneName); });
-        FindObjectOfType<TransitionScreen>().Transition(0);
+        FindObjectOfType<TransitionScreen>().afterFadeIn.AddListener(() => {
+			SceneManager.instance.LoadScene(sceneName, fadeIn: true);
+        });
 
+        FindObjectOfType<TransitionScreen>().Transition(0, false);
 	}
 
-    public void TitleScreenChange()
+    public void LoadScene()
     {
-        sceneManager.LoadScene(sceneName);
-        
-    }
-
-
-
-    public void OnApplicationQuit()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
-        }
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
-        Application.Quit();
-
+        SceneManager.instance.LoadScene(sceneName);
     }
 }

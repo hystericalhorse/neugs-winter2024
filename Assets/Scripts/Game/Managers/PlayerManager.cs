@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 {
@@ -36,16 +37,25 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 
 	public PlayerController GetPlayerController()
 	{
-		playerController ??= FindAnyObjectByType<PlayerController>()
-			?? Instantiate(playerPrefab).GetComponent<PlayerController>();
+		if (playerController == null)
+		{
+			playerController = FindAnyObjectByType<PlayerController>() ?? Instantiate(playerPrefab).GetComponent<PlayerController>();
+		}
 
 		return playerController;
 	}
 
 	public CameraController GetCameraController()
 	{
-		cameraController ??= FindAnyObjectByType<CameraController>()
-			?? Instantiate(cameraPrefab).GetComponent<CameraController>();
+		if (cameraController == null)
+		{
+			//cameraController = FindAnyObjectByType<Camera>().gameObject.AddComponent<CameraController>()
+			//?? Camera.main?.gameObject.AddComponent<CameraController>()
+			//?? FindAnyObjectByType<CameraController>()
+			//?? Instantiate(cameraPrefab).GetComponent<CameraController>();
+
+			cameraController = Instantiate(cameraPrefab).GetComponent<CameraController>();
+		}
 
 		return cameraController;
 	}

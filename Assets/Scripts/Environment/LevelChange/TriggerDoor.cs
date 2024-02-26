@@ -43,13 +43,13 @@ public class TriggerDoor : MonoBehaviour, Door
 		{
 			var ts = FindAnyObjectByType<TransitionScreen>();
 
-			ts.onTransitionBegin.AddListener(() => {
+			ts.beforeFadeIn.AddListener(() => {
 				PlayerManager.instance.GetPlayerController().DeactivateControls();
 				PlayerManager.instance.GetCameraController().Pause();
 				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
 			});
 
-			ts.onTransitionEnd.AddListener(() => {
+			ts.beforeFadeOut.AddListener(() => {
 				PlayerManager.instance.GetCameraController().Unpause();
 				PlayerManager.instance.GetPlayerController().ActivateControls();
 				targetRoom?.OnEnterRoom();
