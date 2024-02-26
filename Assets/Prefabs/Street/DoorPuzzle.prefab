@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3526305374049526281}
   - component: {fileID: 5344072057690611123}
   - component: {fileID: 2575376969565927521}
+  - component: {fileID: 2301641511512062873}
   m_Layer: 0
   m_Name: StreetLightSprite
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 830993799
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 3
   m_Sprite: {fileID: -1184845076, guid: 570158b559bd82e4fb16000d783503f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,6 +102,36 @@ MonoBehaviour:
   isStatic: 1
   layerOrder: 0
   parentOrder: {fileID: 0}
+--- !u!114 &2301641511512062873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244615087388916573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf9fb3b4801d96f6a187f5873113b4d49be3b7e1d4
+  m_ShapePath:
+  - {x: -0.1093297, y: 0.09378958, z: 0}
+  - {x: -0.109434605, y: 0.21907997, z: 0}
+  - {x: 0.10945749, y: 0.21955061, z: 0}
+  - {x: 0.109410286, y: 0.09372711, z: -0.000000014901161}
+  m_ShapePathHash: 645522901
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 60762
+  m_LocalBounds:
+    m_Center: {x: 0.000011444092, y: 0.15663886, z: 0}
+    m_Extent: {x: 0.10944605, y: 0.06291175, z: 0}
 --- !u!1 &3952674611557892751
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +439,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 830993799
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -100
   m_Sprite: {fileID: 1427782908, guid: 570158b559bd82e4fb16000d783503f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
