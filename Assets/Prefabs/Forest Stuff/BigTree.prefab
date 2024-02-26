@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8500641444472675151}
   - component: {fileID: 5493465194700954071}
   - component: {fileID: 1986912646686524696}
+  - component: {fileID: 3545206365631078277}
   m_Layer: 0
   m_Name: BigTree
   m_TagString: Untagged
@@ -138,6 +139,19 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0.027893066, y: 0.045654416, z: 0}
     m_Extent: {x: 1.14185, y: 1.5007708, z: 0}
+--- !u!114 &3545206365631078277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604266970903774615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a84e0c0c43dc2e4e9fc48ca7f1a1bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 50
 --- !u!1 &4667279626664589881
 GameObject:
   m_ObjectHideFlags: 0
