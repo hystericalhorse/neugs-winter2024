@@ -1,10 +1,13 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DeathTrigger : MonoBehaviour
 {
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private GameObject gameOver; 
     // Canvas
     //[SerializeField] private
 
@@ -12,12 +15,14 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("GET SHIT ON YOU FUCKING CRAP GRAHHH");
             playerAnimator.SetBool("Dead", true);
-
-
-
+            Invoke("SummonGameOverUI", 2);
         }
+    }
+
+    void SummonGameOverUI()
+    {
+        gameOver.SetActive(true);
     }
  
 }
