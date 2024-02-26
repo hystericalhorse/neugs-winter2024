@@ -6,13 +6,16 @@ public class DeathTrigger : MonoBehaviour
 {
     public Animator playerAnimator;
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit");
+            Debug.Log("GET SHIT ON YOU FUCKING CRAP GRAHHH");
             playerAnimator.SetBool("Dead", true);
+
+
+
         }
     }
+ 
 }

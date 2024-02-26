@@ -45,16 +45,7 @@ public class MannequinAI : MonoBehaviour {
         //animator.SetFloat("Speed", Velocity.magnitude);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("GET SHIT ON YOU FUCKING CRAP GRAHHH");
-            sceneManager.LoadScene("Dev_Ed_GameOver");
-
-            
-        }
-    }
+   
 
 
     private void OnTriggerEnter2D(Collider2D collision) {
