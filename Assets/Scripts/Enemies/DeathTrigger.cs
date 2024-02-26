@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DeathTrigger : MonoBehaviour
 {
-    public Animator playerAnimator;
+    [SerializeField] private Animator playerAnimator;
+    // Canvas
+    //[SerializeField] private
 
 
     private void OnTriggerEnter2D(Collider2D collision)
