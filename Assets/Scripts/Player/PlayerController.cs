@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -61,6 +63,9 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (movement.magnitude > 0)
+			UpdateDirection();
+
 		rb.velocity = movement.normalized * (sprinting ? SprintSpeed : WalkSpeed);
 	}
 
@@ -184,14 +189,6 @@ public class PlayerController : MonoBehaviour
 		{
 			direction = movement.Cardinalize(ExtensionMethods.Axis.Vertical);
 
-			var ints = flashlight.GetComponent<Light2D>().GetLayers();
-			//Debug.Log(ints.ToString());
-
-			//if (direction == Vector2.up)
-			//	flashlight.GetComponent<Light2D>().SetLayers(noplayer);
-			//else
-			//	flashlight.GetComponent<Light2D>().SetLayers(withplayer);
-
 			animator.SetBool("FaceUp", movement.y > 0);
 			animator.SetBool("FaceRight", movement.x >= 0);
 		}
@@ -247,9 +244,30 @@ public class PlayerController : MonoBehaviour
 		animator.speed = (sprinting? SprintAnimationSpeed : WalkAnimationSpeed);
     }
 	//public void PlayFootstep() { AudioManager.instance.PlaySound("Footsteps"); }
-    
-    #endregion
 
+	#endregion
 
+	#region Other Stuff
+	public delegate void OnMoveDone();
+	public IEnumerator MovePawn(Vector2 move, OnMoveDone onMoveDone = null)
+	{
+		// A short check for whether or not the player already has controls active.
+		// If not, assumes controls were off for a reason, and leaves them off.
+		bool reactive = HasActiveControls;
+		if (reactive) DeactivateControls();
+		var desiredPosition = (Vector2) transform.position + move;
+		while (Vector2.Distance((Vector2) transform.position, desiredPosition) > 0.1f)
+		{
+			movement = move.normalized;
+			yield return null;
+		}
+
+		movement = Vector2.zero;
+
+		onMoveDone?.Invoke();
+		onMoveDone = null;
+		if (reactive) ActivateControls();
+	}
+	#endregion
 
 }

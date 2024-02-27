@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
 
 public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 {
@@ -28,6 +29,19 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 		{
 			GetPlayerController().transform.position = (Vector3)position;
 			GetCameraController().NoLerpResetPosition();
+		}
+		catch (Exception e)
+		{
+			Debug.LogException(e);
+		}
+	}
+
+	public delegate void OnMoveDone();
+	public void MovePlayerController(Vector2 move, OnMoveDone onMoveDone = null)
+	{
+		try
+		{
+			StartCoroutine(GetPlayerController().MovePawn(move, () => { onMoveDone?.Invoke(); }));
 		}
 		catch (Exception e)
 		{
