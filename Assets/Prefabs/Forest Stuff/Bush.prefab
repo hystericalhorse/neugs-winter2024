@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7266084299330025978}
   - component: {fileID: 7610647157854724713}
   - component: {fileID: 3804697452029115238}
+  - component: {fileID: -5107970615514113332}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3927030843038577735}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
@@ -207,7 +208,20 @@ MonoBehaviour:
   - {x: -0.2656088, y: -0.21874431, z: 0}
   m_ShapePathHash: 900324929
   m_Mesh: {fileID: 0}
-  m_InstanceId: -50952
+  m_InstanceId: 74272
   m_LocalBounds:
     m_Center: {x: -0.0000063180923, y: 0, z: 0}
     m_Extent: {x: 0.3593849, y: 0.31249964, z: 0}
+--- !u!114 &-5107970615514113332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927030843038577735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a84e0c0c43dc2e4e9fc48ca7f1a1bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 50
