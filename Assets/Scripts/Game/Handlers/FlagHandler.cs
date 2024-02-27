@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FlagHandler : MonoBehaviour
 {
-    string flag;
-    bool value;
+   [SerializeField] string flag;
+   [SerializeField] bool value;
 
     public void SetFlag() => LevelManager.instance.SetFlag(flag, value);
     public void SetFlag(bool value) => LevelManager.instance.SetFlag(flag, value);
