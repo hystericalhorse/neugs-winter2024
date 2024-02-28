@@ -7,7 +7,8 @@ using UnityEngine;
 public class DeathTrigger : MonoBehaviour
 {
     [SerializeField] private Animator playerAnimator;
-    [SerializeField] private GameObject gameOver; 
+    [SerializeField] private GameObject gameOver;
+    //[SerializeField] private Animator gameOverAnimator;
     // Canvas
     //[SerializeField] private
 
@@ -15,14 +16,18 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Hit");
             playerAnimator.SetBool("Dead", true);
-            Invoke("SummonGameOverUI", 2);
+            Invoke("GameOverCanvas",2);
+            //gameOverAnimator.StopPlayback();
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         }
     }
 
-    void SummonGameOverUI()
+    private void GameOverCanvas()
     {
-        gameOver.SetActive(true);
+        Instantiate(gameOver);
     }
- 
+
+
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7599403382875567833}
   - component: {fileID: 199484698688671837}
   - component: {fileID: 1044470530453857901}
+  - component: {fileID: -4113007941486263800}
   m_Layer: 0
   m_Name: MONSTER
   m_TagString: Untagged
@@ -4851,7 +4852,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 830993799
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 9999
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4906,3 +4907,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4113007941486263800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344409730058034405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65585d2965dda04429bbc28b1644e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 7627273898388890884, guid: b1b47e15661a97e448895534050a20ce, type: 3}
+  gameOver: {fileID: 0}
