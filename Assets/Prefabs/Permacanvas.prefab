@@ -313,10 +313,16 @@ MonoBehaviour:
   image: {fileID: 4113739460338983393}
   canvasGroup: {fileID: 985574520184365613}
   transitionTime: 0.5
-  onTransitionBegin:
+  beforeFadeIn:
     m_PersistentCalls:
       m_Calls: []
-  onTransitionEnd:
+  afterFadeIn:
+    m_PersistentCalls:
+      m_Calls: []
+  beforeFadeOut:
+    m_PersistentCalls:
+      m_Calls: []
+  afterFadeOut:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &992268439505385765
