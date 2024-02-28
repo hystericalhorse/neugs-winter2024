@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Whiteboard : CutscenePlayer
+public class Whiteboard : SimpleCutscenePlayer
 {
 	[SerializeField] private GameObject CodeBoxes;
 	private GameObject go;

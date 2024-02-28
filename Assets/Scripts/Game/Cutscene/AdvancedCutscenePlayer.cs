@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdvancedCutscenePlayer : MonoBehaviour, Interactable
+public class AdvancedCutscenePlayer : MonoBehaviour, Interactable, CutscenePlayer
 {
 	[HideInInspector] public List<Flag> exceptions = new();
 
