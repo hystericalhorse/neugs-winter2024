@@ -1,7 +1,5 @@
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using JetBrains.Annotations;
 
 public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 {
@@ -42,6 +40,17 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 		try
 		{
 			StartCoroutine(GetPlayerController().MovePawn(move, () => { onMoveDone?.Invoke(); }));
+		}
+		catch (Exception e)
+		{
+			Debug.LogException(e);
+		}
+	}
+	public void MoveCameraController(Transform target, OnMoveDone onMoveDone = null)
+	{
+		try
+		{
+			StartCoroutine(GetCameraController().MoveCamera(target, () => { onMoveDone?.Invoke(); }));
 		}
 		catch (Exception e)
 		{

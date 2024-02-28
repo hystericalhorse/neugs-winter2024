@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
@@ -86,6 +87,11 @@ public class CameraController : MonoBehaviour
 		}
 	}
 
+	public void SoftResetController()
+	{
+		TargetTransform = PlayerManager.instance.GetPlayerController().transform;
+	}
+
 	public void ResetController()
 	{
 		TargetTransform = PlayerManager.instance.GetPlayerController().transform;
@@ -100,4 +106,33 @@ public class CameraController : MonoBehaviour
 
 	public void Pause() => paused = true;
 	public void Unpause() => paused = false;
+
+	public delegate void OnMoveDone();
+	public IEnumerator MoveCamera(Transform target, OnMoveDone onMoveDone = null)
+	{
+		// A short check for whether or not the player already has controls active.
+		// If not, assumes controls were off for a reason, and leaves them off.
+		bool reactive = paused;
+		paused = true;
+
+		TargetTransform = target;
+
+		while (Vector2.Distance((Vector2)transform.position,(Vector2)TargetTransform.position) > 0.1)
+		{
+			pos = TargetTransform.position;
+
+			pos.z = -10; // z-value doesn't particularly matter if the camera is orthographic.
+
+			// prevents the camera from moving past world limits. this only works well for rectangular maps.
+			// https://forum.unity.com/threads/2d-top-down-camera-edge.233036/
+			//pos.x = Mathf.Clamp(pos.x, Center.x - Limits.x * 0.5f, Center.x + Limits.x * 0.5f);
+			//pos.y = Mathf.Clamp(pos.y, Center.y - Limits.y * 0.5f, Center.y + Limits.y * 0.5f);
+
+			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime);
+			yield return new WaitForFixedUpdate();
+		}
+
+		onMoveDone?.Invoke();
+		if (!reactive) paused = false;
+	}
 }

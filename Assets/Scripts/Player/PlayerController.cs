@@ -1,11 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -192,14 +188,18 @@ public class PlayerController : MonoBehaviour
 			animator.SetBool("FaceUp", movement.y > 0);
 			animator.SetBool("FaceRight", movement.x >= 0);
 		}
-			
 	}
 
 	public void Interact(InputAction.CallbackContext context)
 	{
+		TryInteract();
+	}
+
+	public void TryInteract()
+	{
 		var hits = Physics2D.BoxCastAll(transform.position, Vector2.one * 0.5f, 0, direction, 1);
 		ExtDebug.DrawBoxCastBox(transform.position, Vector2.one * 0.25f, Quaternion.identity, direction, 1, Color.blue);
-			
+
 		foreach (var hit in hits)
 		{
 			Debug.DrawRay(hit.point, Vector3.up * 0.1f, Color.red, 5.0f);
@@ -265,8 +265,16 @@ public class PlayerController : MonoBehaviour
 		movement = Vector2.zero;
 
 		onMoveDone?.Invoke();
-		onMoveDone = null;
 		if (reactive) ActivateControls();
+	}
+
+	public void FaceDirection(Vector2 direction)
+	{
+		animator.SetBool("FaceUp", direction.y > 0);
+		animator.SetBool("FaceRight", direction.x >= 0);
+
+		animator.SetFloat("XSpeed", Mathf.Abs(direction.x));
+		animator.SetFloat("YSpeed", Mathf.Abs(direction.y));
 	}
 	#endregion
 
