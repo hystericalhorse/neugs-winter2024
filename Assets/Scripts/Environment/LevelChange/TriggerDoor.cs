@@ -19,7 +19,7 @@ public class TriggerDoor : MonoBehaviour, Door
 	public void Start()
 	{
 		var col = GetComponent<Collider2D>() ?? gameObject.AddComponent<BoxCollider2D>();
-		col.isTrigger = Locked;
+		col.isTrigger = !Locked;
 	}
 
 	public void OnInteract(bool withTransition = false)
