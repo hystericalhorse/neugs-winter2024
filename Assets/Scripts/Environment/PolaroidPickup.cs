@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PolaroidPickup : MonoBehaviour, Interactable
-{
-    public string key;
+{    
+    [SerializeField] MonsterWall connectedWall;
 
-    public void OnInteract()
+	public void OnInteract()
     {
-        LevelManager.instance.SetFlag(key, true);
+        connectedWall.UpdateWall();
         Destroy(gameObject);
     }
 }
