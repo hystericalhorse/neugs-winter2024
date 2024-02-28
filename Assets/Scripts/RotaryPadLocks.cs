@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,6 +23,8 @@ public class RotaryPadLocks : MonoBehaviour
     [SerializeField] private short[] combination = new short[3];
     [SerializeField] private short[] currentInputs = new short[3];
     //[SerializeField] private bool[] direction = new short[3];
+
+    [SerializeField] private TMP_Text DISPLAY;
 
     [SerializeField] public bool hasKey;
 
@@ -115,20 +118,26 @@ public class RotaryPadLocks : MonoBehaviour
         switch (currentPlace)
         {
             case 0:
-                if ((!direction) && currentFullRotations >= 3) currentInputs[0] = currentNumber;
+                if ((!direction) && currentFullRotations >= 3)
+                {
+                    currentInputs[0] = currentNumber;
+					DISPLAY.text = $"{currentInputs[0]} - _ - _";
+				}
                 else if ((direction)) ResetLock();
-                
-                break;
+				
+				break;
              case 1:
-                if (direction && currentPlace == 1 && currentFullRotations == 1) currentInputs[1] = currentNumber;
+                if (direction && currentPlace == 1 && currentFullRotations == 1)
+                { currentInputs[1] = currentNumber; DISPLAY.text = $"{currentInputs[0]} - {currentInputs[1]} - _"; }
                 else if (!direction || currentFullRotations > 1) ResetLock();
                 break;
             case 2:
                 if (!direction && currentFullRotations < 1)
                 {
                     currentInputs[2] = currentNumber;
+					DISPLAY.text = $"{currentInputs[0]} - {currentInputs[1]} - {currentInputs[2]}";
 
-                    if (CheckCombo()) // Here is where obtaining the key is available
+					if (CheckCombo()) // Here is where obtaining the key is available
                     {
                         hasKey = true;
                         // Test
@@ -149,6 +158,8 @@ public class RotaryPadLocks : MonoBehaviour
                 }
                 break;
         }
+
+        
     }
     public void Activate()
     {
@@ -207,7 +218,8 @@ public class RotaryPadLocks : MonoBehaviour
     private void ResetLock()
     {
         currentInputs = new short[3];
-        currentPlace = 0;
+		DISPLAY.text = $"_ - _ - _";
+		currentPlace = 0;
     }
     public short[] GetCombo()
     {
