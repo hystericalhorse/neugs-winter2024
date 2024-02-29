@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterWall : MonoAction
@@ -6,6 +7,7 @@ public class MonsterWall : MonoAction
 	[SerializeField] TriggerDoor wallDoor;
 	[SerializeField] int keysGrabbed = 0;
 	[SerializeField] int keysRequired = 1;
+	[SerializeField] SpriteRenderer[] stars;
 
 	[SerializeField] ObjectiveHandler handler;
 
@@ -16,6 +18,8 @@ public class MonsterWall : MonoAction
 
 		wallDoor?.Lock();
 		particleSys.Play();
+
+		stars = GetComponentsInChildren<SpriteRenderer>();
 
 		if (handler == null)
 			handler = gameObject.GetComponent<ObjectiveHandler>() ?? gameObject.AddComponent<ObjectiveHandler>();
@@ -28,6 +32,8 @@ public class MonsterWall : MonoAction
 	{
 		keysGrabbed += 1;
 		handler.SetObjectiveDesc($"Find Photos ({keysGrabbed}/{keysRequired})");
+		if (stars.Length == keysRequired)
+			stars[keysGrabbed-1].gameObject.SetActive( false );
 		handler.UpdateObjective();
 
 		if (keysGrabbed >= keysRequired)

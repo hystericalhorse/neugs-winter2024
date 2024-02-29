@@ -8,19 +8,15 @@ public class MannequinAI : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriterenderer;
     [SerializeField] private float Speed = 10;
-    [SerializeField] private SceneManager sceneManager;
     private GameObject Player;
     private Rigidbody2D RB;
     private Animator Anim;
     private Vector2 Velocity = Vector2.zero;
     private bool Detected = false;
 
-    private void Awake() {
-        Player = GameObject.FindGameObjectWithTag("Player");
-    }
-
     void Start() {
-        RB = GetComponent<Rigidbody2D>();
+		Player = PlayerManager.instance.GetPlayerController().gameObject;
+		RB = GetComponent<Rigidbody2D>();
         spriterenderer = GetComponent<SpriteRenderer>();
         Anim = GetComponent<Animator>();
     }
@@ -50,25 +46,21 @@ public class MannequinAI : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
       
-        if (collision.gameObject.CompareTag("PlayerDetection")) {
+        if (collision.transform.CompareTag("PlayerDetection")) {
             Detected = true;
             Anim.speed = 0;
-        }
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("YOU JUST GOT MURDERED!");
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("PlayerDetection")) {
+        if (collision.transform.CompareTag("PlayerDetection")) {
             Detected = true;
             Anim.speed = 0;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("PlayerDetection")) {
+        if (collision.transform.CompareTag("PlayerDetection")) {
             Detected = false;
             Anim.speed = 1;
         }
