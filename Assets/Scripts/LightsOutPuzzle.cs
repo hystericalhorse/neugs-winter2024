@@ -67,6 +67,7 @@ public class LightsOutPuzzle : MonoBehaviour
         return output;
     }
 
+    [ContextMenu("Solve!")]
     public void TestSolve()
     {
         //Instantiate(tempExplosion);
