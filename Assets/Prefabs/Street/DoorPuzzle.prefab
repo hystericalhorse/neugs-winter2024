@@ -128,7 +128,7 @@ MonoBehaviour:
   - {x: 0.109410286, y: 0.09372711, z: -0.000000014901161}
   m_ShapePathHash: 645522901
   m_Mesh: {fileID: 0}
-  m_InstanceId: 123318
+  m_InstanceId: 176724
   m_LocalBounds:
     m_Center: {x: 0.000011444092, y: 0.15663886, z: 0}
     m_Extent: {x: 0.10944605, y: 0.06291175, z: 0}
@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 708732506588322586}
   - component: {fileID: 3059298795486417811}
   - component: {fileID: 8887055915699655380}
+  - component: {fileID: 8465171429368587633}
   m_Layer: 0
   m_Name: DoorPuzzle
   m_TagString: Untagged
@@ -482,10 +483,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3059298795486417811}
-        m_TargetAssemblyTypeName: FlagHandler, Assembly-CSharp
-        m_MethodName: SetFlag
-        m_Mode: 6
+      - m_Target: {fileID: 708732506588322586}
+        m_TargetAssemblyTypeName: LightsOutPuzzleLight, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -494,10 +495,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 708732506588322586}
-        m_TargetAssemblyTypeName: LightsOutPuzzleLight, Assembly-CSharp
-        m_MethodName: OnInteract
-        m_Mode: 1
+      - m_Target: {fileID: 3059298795486417811}
+        m_TargetAssemblyTypeName: FlagHandler, Assembly-CSharp
+        m_MethodName: SetFlag
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -522,14 +523,42 @@ MonoBehaviour:
   cutscene:
   - conditions:
     - name: ObjectiveUpdate
-      value: 1
+      value: 0
     cutscene:
       timeline:
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 0}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - You knock on the door.
+        - ...
+        - There's no answer.
+        narrator: 
+        silent: 0
+        textSounds: []
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 8465171429368587633}
+              m_TargetAssemblyTypeName: ObjectiveHandler, Assembly-CSharp
+              m_MethodName: ResolveObjective
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
       - shotImage: {fileID: 0}
         leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
         rightCharacterImage: {fileID: 0}
         shotScript:
-        - The light turned on...
+        - The streetlight turned on when I knocked on the door?
         narrator: Ashley
         silent: 0
         textSounds: []
@@ -540,16 +569,16 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 0}
-              m_TargetAssemblyTypeName: 
-              m_MethodName: 
-              m_Mode: 0
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
                 m_IntArgument: 0
                 m_FloatArgument: 0
                 m_StringArgument: 
-                m_BoolArgument: 0
+                m_BoolArgument: 1
               m_CallState: 2
   currentIndex: 0
   loopScenes: 0
@@ -629,3 +658,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.53125}
   m_EdgeRadius: 0
+--- !u!114 &8465171429368587633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746541286967240310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc40224aa112e6f48bdd4662a8c5dbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objname: knock
+  objdesc: 

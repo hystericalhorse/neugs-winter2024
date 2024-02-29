@@ -24,11 +24,11 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 	{
 		try
 		{
-			LevelData lvl_dat = GetLevelData(currentLevel.Name);
+			LevelData lvl_dat = GetLevelData(CurrentLevel().Name);
 			if (lvl_dat != null)
-				LevelData[LevelData.IndexOf(lvl_dat)] = currentLevel.ExtractData();
+				LevelData[LevelData.IndexOf(lvl_dat)] = CurrentLevel().ExtractData();
 			else
-				LevelData.Add(currentLevel.ExtractData());
+				LevelData.Add(CurrentLevel().ExtractData());
 		}
 		catch (Exception e)
 		{
@@ -43,29 +43,36 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 		{
 			currentLevel = FindObjectOfType<Level>();
 
-			LevelData lvl_dat = GetLevelData(currentLevel.Name);
+			LevelData lvl_dat = GetLevelData(CurrentLevel().Name);
 			if (lvl_dat != null)
-				currentLevel.InsertData(lvl_dat);
+				CurrentLevel().InsertData(lvl_dat);
 
 			// "default room" is the top room in the rooms list
 			var cam = PlayerManager.instance.GetCameraController();
 			if (cam != null)
 			{
-				PlayerManager.instance.GetCameraController().Center = currentLevel.Rooms[0].transform.position;
-				PlayerManager.instance.GetCameraController().Limits = currentLevel.Rooms[0].RoomBounds;
-				PlayerManager.instance.GetCameraController().transform.position = currentLevel.Rooms[0].transform.position;
+				PlayerManager.instance.GetCameraController().Center = CurrentLevel().Rooms[0].transform.position;
+				PlayerManager.instance.GetCameraController().Limits = CurrentLevel().Rooms[0].RoomBounds;
+				PlayerManager.instance.GetCameraController().transform.position = CurrentLevel().Rooms[0].transform.position;
 			}
 
-			PlayerManager.instance.PlacePlayerController(currentLevel.DefaultTransform.position);
+			PlayerManager.instance.PlacePlayerController(CurrentLevel().DefaultTransform.position);
 
-			currentLevel.Rooms[0].OnEnterRoom();
-			currentLevel.OnLevelLoad?.Invoke();
+			CurrentLevel().Rooms[0].OnEnterRoom();
+			CurrentLevel().OnLevelLoad?.Invoke();
 		}
 		catch (Exception e)
 		{
 			Debug.LogException(e);
 		}
-		
+	}
+
+	public Level CurrentLevel()
+	{
+		if (currentLevel == null)
+			LoadLevel();
+
+		return currentLevel;
 	}
 
 	LevelData GetLevelData(string name)
@@ -80,7 +87,7 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 
 	Flag GetFlag(string name)
 	{
-		foreach (var flag in currentLevel.Flags)
+		foreach (var flag in CurrentLevel().Flags)
 		{
 			if (flag.name == name) return flag;
 		}
@@ -131,17 +138,17 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 
 	public void SetFlag(string name, bool value)
 	{
-		for (var i = 0; i < currentLevel.Flags.Count; i++)
+		for (var i = 0; i < CurrentLevel().Flags.Count; i++)
 		{
-			if (currentLevel.Flags[i].name == name)
+			if (CurrentLevel().Flags[i].name == name)
 			{
-				currentLevel.Flags[i].value = value;
+				CurrentLevel().Flags[i].value = value;
 				return;
 			}
 		}
 
 		// should only reach here if the flag doesn't exist
 
-		currentLevel.Flags.Add(new(name, value));
+		CurrentLevel().Flags.Add(new(name, value));
 	}
 }

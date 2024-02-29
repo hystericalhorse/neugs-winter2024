@@ -20,6 +20,6 @@ public class SceneChange : MonoBehaviour, Interactable
 
     public void LoadScene()
     {
-        SceneManager.instance.LoadScene(sceneName);
-    }
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+	}
 }

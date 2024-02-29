@@ -15,7 +15,10 @@ public class AreaTrigger : MonoBehaviour
         collider.isTrigger = true;
     }
 
-	public void OnTriggerEnter2D(Collider2D collision) => OnEnter?.Invoke();
-	public void OnTriggerStay2D(Collider2D collision) => OnStay?.Invoke();
-	public void OnTriggerExit2D(Collider2D collision) => OnExit?.Invoke();
+    public void OnTriggerEnter2D(Collider2D collision)
+    { if (collision.GetComponent<PlayerController>()) OnEnter?.Invoke(); }
+	public void OnTriggerStay2D(Collider2D collision) 
+    { if (collision.GetComponent<PlayerController>()) OnStay?.Invoke();}
+	public void OnTriggerExit2D(Collider2D collision) 
+    { if (collision.GetComponent<PlayerController>()) OnExit?.Invoke();}
 }
