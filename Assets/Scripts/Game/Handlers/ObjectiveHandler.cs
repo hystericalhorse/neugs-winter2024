@@ -21,6 +21,11 @@ public class ObjectiveHandler : MonoBehaviour
         PlayerManager.instance.objectiveList.AddObjective(objname, objdesc);
     }
 
+    public void UpdateObjective()
+    {
+        PlayerManager.instance.objectiveList.UpdateObjective(objname, objdesc);
+	}
+
     [ContextMenu("Resolve Objective")]
     public void ResolveObjective()
     {

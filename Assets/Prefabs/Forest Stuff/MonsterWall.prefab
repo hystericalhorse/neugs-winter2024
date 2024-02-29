@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8777579859978083455}
   - component: {fileID: 8551795722941205434}
   - component: {fileID: 7630963448921450420}
+  - component: {fileID: 1922756243851375187}
   m_Layer: 0
   m_Name: MonsterWall
   m_TagString: Untagged
@@ -4848,3 +4849,18 @@ MonoBehaviour:
   wallDoor: {fileID: 0}
   keysGrabbed: 0
   keysRequired: 1
+  handler: {fileID: 0}
+--- !u!114 &1922756243851375187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5360590600099242221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc40224aa112e6f48bdd4662a8c5dbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objname: 
+  objdesc: 

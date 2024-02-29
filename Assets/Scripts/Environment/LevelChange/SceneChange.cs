@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour, Interactable
 {
     [SerializeField] public string sceneName;
-
+    private Scene scene;
     public void OnInteract()
     {
         FindObjectOfType<TransitionScreen>().afterFadeIn.AddListener(() => {
@@ -15,6 +15,8 @@ public class SceneChange : MonoBehaviour, Interactable
 
         FindObjectOfType<TransitionScreen>().Transition(0, false);
 	}
+
+
 
     public void LoadScene()
     {

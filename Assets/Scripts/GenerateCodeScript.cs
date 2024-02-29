@@ -13,6 +13,8 @@ public class GenerateCodeScript : MonoBehaviour, Interactable
     private void Start()
     {
         GenrateCode();
+        Debug.Log(code);
+
         
     }
 

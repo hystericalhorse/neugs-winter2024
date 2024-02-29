@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4868827078658374385}
   - component: {fileID: 974509917952170496}
   - component: {fileID: 4512425024132813878}
+  - component: {fileID: 4696402718373188526}
+  - component: {fileID: 2160626148163907811}
   m_Layer: 0
   m_Name: DoorGone
   m_TagString: Untagged
@@ -29,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.176, y: 9.062, z: -0.14343391}
-  m_LocalScale: {x: 1, y: 1.4994977, z: 3}
+  m_LocalScale: {x: 1.0175, y: 1.065993, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 110679869, guid: 975d6e34b1446ba4ba2d0ca39e2d4e5d, type: 3}
-  m_Color: {r: 1, g: 0.89003044, b: 0.8349056, a: 0.5372549}
+  m_Sprite: {fileID: 558196682, guid: 91c61bc87b5db8148a9a7366778962db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,25 +102,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscene:
     timeline:
-    - shotImage: {fileID: 0}
+    - shotImage: {fileID: 21300000, guid: 4709bb82040169b4c8226ad226d0f78c, type: 3}
       leftCharacterImage: {fileID: -1121674598, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
       rightCharacterImage: {fileID: 0}
       shotScript:
       - There's a doorframe.... but no door
       narrator: '*****'
-    - shotImage: {fileID: 0}
+      silent: 0
+      textSounds:
+      - 
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+    - shotImage: {fileID: 21300000, guid: 4709bb82040169b4c8226ad226d0f78c, type: 3}
       leftCharacterImage: {fileID: -1121674598, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
       rightCharacterImage: {fileID: 0}
       shotScript:
       - Okay, that's definitely weird.
       - ...
       narrator: Ashley
-    - shotImage: {fileID: 0}
+      silent: 0
+      textSounds:
+      - 
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+    - shotImage: {fileID: 21300000, guid: 4709bb82040169b4c8226ad226d0f78c, type: 3}
       leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
       rightCharacterImage: {fileID: 0}
       shotScript:
       - and concerning. Where am I...?
       narrator: Ashley
+      silent: 0
+      textSounds:
+      - NarrativeSpeech1
+      - NarrativeSpeech2
+      - NarrativeSpeech3
+      - NarrativeSpeech4
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2160626148163907811}
+            m_TargetAssemblyTypeName: ObjectiveHandler, Assembly-CSharp
+            m_MethodName: AddObjective
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!61 &4512425024132813878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,8 +198,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 1.53125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -164,3 +208,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4696402718373188526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749593745394214957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d711cec434f5b4344bba30c595a2a8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 1
+  layerOrder: 0
+  parentOrder: {fileID: 0}
+--- !u!114 &2160626148163907811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749593745394214957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc40224aa112e6f48bdd4662a8c5dbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objname: door
+  objdesc: Find a way out of the house.

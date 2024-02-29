@@ -21,26 +21,26 @@ public class SplitComboLockCode : MonoBehaviour
 		Shot shot = new Shot();
 		shot.shotScript.Add(combo1000s.ToString());
 
-		lockers[0].GetComponent<CutscenePlayer>()?.ClearShots();
-		lockers[0].GetComponent<CutscenePlayer>()?.AddShot(shot);
+		lockers[0].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
+		lockers[0].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 
 		shot = new();
 		shot.shotScript.Add(combo100s.ToString());
 
-		lockers[1].GetComponent<CutscenePlayer>()?.ClearShots();
-		lockers[1].GetComponent<CutscenePlayer>()?.AddShot(shot);
+		lockers[1].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
+		lockers[1].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 
 		shot = new();
 		shot.shotScript.Add(combo10s.ToString());
 
-		lockers[2].GetComponent<CutscenePlayer>()?.ClearShots();
-		lockers[2].GetComponent<CutscenePlayer>()?.AddShot(shot);
+		lockers[2].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
+		lockers[2].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 
 		shot = new();
 		shot.shotScript.Add(combo1s.ToString());
 
-		lockers[3].GetComponent<CutscenePlayer>()?.ClearShots();
-		lockers[3].GetComponent<CutscenePlayer>()?.AddShot(shot);
+		lockers[3].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
+		lockers[3].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 	}
 
     private void SplitCode()
