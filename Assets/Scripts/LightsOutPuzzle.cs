@@ -72,7 +72,7 @@ public class LightsOutPuzzle : MonoBehaviour
     {
         //Instantiate(tempExplosion);
         CutsceneManager.instance.StartCutscene(cutscenePlayer);
-        Destroy(miniCanvas);
+        Destroy(miniCanvas.gameObject);
         
     }
 
@@ -91,7 +91,7 @@ public class LightsOutPuzzle : MonoBehaviour
         {
             if ((puzzleLights[index].GetOn() == true))
             {
-                Debug.Log("Current Index: " + puzzleLights[index].GetOn() + " LIGHT INDEX : " + puzzleLights[index] + " imgLights: " + imgLights[index]);
+                //Debug.Log("Current Index: " + puzzleLights[index].GetOn() + " LIGHT INDEX : " + puzzleLights[index] + " imgLights: " + imgLights[index]);
                 imgLights[index].color = onColor;
             }
             else if ((puzzleLights[index].GetOn() == false))

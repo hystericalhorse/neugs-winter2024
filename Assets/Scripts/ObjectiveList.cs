@@ -45,7 +45,7 @@ public class ObjectiveList : MonoBehaviour
 
 				for (var index = 0; index < indexB; index++)
 				{
-					textBox.text = "<s>" + text.Substring(0, index) + "</s>" + text.Substring(index, text.Length - (index + 1));
+					textBox.text = "<s>" + text.Substring(0, index) + "</s>" + text.Substring(index, text.Length - (index/* + 1*/));
 					yield return new WaitForFixedUpdate();
 				}
 
@@ -57,24 +57,16 @@ public class ObjectiveList : MonoBehaviour
 		}	
 
         yield return new WaitForSeconds(0.5f);
-		UpdateObjectives();
     }
-
-    private void UpdateObjectives()
-    {
-		if (!gameObject.activeSelf && objectives.Count() > 0)
-        {
-			gameObject.RecursiveSetActive(true);
-			StartCoroutine(FadeIn());
-            return;
-		}
-	}
 
     private IEnumerator FadeOut(TMP_Text textBox)
     {
-		while (textBox.text.Length > 2)
+		var text = textBox.text.Substring(3, textBox.text.Length - 4); // removing the formatting in the text
+
+		while (text.Length > 0)
 		{
-			textBox.text = textBox.text.Substring(1, textBox.text.Length - 1);
+			text = text.Substring(1, text.Length - 1);
+			textBox.text = "<s>" + text + "</s>";
 			yield return new WaitForFixedUpdate();
 		}
 
@@ -105,7 +97,6 @@ public class ObjectiveList : MonoBehaviour
 		textBoxes.Add(textbox);
 
 		UpdateTextboxes();
-		UpdateObjectives();
     }
 
 
@@ -124,7 +115,6 @@ public class ObjectiveList : MonoBehaviour
 		}
 
 		UpdateTextboxes();
-		UpdateObjectives();
 	}
 
 	public void RemoveObjective(string name)
