@@ -11,6 +11,8 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 	public delegate void OnSceneLoaded();
 	public OnSceneLoaded onSceneLoaded;
 
+	string currentScene;
+
 	private void Awake() => Set(this);
 	private void OnDestroy() => Release();
 
@@ -30,6 +32,8 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 		if (onSceneLoaded != null) onSceneLoaded();
 		onSceneLoaded = null;
 
+		currentScene = UnitySceneManager.GetActiveScene().name;
+
 		if (fadeIn)
 			StartCoroutine(FindObjectOfType<TransitionScreen>().FadeOut());
 	}
@@ -42,5 +46,11 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 	public void UnloadScene(string sceneName, LoadSceneMode loadSceneMode = LoadSceneMode.Single)
 	{
 		StartCoroutine(WaitForSceneLoad(UnitySceneManager.UnloadSceneAsync(sceneName)));
+	}
+
+	public void ReloadScene()
+	{
+		currentScene = UnitySceneManager.GetActiveScene().name;
+		LoadScene(currentScene);
 	}
 }
