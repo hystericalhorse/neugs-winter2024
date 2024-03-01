@@ -120,7 +120,8 @@ public class ObjectiveList : MonoBehaviour
 
 	public void RemoveObjective(string name)
     {
-        StartCoroutine(CrossOutText(name));
+		if (gameObject.activeInHierarchy)
+			StartCoroutine(CrossOutText(name));
 	}
 
 	private void UpdateTextboxes()
@@ -136,7 +137,19 @@ public class ObjectiveList : MonoBehaviour
 			textBoxes[i].rectTransform.anchoredPosition = textBoxes[i - 1].rectTransform.anchoredPosition - (Vector2.up * textBoxes[i - 1].rectTransform.rect.height);
 		}
 
-		foreach (var box in textBoxes) foreach (var obj in objectives)
-			if (box.name == textBox.name) box.text = obj.Item2;
+		foreach (var box in textBoxes)
+			foreach (var obj in objectives)
+				if (box.name == obj.Item1)
+					box.text = obj.Item2;
+	}
+
+	public void ClearObjectives()
+	{
+		objectives.Clear();
+
+		foreach (var textBox in textBoxes)
+			Destroy(textBox.gameObject);
+
+		textBoxes.Clear();
 	}
 }

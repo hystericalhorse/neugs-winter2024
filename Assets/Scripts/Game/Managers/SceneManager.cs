@@ -51,6 +51,7 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 	public void ReloadScene()
 	{
 		currentScene = UnitySceneManager.GetActiveScene().name;
+		PlayerManager.instance.objectiveList.ClearObjectives();
 		LoadScene(currentScene);
 	}
 }
