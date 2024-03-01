@@ -89,6 +89,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 			//?? Instantiate(cameraPrefab).GetComponent<CameraController>();
 
 			cameraController = Instantiate(cameraPrefab).GetComponent<CameraController>();
+			DontDestroyOnLoad(cameraController);
 		}
 
 		return cameraController;
