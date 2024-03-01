@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 852708062475282699}
   - component: {fileID: 330197372275199793}
   - component: {fileID: 9009307510786056115}
+  - component: {fileID: 6813008551923158904}
   m_Layer: 0
   m_Name: Wardrobe
   m_TagString: Untagged
@@ -196,6 +197,44 @@ MonoBehaviour:
       onShotEnd:
         m_PersistentCalls:
           m_Calls: []
+--- !u!114 &6813008551923158904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070531813226192969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 618edd1247f34c5b00000000238afdaf9fb3b4801d96f6a187f5873113b4d49be3b7e1d4
+  m_ShapePath:
+  - {x: -0.39061737, y: 0.06250286, z: 0}
+  - {x: -0.453125, y: 0.062490463, z: 0}
+  - {x: -0.453125, y: 1.46875, z: 0}
+  - {x: 0.453125, y: 1.46875, z: 0}
+  - {x: 0.45321655, y: 0.06261444, z: 0}
+  - {x: 0.39061737, y: 0.06251335, z: 0}
+  - {x: 0.39043617, y: -0.00010108948, z: 0}
+  - {x: 0.29699612, y: 0.000084877014, z: 0}
+  - {x: 0.29692364, y: 0.062469482, z: 0}
+  - {x: -0.2968788, y: 0.062514305, z: 0}
+  - {x: -0.29695225, y: -0.00004863739, z: 0}
+  - {x: -0.39050674, y: 0.00011730194, z: 0}
+  m_ShapePathHash: -301249387
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -60546
+  m_LocalBounds:
+    m_Center: {x: 0.000045776367, y: 0.73432446, z: 0}
+    m_Extent: {x: 0.45317078, y: 0.73442554, z: 0}
 --- !u!1001 &1414595296045649839
 PrefabInstance:
   m_ObjectHideFlags: 0
