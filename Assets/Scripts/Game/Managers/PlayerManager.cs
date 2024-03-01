@@ -57,6 +57,17 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 			Debug.LogException(e);
 		}
 	}
+	public void MoveCameraControllerForSeconds(Transform target, float forSeconds, OnMoveDone onMoveDone = null)
+	{
+		try
+		{
+			StartCoroutine(GetCameraController().MoveCamera(target, forSeconds, () => { onMoveDone?.Invoke(); }));
+		}
+		catch (Exception e)
+		{
+			Debug.LogException(e);
+		}
+	}
 
 	public PlayerController GetPlayerController()
 	{

@@ -34,6 +34,19 @@ public class CutsceneActionsHandler : MonoBehaviour
 		actions.Enqueue(new RepositionCameraAction(targetTransform));
 	}
 
+	public void SetNextForSeconds(float time)
+	{
+		ForSeconds = time;
+	}
+	float ForSeconds = 0;
+	public void AddCameraRepositionForSeconds(Transform targetTransform)
+	{
+		if (ForSeconds <= 0)
+			return;
+
+		actions.Enqueue(new RepositionCameraActionForSeconds(targetTransform, ForSeconds));
+	}
+
 	public void AddCameraReset()
 	{
 		actions.Enqueue(new ResetCameraAction());
@@ -130,6 +143,16 @@ public class CutsceneActionsHandler : MonoBehaviour
 				PlayerManager.instance.MoveCameraController((action as RepositionCameraAction).Value, () => { StopWaiting(); });
 				continue;
 			}
+			if (action is RepositionCameraActionForSeconds)
+			{
+				StartWaiting();
+				yield return null;
+				PlayerManager.instance.MoveCameraControllerForSeconds(
+					(action as RepositionCameraActionForSeconds).Value,
+					(action as RepositionCameraActionForSeconds).ForSeconds,
+					() => { StopWaiting(); });
+				continue;
+			}
 
 			if (action is ValueAction<Transform>)
 			{
@@ -204,6 +227,11 @@ public class ValueAction<T> : Action
 public class RepositionCameraAction : ValueAction<Transform>
 {
 	public RepositionCameraAction(Transform value) : base(value) { }
+}
+public class RepositionCameraActionForSeconds : ValueAction<Transform>
+{
+	public RepositionCameraActionForSeconds(Transform value, float forSeconds) : base(value) { ForSeconds = forSeconds; }
+	public float ForSeconds;
 }
 
 public class PlayerFaceDirectionAction : ValueAction<Vector2>

@@ -93,6 +93,7 @@ public class ObjectiveList : MonoBehaviour
 		textbox.rectTransform.SetParent(gameObject.GetComponent<RectTransform>());
 
 		textbox.text = description;
+		textbox.name = name;
 
 		textBoxes.Add(textbox);
 
@@ -125,7 +126,6 @@ public class ObjectiveList : MonoBehaviour
 	private void UpdateTextboxes()
 	{
 		var tbRect = textBoxes[0].rectTransform.rect;
-		textBoxes[0].text = objectives[0].Item2;
 		tbRect.width = gameObject.GetComponent<RectTransform>().rect.width;
 		textBoxes[0].rectTransform.localScale = Vector3.one;
 		textBoxes[0].rectTransform.anchoredPosition = titleBox.rectTransform.anchoredPosition - (Vector2.up * titleBox.rectTransform.rect.height);
@@ -134,8 +134,9 @@ public class ObjectiveList : MonoBehaviour
 			var tbRect_ = textBoxes[i].rectTransform.rect;
 			textBoxes[i].rectTransform.localScale = Vector3.one;
 			textBoxes[i].rectTransform.anchoredPosition = textBoxes[i - 1].rectTransform.anchoredPosition - (Vector2.up * textBoxes[i - 1].rectTransform.rect.height);
-
-			textBoxes[i].text = objectives[i].Item2;
 		}
+
+		foreach (var box in textBoxes) foreach (var obj in objectives)
+			if (box.name == textBox.name) box.text = obj.Item2;
 	}
 }
