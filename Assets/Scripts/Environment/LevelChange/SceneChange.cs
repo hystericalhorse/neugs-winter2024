@@ -23,8 +23,11 @@ public class SceneChange : MonoBehaviour, Interactable
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 	}
 
-    public void TestScript()
+   public void RestartFromDed()
     {
-        Debug.Log("CLICK");
+        //rip 
+
+        SceneManager.instance.ReloadScene();
+
     }
 }
