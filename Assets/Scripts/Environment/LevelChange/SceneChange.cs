@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour, Interactable
 {
+    [SerializeField] bool killSpuper = false;
     [SerializeField] public string sceneName;
     private Scene scene;
     public void OnInteract()
@@ -20,7 +21,13 @@ public class SceneChange : MonoBehaviour, Interactable
 
     public void LoadScene()
     {
+        
+        if(killSpuper)
+        {
+            GameObject.DestroyImmediate(GameManager.instance.gameObject);
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        
 	}
 
    public void RestartFromDed()
