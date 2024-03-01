@@ -22,4 +22,9 @@ public class SceneChange : MonoBehaviour, Interactable
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 	}
+
+    public void TestScript()
+    {
+        Debug.Log("CLICK");
+    }
 }
