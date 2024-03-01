@@ -37,8 +37,6 @@ public class TriggerDoor : MonoBehaviour, Door
 
 	public void Thru(bool withTransition = false)
 	{
-		thisRoom?.OnExitRoom();
-
 		if (withTransition)
 		{
 			var ts = FindAnyObjectByType<TransitionScreen>();
@@ -47,6 +45,10 @@ public class TriggerDoor : MonoBehaviour, Door
 				PlayerManager.instance.GetPlayerController().DeactivateControls();
 				PlayerManager.instance.GetCameraController().Pause();
 				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+			});
+
+			ts.afterFadeIn.AddListener(() => {
+				thisRoom?.OnExitRoom();
 			});
 
 			ts.beforeFadeOut.AddListener(() => {

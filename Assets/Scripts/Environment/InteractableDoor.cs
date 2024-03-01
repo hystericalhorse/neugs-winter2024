@@ -28,8 +28,6 @@ public class InteractableDoor : MonoBehaviour, Interactable, Door
 
 	public void Thru(bool withTransition = false)
 	{
-		thisRoom?.OnExitRoom();
-
 		if (withTransition)
 		{
 			var ts = FindAnyObjectByType<TransitionScreen>();
@@ -38,6 +36,10 @@ public class InteractableDoor : MonoBehaviour, Interactable, Door
 				PlayerManager.instance.GetPlayerController().DeactivateControls();
 				PlayerManager.instance.GetCameraController().Pause();
 				PlayerManager.instance.PlacePlayerController(this.targetTransform.transform.position);
+			});
+
+			ts.afterFadeIn.AddListener(() => {
+				thisRoom?.OnExitRoom();
 			});
 
 			ts.beforeFadeOut.AddListener(() => {
