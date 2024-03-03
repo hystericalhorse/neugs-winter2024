@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour, Interactable
 {
-    [SerializeField] bool killSpuper = false;
+    
     [SerializeField] public string sceneName;
     private Scene scene;
     public void OnInteract()
@@ -22,9 +22,9 @@ public class SceneChange : MonoBehaviour, Interactable
     public void LoadScene()
     {
         
-        if(killSpuper)
+        if(sceneName == "UI Menu")
         {
-            GameObject.DestroyImmediate(GameManager.instance.gameObject);
+            
         }
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         
