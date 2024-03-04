@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AdvancedCutscenePlayer : MonoBehaviour, Interactable, CutscenePlayer
 {
+	public bool interactable = true;
 	[HideInInspector] public List<Flag> exceptions = new();
 
 	public void Start()
@@ -59,6 +60,7 @@ public class AdvancedCutscenePlayer : MonoBehaviour, Interactable, CutscenePlaye
 
 	public virtual void OnInteract()
 	{
+		if (!interactable) return;
 		if (hasPlayed && playOnce)
 		{
 			return;

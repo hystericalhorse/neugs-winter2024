@@ -74,6 +74,12 @@ public class TriggerDoor : MonoBehaviour, Door
 			OnInteract();
 	}
 
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.transform.TryGetComponent<PlayerController>(out _))
+			lockedInteraction?.Invoke();
+	}
+
 	public void Lock()
 	{
 		Locked = true;
