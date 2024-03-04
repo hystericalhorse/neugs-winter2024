@@ -8,6 +8,7 @@ public class PolaroidPickup : MonoBehaviour, Interactable
 
 	public void OnInteract()
     {
+        AudioManager.instance.PlaySound("PickUp");
         connectedWall.UpdateWall();
         Destroy(gameObject);
     }
