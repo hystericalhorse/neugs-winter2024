@@ -51,12 +51,13 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 			var cam = PlayerManager.instance.GetCameraController();
 			if (cam != null)
 			{
-				PlayerManager.instance.GetCameraController().Center = CurrentLevel().Rooms[0].transform.position;
-				PlayerManager.instance.GetCameraController().Limits = CurrentLevel().Rooms[0].RoomBounds;
-				PlayerManager.instance.GetCameraController().transform.position = CurrentLevel().Rooms[0].transform.position;
+				cam.Center = CurrentLevel().Rooms[0].transform.position;
+				cam.Limits = CurrentLevel().Rooms[0].RoomBounds;
+				cam.transform.position = CurrentLevel().Rooms[0].transform.position;
 			}
 
 			PlayerManager.instance.PlacePlayerController(CurrentLevel().DefaultTransform.position);
+			PlayerManager.instance.objectiveList.ClearObjectives();
 
 			CurrentLevel().Rooms[0].OnEnterRoom();
 			CurrentLevel().OnLevelLoad?.Invoke();
