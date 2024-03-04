@@ -643,8 +643,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7100107741049565663}
-  - component: {fileID: 6202711710343466974}
   - component: {fileID: 3200405549097072378}
+  - component: {fileID: 6417447606761584313}
   m_Layer: 5
   m_Name: Combolock
   m_TagString: Untagged
@@ -674,27 +674,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 262.5, y: 262.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &6202711710343466974
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2343361830243556503}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f758fd39505539846897abb139105cf3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3200405549097072378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +696,27 @@ MonoBehaviour:
   - {fileID: 8765144049969774576}
   - {fileID: 7238635111672895485}
   - {fileID: 6950048519128209295}
+--- !u!95 &6417447606761584313
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2343361830243556503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f985380188e59b46a16cfe6d91f4f9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2720373582498742494
 GameObject:
   m_ObjectHideFlags: 0
