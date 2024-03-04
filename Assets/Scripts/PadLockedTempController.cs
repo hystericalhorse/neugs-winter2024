@@ -23,10 +23,9 @@ public class PadLockedTempController : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] texts;
     [SerializeField] TextMeshProUGUI[] nextTexts;
     [SerializeField] TextMeshProUGUI[] prevTexts;
-    [SerializeField] Image comboLockLooks;
     [SerializeField] Button[] dails;
-    
-  
+    [SerializeField] private Animator animator;
+
     int active = 0;
  
     private PlayerControls playerControls;
@@ -39,7 +38,6 @@ public class PadLockedTempController : MonoBehaviour
     {
        // dails[active].image.color = Color.red;
         playerControls ??= new();
-        
     }
 
     void Start()
@@ -323,6 +321,7 @@ public class PadLockedTempController : MonoBehaviour
         foreach(var dail in dails)
         {
             dail.gameObject.SetActive(true);
+            animator.speed = 0;
         }
 
 
@@ -364,6 +363,7 @@ public class PadLockedTempController : MonoBehaviour
         if (currentAnswer == correctAnwer)
         {
             FindObjectOfType<TriggerDoor>()?.Unlock();
+            animator.speed = 1;
         }
     }
 
