@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviourSingleton<PlayerManager>
 		Set(this);
 	}
 
-	private void OnDestroy() => Release();
+	//private void OnDestroy() => Release();
 
 	private void Start()
 	{

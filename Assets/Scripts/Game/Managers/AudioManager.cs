@@ -20,7 +20,7 @@ public class Sound
 public class AudioManager : MonoBehaviourSingleton<AudioManager>
 {
 	void Awake() => Set(this);
-	void OnDestroy() => Release();
+	//void OnDestroy() => Release();
 
 	[SerializeField] AudioMixerGroup mixerGroup;
 	[SerializeField] Sound[] sounds;

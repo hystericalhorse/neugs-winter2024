@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviourSingleton<LevelManager>
 		Set(this);
 	}
 
-	private void OnDestroy() => Release();
+	//private void OnDestroy() => Release();
 
 	private void Start()
 	{

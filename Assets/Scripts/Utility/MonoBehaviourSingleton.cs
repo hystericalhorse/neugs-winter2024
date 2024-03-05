@@ -9,7 +9,7 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviourSi
     {
         if (MonoBehaviourSingleton<T>.instance)
         {
-            if (!ReferenceEquals(MonoBehaviourSingleton<T>.instance, instance))
+            if (!ReferenceEquals(MonoBehaviourSingleton<T>.instance.gameObject, instance.gameObject))
                 DestroyImmediate(instance.gameObject);
         }
 		else

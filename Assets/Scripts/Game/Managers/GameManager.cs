@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 	{
 		Set(this);
 	}
-	private void OnDestroy() => Release();
+	//private void OnDestroy() => Release();
 
 	private void Start()
 	{

@@ -32,7 +32,7 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 	PlayerControls controls;
 
 	private void Awake() => Set(this);
-	private void OnDestroy() => Release();
+	//private void OnDestroy() => Release();
 
 	private IEnumerator PlayCutscene()
 	{
@@ -40,15 +40,13 @@ public class CutsceneManager : MonoBehaviourSingleton<CutsceneManager>
 		controls.Player.Interact.performed += Next;
 		controls.Enable();
 
-		//PlayerManager.instance.TogglePlayerController(false);
-		PlayerManager.instance.GetPlayerController().DeactivateControls();
-
 		isPlaying = true;
 		currentShot = currentCutscene.Dequeue();
 		TryDisplayShot(currentShot);
 
 		while (isPlaying)
 		{
+			PlayerManager.instance.GetPlayerController().DeactivateControls();
 			yield return null;
 		}
 

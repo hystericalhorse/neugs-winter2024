@@ -14,7 +14,7 @@ public class SceneManager : MonoBehaviourSingleton<SceneManager>
 	string currentScene;
 
 	private void Awake() => Set(this);
-	private void OnDestroy() => Release();
+	//private void OnDestroy() => Release();
 
 	public IEnumerator WaitForSceneLoad(UnityEngine.AsyncOperation operation, bool fadeIn = false)
 	{
