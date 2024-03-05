@@ -38,10 +38,9 @@ public class CallCombinationLock : MonoBehaviour, Interactable
             };
 
             //combo = combination.GetComboInt().ToList();
-
-			combinationLock.SetActive(false);
 		}
-    }
+		combinationLock.SetActive(false);
+	}
 
 	[ContextMenu("Unlock")]
 	public void Unlock()
