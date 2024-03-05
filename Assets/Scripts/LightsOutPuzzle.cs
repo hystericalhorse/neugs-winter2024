@@ -71,6 +71,10 @@ public class LightsOutPuzzle : MonoBehaviour
     public void TestSolve()
     {
         //Instantiate(tempExplosion);
+        foreach(var light in puzzleLights)
+        {
+            light.interactable = false;
+        }
         CutsceneManager.instance.StartCutscene(cutscenePlayer);
         Destroy(miniCanvas.gameObject);
         
