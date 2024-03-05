@@ -1296,6 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
   exceptions: []
   cutscene:
   - conditions: []
@@ -3812,7 +3813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808933420a6d974388580313f6861a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killSpuper: 0
   sceneName: GasStation_Main
 --- !u!1 &7833903459081833154
 GameObject:
@@ -7335,7 +7335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26860
+      value: -234680
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9389,6 +9389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Twinkle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6206633515715531387, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10399,7 +10403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -27064
+      value: -234482
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11219,6 +11223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Twinkle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6206633515715531387, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11795,7 +11803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -26976
+      value: -231250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12614,6 +12622,10 @@ PrefabInstance:
     - target: {fileID: 2463722510865152141, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
       propertyPath: m_Name
       value: Twinkle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206633515715531387, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13509,7 +13521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -27086
+      value: -227712
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16899,7 +16911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26836
+      value: -225064
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22218,7 +22230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -27108
+      value: -230664
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22284,7 +22296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26788
+      value: -228288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23115,6 +23127,10 @@ PrefabInstance:
     - target: {fileID: 2463722510865152141, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
       propertyPath: m_Name
       value: Twinkle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206633515715531387, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35344,7 +35360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -26998
+      value: -229440
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35728,7 +35744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -26954
+      value: -226936
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36757,6 +36773,10 @@ PrefabInstance:
     - target: {fileID: 2463722510865152141, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
       propertyPath: m_Name
       value: Twinkle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206633515715531387, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40227,7 +40247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26932
+      value: -232876
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48594,7 +48614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26812
+      value: -231946
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49288,7 +49308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26908
+      value: -229028
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50184,7 +50204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -27020
+      value: -231654
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50630,7 +50650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -27042
+      value: -235360
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50696,7 +50716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -26884
+      value: -230592
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51605,6 +51625,10 @@ PrefabInstance:
     - target: {fileID: 2463722510865152141, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
       propertyPath: m_Name
       value: Twinkle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206633515715531387, guid: c0cd0c1f947c9084ca8f06e50fc8d66b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
