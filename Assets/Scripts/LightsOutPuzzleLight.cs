@@ -8,6 +8,7 @@ public class LightsOutPuzzleLight : MonoBehaviour, Interactable
     [SerializeField] private GameObject lightObject;
     [SerializeField] private List<LightsOutPuzzleLight> neighbors;
     [SerializeField] private LightsOutPuzzle puzzle;
+    public bool interactable = true;
     
     private bool lightOn = false;
 
@@ -20,14 +21,18 @@ public class LightsOutPuzzleLight : MonoBehaviour, Interactable
     }
     public void OnInteract()
     {
-        ToggleLightOn();
-        puzzle.InitializeMap();
-        foreach(var neighbor in neighbors) 
+        if (interactable)
         {
-            neighbor.ToggleLightOn();
-            neighbor.puzzle.InitializeMap();
+            ToggleLightOn();
+            puzzle.InitializeMap();
+            foreach(var neighbor in neighbors) 
+            {
+                neighbor.ToggleLightOn();
+                neighbor.puzzle.InitializeMap();
+            }
+            puzzle.CheckSolved();
+
         }
-        puzzle.CheckSolved();
     }
 
     public void SetLightOn(bool on = true)
