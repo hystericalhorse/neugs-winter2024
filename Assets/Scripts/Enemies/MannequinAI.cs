@@ -30,7 +30,7 @@ public class MannequinAI : MonoBehaviour {
         Vector2 Direction = Player.transform.position - transform.position;
         Direction.Normalize();
         Velocity = Direction * Speed;
-
+        AudioManager.instance.PlaySound("Creak");
         Velocity.x = Direction.x * Speed;
         Velocity.y = Direction.y * Speed;
         RB.velocity = Velocity;
@@ -62,6 +62,7 @@ public class MannequinAI : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.transform.CompareTag("PlayerDetection")) {
             Detected = false;
+
             Anim.speed = 1;
         }
     }
