@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Android.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -36,14 +37,14 @@ public class PadLockedTempController : MonoBehaviour
 
     private void Awake()
     {
-       // dails[active].image.color = Color.red;
+       texts[active].color = Color.yellow;
         playerControls ??= new();
     }
 
     void Start()
     {
         //self explanitory just sets the padlock messages to the defualt
-        for(int i = 0; i < texts.Length; i++)
+        for(int i = 0; i < texts.Length - 1; i++)
         {
             texts[i].text = "0";
             nextTexts[i].text = "1";
@@ -64,7 +65,8 @@ public class PadLockedTempController : MonoBehaviour
 
     private void GoRight(InputAction.CallbackContext context)
     {
-        
+
+        texts[active].color = Color.white;
 
       
         active += 1;
@@ -72,12 +74,15 @@ public class PadLockedTempController : MonoBehaviour
         {
             active = 0;
         }
-      
-      
+        texts[active].color = Color.yellow;
+        //dails[active].GetComponent<TextMeshProUGUI>().color = Color.yellow;
+
+
     }
     private void GoLeft(InputAction.CallbackContext context)
     {
        
+       texts[active].color = Color.white;
        
         active -= 1;
         if (active < 0)
@@ -85,6 +90,7 @@ public class PadLockedTempController : MonoBehaviour
             active = 4;
         }
        
+       texts[active].color = Color.yellow;
         
     }
 

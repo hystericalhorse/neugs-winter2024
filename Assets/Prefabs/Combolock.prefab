@@ -691,6 +691,7 @@ MonoBehaviour:
   - {fileID: 1041368291337513999}
   - {fileID: 2716342012465444777}
   - {fileID: 3928441346545219664}
+  - {fileID: 384042132678844977}
   nextTexts:
   - {fileID: 8711254515095611353}
   - {fileID: 3101286752221470975}
@@ -706,6 +707,7 @@ MonoBehaviour:
   - {fileID: 8765144049969774576}
   - {fileID: 7238635111672895485}
   - {fileID: 6950048519128209295}
+  - {fileID: 8271969622879367863}
   animator: {fileID: 6417447606761584313}
 --- !u!95 &6417447606761584313
 Animator:
@@ -1202,7 +1204,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9882353, g: 1, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
