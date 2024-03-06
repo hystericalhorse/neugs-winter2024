@@ -247,11 +247,11 @@ public class RotaryPadLocks : MonoBehaviour
     {
         for (int i = 0; i < combination.Length; i++)
         {
-            combination[i] = GenerateUniqueNumber(); 
+            combination[i] = GenerateUniqueNumber(i); 
         }
     }
 
-    private short GenerateUniqueNumber()
+    private short GenerateUniqueNumber(int id = 0)
     {
         System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
         bool unique = false;
@@ -259,7 +259,18 @@ public class RotaryPadLocks : MonoBehaviour
         while (!unique)
         {
             output = (short)rand.Next(40);
-            if (!combination.Contains(output)) unique = true;
+            if (!combination.Contains(output))
+            {
+                if (id != 0)
+                {
+                    var temp = combination[id - 1] - output;
+                    temp = Math.Abs(temp);
+                    if (temp >= 10) unique = true;
+
+                    //:D
+                }
+                else unique = true;
+            }
         }
         return output;
     }
