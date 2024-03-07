@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -8,6 +9,8 @@ public class SplitComboLockCode : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GenerateCodeScript genCode;
     [SerializeField] private GameObject[] lockers;
+    [SerializeField] Sprite[] sprites;
+
     private float combo;
     private int combo1000s;
     private int combo100s;
@@ -20,18 +23,21 @@ public class SplitComboLockCode : MonoBehaviour
 
 		Shot shot = new Shot();
 		shot.shotScript.Add(combo1000s.ToString());
-
+        shot.shotImage = sprites[0];
 		lockers[0].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
+        
 		lockers[0].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 
 		shot = new();
 		shot.shotScript.Add(combo100s.ToString());
+        shot.shotImage = sprites[1];
 
 		lockers[1].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
 		lockers[1].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 
 		shot = new();
 		shot.shotScript.Add(combo10s.ToString());
+        shot.shotImage = sprites[2];
 
 		lockers[2].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
 		lockers[2].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
@@ -39,6 +45,7 @@ public class SplitComboLockCode : MonoBehaviour
 		shot = new();
 		shot.shotScript.Add(combo1s.ToString());
 
+        shot.shotImage = sprites[3];
 		lockers[3].GetComponent<SimpleCutscenePlayer>()?.ClearShots();
 		lockers[3].GetComponent<SimpleCutscenePlayer>()?.AddShot(shot);
 	}
