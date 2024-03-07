@@ -56,16 +56,12 @@ public class AdvancedCutscenePlayer : MonoBehaviour, Interactable, CutscenePlaye
 	[SerializeField] bool playOnce = false;
 	[SerializeField] bool hasPlayed = false;
 
-	public void Play() => OnInteract();
-
-	public virtual void OnInteract()
+	public void Play()
 	{
-		if (!interactable) return;
 		if (hasPlayed && playOnce)
 		{
 			return;
 		}
-		//if (hasPlayed == true) return;
 
 		if (PlayIf())
 		{
@@ -82,5 +78,11 @@ public class AdvancedCutscenePlayer : MonoBehaviour, Interactable, CutscenePlaye
 				currentIndex += 1;
 			}
 		}
+	}
+
+	public virtual void OnInteract()
+	{
+		if (!interactable) return;
+		Play();
 	}
 }

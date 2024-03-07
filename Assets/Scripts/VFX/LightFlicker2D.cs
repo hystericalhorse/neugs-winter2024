@@ -7,7 +7,9 @@ public class LightFlicker2D : MonoBehaviour
 	[SerializeField] float minIntensity = 1;
 	[SerializeField] float maxIntensity = 3;
 
-    Light2D lightComponent;
+	[SerializeField, Range(0.1f, 1f)] float smoothAmount = 0.1f;
+
+	Light2D lightComponent;
 
 	private void Start()
 	{
@@ -16,15 +18,13 @@ public class LightFlicker2D : MonoBehaviour
 		lightComponent.intensity = minIntensity;
 
 		targetIntensity = Random.Range(minIntensity, maxIntensity);
-		flickerTime = Random.Range(0.1f, 1);
 	}
 
 	float targetIntensity;
-	float flickerTime;
 	private void Update()
     {
-		float f = Mathf.Abs(lightComponent.intensity / (targetIntensity - lightComponent.intensity));
-		lightComponent.intensity = Mathf.Lerp(lightComponent.intensity, targetIntensity, f);
+		float f = Mathf.Abs(lightComponent.intensity / (targetIntensity - lightComponent.intensity)) * (Time.smoothDeltaTime / smoothAmount);
+		lightComponent.intensity = Mathf.SmoothStep(lightComponent.intensity, targetIntensity, f);
     }
 
 	private void LateUpdate()
@@ -32,7 +32,6 @@ public class LightFlicker2D : MonoBehaviour
 		if (Mathf.Approximately(lightComponent.intensity, targetIntensity))
 		{
 			targetIntensity = Random.Range(minIntensity, maxIntensity);
-			flickerTime = Random.Range(0.1f, 1);
 		}
 	}
 }
