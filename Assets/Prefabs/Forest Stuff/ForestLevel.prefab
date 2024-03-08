@@ -153,6 +153,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 5.0300007, y: 17.86}
   RoomBounds: {x: 3, y: 2}
 --- !u!1 &310601449086140673
 GameObject:
@@ -300,6 +301,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 12, y: -3}
   RoomBounds: {x: 35, y: 18}
 --- !u!114 &5414569756945577226
 MonoBehaviour:
@@ -506,6 +508,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 22.03, y: 17.86}
   RoomBounds: {x: 4, y: 3}
 --- !u!1 &1306253657717142489
 GameObject:
@@ -2196,6 +2199,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 14.25, y: -29}
   RoomBounds: {x: 15, y: 5}
 --- !u!114 &7243332373809969949
 MonoBehaviour:
@@ -2461,6 +2465,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 56, y: 2.25}
   RoomBounds: {x: 5, y: 10}
 --- !u!1 &5228725656467860182
 GameObject:
@@ -2849,6 +2854,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 41.75, y: -1}
   RoomBounds: {x: 7, y: 7}
 --- !u!114 &2797052851275600258
 MonoBehaviour:
@@ -3229,6 +3235,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 33.25, y: -28.25}
   RoomBounds: {x: 0, y: 8}
 --- !u!1 &6241005247924704213
 GameObject:
@@ -3309,6 +3316,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: 39.5, y: 14.25}
   RoomBounds: {x: 4, y: 5}
 --- !u!1 &6389420610408768098
 GameObject:
@@ -3391,6 +3399,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: -4.75, y: -29.25}
   RoomBounds: {x: 2, y: 1}
 --- !u!1 &6549973257643298257
 GameObject:
@@ -3813,7 +3822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808933420a6d974388580313f6861a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: GasStation_Main
+  sceneName: GasStation_NotMain
 --- !u!1 &7833903459081833154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4756,6 +4765,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 1, g: 0, b: 0, a: 1}
+  roomCenter: {x: -24.97, y: -7.39}
   RoomBounds: {x: 4, y: 8}
 --- !u!1 &8879696104817732770
 GameObject:
@@ -7335,7 +7345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -234680
+      value: -10664
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10403,7 +10413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -234482
+      value: -8530
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11803,7 +11813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -231250
+      value: -11862
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13521,7 +13531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -227712
+      value: -14778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16911,7 +16921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -225064
+      value: -5114
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22230,7 +22240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -230664
+      value: -15842
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22296,7 +22306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -228288
+      value: -15182
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35360,7 +35370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -229440
+      value: -7438
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35744,7 +35754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -226936
+      value: -9260
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40247,7 +40257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -232876
+      value: -9372
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48614,7 +48624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -231946
+      value: -11322
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49308,7 +49318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -229028
+      value: -9912
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50204,7 +50214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -231654
+      value: -6366
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50650,7 +50660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475293712362819024, guid: 63e789d3a4bacf3439b76d80edf96265, type: 3}
       propertyPath: m_InstanceId
-      value: -235360
+      value: -12994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50716,7 +50726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828062118857030772, guid: 1d021cd9346005545addb799964e05fe, type: 3}
       propertyPath: m_InstanceId
-      value: -230592
+      value: -6296
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

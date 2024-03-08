@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -3348471221840809921}
   - component: {fileID: 2084654562096654454}
   - component: {fileID: 57425088120839344}
+  - component: {fileID: 373108049982285726}
   m_Layer: 0
   m_Name: Toolbox
   m_TagString: Untagged
@@ -180,7 +181,7 @@ MonoBehaviour:
   - {x: 0.265625, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -5164
+  m_InstanceId: -6796
   m_LocalBounds:
     m_Center: {x: 0, y: 0.28125, z: 0}
     m_Extent: {x: 0.265625, y: 0.28125, z: 0}
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
   exceptions: []
   cutscene:
   - conditions: []
@@ -287,6 +289,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 373108049982285726}
+        m_TargetAssemblyTypeName: AdvancedCutscenePlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2084654562096654454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +327,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objname: code
   objdesc: Find a code for the lockbox
+--- !u!114 &373108049982285726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598632681821555615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  exceptions: []
+  cutscene:
+  - conditions: []
+    cutscene:
+      timeline:
+      - shotImage: {fileID: 0}
+        leftCharacterImage: {fileID: 1401458194, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+        rightCharacterImage: {fileID: 0}
+        shotScript:
+        - Oh, a key!
+        - What could this be for?
+        narrator: Ashley
+        silent: 0
+        textSounds: []
+        onShotBegin:
+          m_PersistentCalls:
+            m_Calls: []
+        onShotEnd:
+          m_PersistentCalls:
+            m_Calls: []
+  currentIndex: 0
+  loopScenes: 0
+  playOnce: 1
+  hasPlayed: 0
 --- !u!1001 &225683232257913964
 PrefabInstance:
   m_ObjectHideFlags: 0
