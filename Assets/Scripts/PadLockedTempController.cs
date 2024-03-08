@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -31,7 +32,7 @@ public class PadLockedTempController : MonoBehaviour
  
     private PlayerControls playerControls;
 
-  
+    public UnityEvent onUnlock;
 
     
 
@@ -368,7 +369,8 @@ public class PadLockedTempController : MonoBehaviour
       
         if (currentAnswer == correctAnwer)
         {
-            FindObjectOfType<TriggerDoor>()?.Unlock();
+            Deactivate();
+            onUnlock?.Invoke();
             animator.speed = 1;
         }
     }

@@ -12,7 +12,7 @@ public class Room : MonoBehaviour
     [Space]
     [SerializeField] Color boundsCrossColor = Color.red;
 
-    private Vector2 roomCenter;
+    public Vector2 roomCenter;
     public Vector2 RoomBounds = Vector2.positiveInfinity;
 
     public void Awake()
@@ -24,14 +24,25 @@ public class Room : MonoBehaviour
     public void OnEnterRoom() => onEnterRoom?.Invoke();
     public void OnExitRoom() => onExitRoom?.Invoke();
 
-    protected void SetCameraControllerCenter()
+	public void SetCameraControllerCenter()
+	{
+		var cam = PlayerManager.instance?.GetCameraController();
+		if (cam)
+		{
+			cam.Center = roomCenter;
+			cam.Limits = RoomBounds;
+			cam.ResetController();
+		}
+	}
+
+	public void SetCameraControllerCenter(bool force = false)
     {
         var cam = PlayerManager.instance?.GetCameraController();
         if (cam)
         {
 			cam.Center = roomCenter;
 			cam.Limits = RoomBounds;
-			cam.ResetController();
+			cam.ResetController(force);
 		}
     }
 

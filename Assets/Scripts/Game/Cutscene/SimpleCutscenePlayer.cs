@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface CutscenePlayer { }
+public interface CutscenePlayer { public void Play(); }
 
 public class SimpleCutscenePlayer : MonoBehaviour, Interactable, CutscenePlayer
 {

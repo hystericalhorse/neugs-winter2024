@@ -48,6 +48,7 @@ public class TriggerDoor : MonoBehaviour, Door
 			});
 
 			ts.afterFadeIn.AddListener(() => {
+				targetRoom.SetCameraControllerCenter(force: true);
 				thisRoom?.OnExitRoom();
 			});
 

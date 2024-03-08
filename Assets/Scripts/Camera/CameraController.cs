@@ -65,7 +65,7 @@ public class CameraController : MonoBehaviour
 			transform.position = Vector3.Lerp(transform.position, pos, followSpeed * Time.smoothDeltaTime); // smooth camera motion
 	}
 
-	public void NoLerpResetPosition()
+	public void NoLerpResetPosition(bool forced = false)
 	{
 		if (TargetTransform == null)
 		{
@@ -84,7 +84,7 @@ public class CameraController : MonoBehaviour
 			if (Limits.y == 0) pos.y = Center.y;
 			else pos.y = Mathf.Clamp(pos.y, Center.y - Limits.y * 0.5f, Center.y + Limits.y * 0.5f);
 
-			if (!paused) transform.position = pos;
+			if (!paused || forced) transform.position = pos;
 		}
 	}
 
@@ -93,10 +93,10 @@ public class CameraController : MonoBehaviour
 		TargetTransform = PlayerManager.instance.GetPlayerController().transform;
 	}
 
-	public void ResetController()
+	public void ResetController(bool force = false)
 	{
 		TargetTransform = PlayerManager.instance.GetPlayerController().transform;
-		NoLerpResetPosition();
+		NoLerpResetPosition(force);
 	}
 
 	public void ResetController(Transform t)

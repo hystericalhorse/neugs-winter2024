@@ -3,29 +3,36 @@ using UnityEngine;
 // With apologies to ErkrodC @ https://github.com/ErkrodC & Kokowolo @ https://www.reddit.com/user/Kokowolo/
 public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviourSingleton<T>
 {
-    public static T instance { get; private set; }
+    static T m_instance { get; set; }
+    public static T instance
+    {
+        get
+        {
+            if (m_instance is null)
+				m_instance = FindObjectOfType<T>() ?? new GameObject().AddComponent<T>();
+
+            return m_instance;
+		}
+        
+        private set
+        {
+			m_instance = value;
+        }
+    }
 
     public static void Set(T instance, bool dontDestroyOnLoad = true)
     {
-        if (MonoBehaviourSingleton<T>.instance)
+        if (m_instance)
         {
-            if (!ReferenceEquals(MonoBehaviourSingleton<T>.instance.gameObject, instance.gameObject))
+            if (!ReferenceEquals(m_instance, instance))
                 DestroyImmediate(instance.gameObject);
         }
 		else
         {
-			MonoBehaviourSingleton<T>.instance = instance;
+			m_instance = instance;
             if (dontDestroyOnLoad) DontDestroyOnLoad(instance.gameObject);
 		}
 	}
-
-    public static T Get()
-    {
-        if (!instance)
-            Set(FindObjectOfType<T>() ?? new GameObject().AddComponent<T>());
-
-        return instance;
-    }
 
     public static void Release()
     {

@@ -100,4 +100,6 @@ public class TransitionScreen : MonoBehaviour
 		afterFadeOut?.Invoke();
 		afterFadeOut?.RemoveAllListeners();
 	}
+
+	public void SetVisible(bool b) => canvasGroup.alpha = (b)?1:0;
 }

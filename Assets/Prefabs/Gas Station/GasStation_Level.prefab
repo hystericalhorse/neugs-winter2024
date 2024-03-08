@@ -291,7 +291,7 @@ MonoBehaviour:
   - {x: -0.48439264, y: 0.03124857, z: 0}
   m_ShapePathHash: -836043003
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1686
+  m_InstanceId: 90718
   m_LocalBounds:
     m_Center: {x: 0.0000013113022, y: 0.5937207, z: 0}
     m_Extent: {x: 0.5156249, y: 0.56254125, z: 0}
@@ -320,8 +320,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4544926679250302795}
   - component: {fileID: 8701627082927563017}
-  - component: {fileID: 3213559889000574991}
   - component: {fileID: 1841432428990386609}
+  - component: {fileID: 6937863601189626921}
+  - component: {fileID: 6788890702042610253}
+  - component: {fileID: 4905084827948007650}
+  - component: {fileID: 4757719009608149954}
+  - component: {fileID: 691363501217854521}
+  - component: {fileID: 1198952648499971049}
   m_Layer: 0
   m_Name: BacklotCutscene
   m_TagString: Untagged
@@ -343,6 +348,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2454436488563966339}
+  - {fileID: 8987630127347209828}
+  - {fileID: 9073312981170605241}
   m_Father: {fileID: 3488616548247266160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8701627082927563017
@@ -361,36 +368,89 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1841432428990386609}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: AddCameraReposition
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2454436488563966339}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3213559889000574991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281276868500966959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef632a3c82da0804eb7f59e70c96b5e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  exceptions: []
-  cutscene: []
-  currentIndex: 0
-  loopScenes: 0
-  playOnce: 0
-  hasPlayed: 0
+      - m_Target: {fileID: 1841432428990386609}
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: AddMoveTo
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8987630127347209828}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1841432428990386609}
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: AddMoveTo
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 9073312981170605241}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1841432428990386609}
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: AddFaceDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1841432428990386609}
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: AddPause
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1841432428990386609}
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: AddMonoAction
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4905084827948007650}
+          m_ObjectArgumentAssemblyTypeName: MonoAction, Assembly-CSharp
+          m_IntArgument: 2
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1841432428990386609}
+        m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1841432428990386609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +465,223 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waiting: 0
   waitingTime: 0
+--- !u!114 &6937863601189626921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281276868500966959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 0
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - What the...
+      narrator: Ashley
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6788890702042610253}
+            m_TargetAssemblyTypeName: AnimationHandler, Assembly-CSharp
+            m_MethodName: SetTargetProperty
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: shaking
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6788890702042610253}
+            m_TargetAssemblyTypeName: AnimationHandler, Assembly-CSharp
+            m_MethodName: SetBool
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: closed
+              m_BoolArgument: 0
+            m_CallState: 2
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6788890702042610253}
+            m_TargetAssemblyTypeName: AnimationHandler, Assembly-CSharp
+            m_MethodName: SetTargetProperty
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: open
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6788890702042610253}
+            m_TargetAssemblyTypeName: AnimationHandler, Assembly-CSharp
+            m_MethodName: SetBool
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: closed
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1841432428990386609}
+            m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+            m_MethodName: Clear
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: closed
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1841432428990386609}
+            m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+            m_MethodName: AddPause
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 2
+              m_StringArgument: closed
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1841432428990386609}
+            m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+            m_MethodName: AddMonoAction
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 4757719009608149954}
+              m_ObjectArgumentAssemblyTypeName: MonoAction, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: closed
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1198952648499971049}
+            m_TargetAssemblyTypeName: AudioHandler, Assembly-CSharp
+            m_MethodName: StopSound
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: MetalBanging
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1841432428990386609}
+            m_TargetAssemblyTypeName: CutsceneActionsHandler, Assembly-CSharp
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: MetalBanging
+              m_BoolArgument: 1
+            m_CallState: 2
+--- !u!114 &6788890702042610253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281276868500966959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d8f7a95dd025741abea552b30d97f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetAnimator: {fileID: 5060641452366799569}
+  targetProperty: 
+--- !u!114 &4905084827948007650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281276868500966959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7007cb4b95eb7a4daa35e9483538532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 281276868500966959}
+--- !u!114 &4757719009608149954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281276868500966959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556ef57a569ca504b9f44773515a0f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 691363501217854521}
+        m_TargetAssemblyTypeName: DemoOver, Assembly-CSharp
+        m_MethodName: DemoScreenPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  clearAfter: 0
+--- !u!114 &691363501217854521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281276868500966959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d980321e75ba84cb97a2e30ab2da1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DemoOverScreen: {fileID: 0}
+--- !u!114 &1198952648499971049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281276868500966959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758c894c073bd1f4da62e99d6d1fa53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &314419471687721295
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +879,8 @@ GameObject:
   - component: {fileID: 5859962353129760214}
   - component: {fileID: 3155022412026795575}
   - component: {fileID: 1337109632955765142}
+  - component: {fileID: 8883642348891520930}
+  - component: {fileID: 5567700236047942512}
   m_Layer: 0
   m_Name: LockedLocker
   m_TagString: Untagged
@@ -779,7 +1058,7 @@ MonoBehaviour:
   - {x: -0.48439264, y: 0.03124857, z: 0}
   m_ShapePathHash: -836043003
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1708
+  m_InstanceId: 90732
   m_LocalBounds:
     m_Center: {x: 0.0000013113022, y: 0.5937207, z: 0}
     m_Extent: {x: 0.5156249, y: 0.56254125, z: 0}
@@ -819,7 +1098,6 @@ MonoBehaviour:
         leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
         rightCharacterImage: {fileID: 0}
         shotScript:
-        - This one's locked.
         - Another combination lock.
         - Maybe someone left a code lying around.
         narrator: Ashley
@@ -888,7 +1166,31 @@ MonoBehaviour:
   lockedDoor: {fileID: 504691736814539176}
   onUnlock:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 504691736814539176}
+        m_TargetAssemblyTypeName: TriggerDoor, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8883642348891520930}
+        m_TargetAssemblyTypeName: SimpleCutscenePlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3155022412026795575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +1217,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objname: station
   objdesc: 
+--- !u!114 &8883642348891520930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476891647328193837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 21300000, guid: d5c869db15e0fb44f84a0796f9687955, type: 3}
+      leftCharacterImage: {fileID: 0}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - Another photograph?
+      narrator: Ashley
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: 266069620, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - Huh?
+      - It's coming from out back!
+      narrator: Ashley
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5567700236047942512}
+            m_TargetAssemblyTypeName: AudioHandler, Assembly-CSharp
+            m_MethodName: PlaySound
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: MetalBanging
+              m_BoolArgument: 0
+            m_CallState: 2
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!114 &5567700236047942512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476891647328193837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758c894c073bd1f4da62e99d6d1fa53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &722599535035515748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1497,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8701627082927563017}
+        m_TargetAssemblyTypeName: OneTimeEvent, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onExitRoom:
     m_PersistentCalls:
       m_Calls:
@@ -1155,6 +1537,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 0, g: 1, b: 0.97789955, a: 1}
+  roomCenter: {x: 14.66, y: 32.72}
   RoomBounds: {x: 6, y: 8}
 --- !u!1 &1206170297162583241
 GameObject:
@@ -1784,7 +2167,7 @@ MonoBehaviour:
   - {x: -0.48439264, y: 0.03124857, z: 0}
   m_ShapePathHash: -836043003
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1736
+  m_InstanceId: 90588
   m_LocalBounds:
     m_Center: {x: 0.0000013113022, y: 0.5937207, z: 0}
     m_Extent: {x: 0.5156249, y: 0.56254125, z: 0}
@@ -2248,6 +2631,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   boundsCrossColor: {r: 0, g: 1, b: 0.97789955, a: 1}
+  roomCenter: {x: 0.120000005, y: 0.53}
   RoomBounds: {x: 15, y: 18}
 --- !u!1 &4613014068771727218
 GameObject:
@@ -2635,7 +3019,7 @@ MonoBehaviour:
   - {x: 0.515625, y: 0, z: 0}
   m_ShapePathHash: 1838768317
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1522
+  m_InstanceId: 90740
   m_LocalBounds:
     m_Center: {x: -0.0000009536743, y: 0.875, z: 0}
     m_Extent: {x: 0.51562595, y: 0.875, z: 0}
@@ -2830,7 +3214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84f8e9adfb119049b21af94fdb10340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Locked: 0
+  Locked: 1
   thisRoom: {fileID: 4193683423801774269}
   targetRoom: {fileID: 7447525633571495977}
   targetTransform: {fileID: 5254488439847547961}
@@ -3127,6 +3511,11 @@ MonoBehaviour:
   - {fileID: 9128870235882513907}
   - {fileID: 2925289092458320494}
   - {fileID: 8905142465155115235}
+  sprites:
+  - {fileID: 1406036136, guid: 501666e38d7614f42adb16b638691b39, type: 3}
+  - {fileID: -562826667, guid: 501666e38d7614f42adb16b638691b39, type: 3}
+  - {fileID: -566678911, guid: 501666e38d7614f42adb16b638691b39, type: 3}
+  - {fileID: -1516904250, guid: 501666e38d7614f42adb16b638691b39, type: 3}
 --- !u!1 &5905491613408246664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,6 +3614,37 @@ MonoBehaviour:
   lockedInteraction:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &6132879179096122733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9073312981170605241}
+  m_Layer: 0
+  m_Name: pos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9073312981170605241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132879179096122733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3024907, y: 1.432528, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4544926679250302795}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6373947846532002250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,7 +4034,7 @@ MonoBehaviour:
   - {x: -0.48439264, y: 0.03124857, z: 0}
   m_ShapePathHash: -836043003
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1664
+  m_InstanceId: 90884
   m_LocalBounds:
     m_Center: {x: 0.0000013113022, y: 0.5937207, z: 0}
     m_Extent: {x: 0.5156249, y: 0.56254125, z: 0}
@@ -3829,6 +4249,37 @@ MonoBehaviour:
   minIntensity: 9
   maxIntensity: 11
   smoothAmount: 0.1
+--- !u!1 &6821043070690066944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8987630127347209828}
+  m_Layer: 0
+  m_Name: pos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8987630127347209828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821043070690066944}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3024907, y: -1.1937733, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4544926679250302795}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7113576198639122942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,6 +4993,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   boundsCrossColor: {r: 0, g: 1, b: 0.97789955, a: 1}
+  roomCenter: {x: 0.120000005, y: 20.61}
   RoomBounds: {x: 5, y: 5}
 --- !u!114 &5963736363918294918
 MonoBehaviour:
@@ -5499,6 +5951,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2681018544665946016}
   - component: {fileID: 4193683423801774269}
+  - component: {fileID: 4828452575561267052}
+  - component: {fileID: 6612439714957390879}
   m_Layer: 0
   m_Name: Backroom
   m_TagString: Untagged
@@ -5539,9 +5993,79 @@ MonoBehaviour:
   RoomName: Backroom
   onEnterRoom:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6612439714957390879}
+        m_TargetAssemblyTypeName: OneTimeEvent, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExitRoom:
     m_PersistentCalls:
       m_Calls: []
   boundsCrossColor: {r: 0, g: 1, b: 0.97789955, a: 1}
+  roomCenter: {x: 0.120000005, y: 31.47}
   RoomBounds: {x: 4, y: 3}
+--- !u!114 &4828452575561267052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206559300390725028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73b01b1c092e4d4aaca778dd3ca90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  cutscene:
+    timeline:
+    - shotImage: {fileID: 0}
+      leftCharacterImage: {fileID: -306596442, guid: 6f86a543555df0d43a27d7baaaed690e, type: 3}
+      rightCharacterImage: {fileID: 0}
+      shotScript:
+      - There's gotta be something back here.
+      - Maybe in these lockers?
+      narrator: 
+      silent: 0
+      textSounds: []
+      onShotBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      onShotEnd:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!114 &6612439714957390879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206559300390725028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e100af545d50842bf596b2fd6b8b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4828452575561267052}
+        m_TargetAssemblyTypeName: SimpleCutscenePlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -29,16 +29,8 @@ public class CallCombinationLock : MonoBehaviour, Interactable
 
         combinationLock = go;
 
-        var combination = combinationLock.GetComponent<RotaryPadLocks>();
-        if (combination != null)
-        {
-            combination.onUnlock += () =>
-            {
-                onUnlock?.Invoke();
-            };
-
-            //combo = combination.GetComboInt().ToList();
-		}
+        var combination = combinationLock.GetComponent<PadLockedTempController>();
+        if (combination != null) combination.onUnlock = onUnlock;
 		combinationLock.SetActive(false);
 	}
 

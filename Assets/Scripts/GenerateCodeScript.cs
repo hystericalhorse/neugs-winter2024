@@ -12,9 +12,9 @@ public class GenerateCodeScript : MonoBehaviour, Interactable
 
     private void Start()
     {
-        GenrateCode();
-        string c = code.ToString();
-        Debug.Log(c.PadLeft(4 - c.Length,'0'));
+        //GenrateCode();
+        //string c = code.ToString();
+        //Debug.Log(c.PadLeft(4 - c.Length,'0'));
     }
 
     public void OnInteract()
@@ -32,9 +32,12 @@ public class GenerateCodeScript : MonoBehaviour, Interactable
 
     public float ReturnCode()
     {
-        //This is used mostly so the padlock/anything that really requires a code can recive the code
-        //Is also the reason i need the two of them to be friends
-        return code;
+		GenrateCode();
+		string c = code.ToString();
+		Debug.Log(c.PadLeft(4 - c.Length, '0'));
+		//This is used mostly so the padlock/anything that really requires a code can recive the code
+		//Is also the reason i need the two of them to be friends
+		return code;
     }
 
     public bool CheckedAnswer()

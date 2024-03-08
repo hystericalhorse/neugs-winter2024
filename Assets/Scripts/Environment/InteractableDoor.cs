@@ -39,6 +39,7 @@ public class InteractableDoor : MonoBehaviour, Interactable, Door
 			});
 
 			ts.afterFadeIn.AddListener(() => {
+				PlayerManager.instance.GetCameraController().NoLerpResetPosition(true);
 				thisRoom?.OnExitRoom();
 			});
 
